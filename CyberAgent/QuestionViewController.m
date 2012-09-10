@@ -26,21 +26,22 @@
 @synthesize leftButton;
 @synthesize rightButton;
 
-@synthesize label;
+@synthesize questionQuantityNum;
 
 
 //問題のボタンは右が正解だったらTrue
 //           左が正解だったらFalse
 bool questionAns = false;
+//現在の問題数
 int sequence = 0;
 NSMutableArray *anArray ;
-//static NSInteger *
-static int *answerCount = 0;
+//正解数
+int answerCount = 0;
 //問題数
 int numQuestion = 5;
 
 //正誤判定
-bool questionResult = true;
+bool questionResult = false;
 
 //問題を答えたかどうかノ判定
 BOOL questionSelected = true;
@@ -83,17 +84,18 @@ BOOL questionSelected = true;
     anArray= [ReadQuestionText SetTextToArray];
     
     
-    [super viewDidLoad];
- 
+  
     
     //タイマーの部分
     NSLog(@"start");
     [NSTimer
     scheduledTimerWithTimeInterval:3.5
     target:self
-    selector:@selector(changeQuestion:)
+    selector:@selector(tmp:)
     userInfo:nil
     repeats:YES];
+    
+    [super viewDidLoad];
     
  	// Do any additional setup after loading the view.
 }
@@ -119,19 +121,37 @@ BOOL questionSelected = true;
 -(void)setQuestionQuantity: (NSString*)qq{
     
     NSLog(@"numtest=%@", qq);
-    [label setText:qq];
+    [questionQuantityNum setText:qq];
 }
 
 
 //次の画面に正解数を渡す
 +(NSInteger*)answerNum{
-    return answerCount;
+    NSInteger *ansCount;
+    ansCount = answerCount;
+    return ansCount;
+}
+
+-(void)tmp:(NSTimer *)timer {
+    [timer invalidate];
+    [self changeQuestion];
+    //問題の終了判定
+    if (sequence >= numQuestion /*&& [timer isValid]*/) {
+        [timer invalidate];
+        
+        ResultViewController *rvc= [self.storyboard instantiateViewControllerWithIdentifier:@"ResultViewController"];
+        [self presentModalViewController:rvc animated:YES ];
+        NSLog(@"正解数は %d です",(int)answerCount);
+        
+        NSLog(@"stop");
+    }
+    
 }
 
 /*
  問題を変える
  */
-- (void)changeQuestion:(NSTimer *)timer {
+- (void)changeQuestion{
 
     
     //問題に答えられたかどうかのbool値の初期化
@@ -171,21 +191,30 @@ BOOL questionSelected = true;
            }
     
     
+    
+    if(questionResult){
+        //正解数を数える
+        answerCount = answerCount + 1;
+    }
+    
     //問題文をすすめる
     sequence++;
     
+    
         
     
-    //問題の終了判定
-    if (sequence >= numQuestion /*&& [timer isValid]*/) {
-        [timer invalidate];
-        
-        ResultViewController *rvc= [self.storyboard instantiateViewControllerWithIdentifier:@"ResultViewController"];
-        [self presentModalViewController:rvc animated:YES ];
-        NSLog(@"正解数は %d です",(int)answerCount);
-        
-        NSLog(@"stop");
-    }
+//    //問題の終了判定
+//    if (sequence >= numQuestion /*&& [timer isValid]*/) {
+//        [timer invalidate];
+//        
+//        ResultViewController *rvc= [self.storyboard instantiateViewControllerWithIdentifier:@"ResultViewController"];
+//        [self presentModalViewController:rvc animated:YES ];
+//        NSLog(@"正解数は %d です",(int)answerCount);
+//        
+//        NSLog(@"stop");
+//    }
+//    NSLog(@"changeQuestion  answerCount = %d",(int)answerCount);
+
     
 }
 
@@ -208,11 +237,7 @@ BOOL questionSelected = true;
     //右が正解
     if (answerSelect == 0) {
         
-//        //ロックされているボタンの開放
-//        [leftButton setTitle:questionNotAnsButtonText forState:UIControlStateDisabled];
-//        [rightButton setTitle:questionAnsButtonText forState:UIControlStateDisabled];
-
-        
+        //ボタンのラベルの設定
         rightButton.titleLabel.text = questionAnsButtonText;
         leftButton.titleLabel.text = questionNotAnsButtonText;
         //右が正解なのでtrue
@@ -222,11 +247,7 @@ BOOL questionSelected = true;
     //左が正解
     else if(answerSelect == 1){
         
-//        //ロックされているボタンの開放
-//        [leftButton setTitle:questionAnsButtonText forState:UIControlStateDisabled];
-//        [rightButton setTitle:questionNotAnsButtonText forState:UIControlStateDisabled];
-
-        
+        //ボタンのラベルの設定
         leftButton.titleLabel.text = questionAnsButtonText;
         rightButton.titleLabel.text = questionNotAnsButtonText;
         //左が正解なのでfalse
@@ -277,16 +298,13 @@ BOOL questionSelected = true;
         [self AnswerSound];
 
         
-        //正解数を数える
-        answerCount++;
-        
+              
         //正解のイメージを表示させる
         NSString *aImagePath = [[NSBundle mainBundle] pathForResource:@"right" ofType:@"jpg"];
         UIImage *imege = [[UIImage alloc] initWithContentsOfFile:aImagePath];
         rightAndWrong.image = imege;
         rightAndWrong.hidden = false;
         [self.view addSubview:rightAndWrong];
-        [NSThread sleepForTimeInterval:1];
         //rightAndWrong.hidden = true;
         
         
@@ -320,6 +338,9 @@ BOOL questionSelected = true;
 //    [timer invalidate];
 //    NSLog(@"Timer Status : %d",[timer isValid]);
 //
+    
+    NSLog(@"push button answerCount = %d",(int)answerCount);
+    [self changeQuestion];
 
 }
 
@@ -346,8 +367,6 @@ BOOL questionSelected = true;
         [self AnswerSound];
         
         
-        //正解数を数える
-        answerCount++;
         
         //正解のイメージを表示させる
         NSString *aImagePath = [[NSBundle mainBundle] pathForResource:@"right" ofType:@"jpg"];
@@ -357,7 +376,6 @@ BOOL questionSelected = true;
         //正解イメージのセット
         rightAndWrong = image;
         rightAndWrong.hidden = NO;
-        [NSThread sleepForTimeInterval:2];
 //        rightAndWrong.hidden = true;
         
         
@@ -374,8 +392,6 @@ BOOL questionSelected = true;
         [self AnswerSound];
 
         
-
-        
         //不正解のイメージを表示させる
         NSString *aImagePath = [[NSBundle mainBundle] pathForResource:@"wrong" ofType:@"jpg"];
         UIImage *img = [[UIImage alloc] initWithContentsOfFile:aImagePath];
@@ -387,11 +403,10 @@ BOOL questionSelected = true;
     questionSelected = true;
 
     
+    NSLog(@"push button answerCount = %d",(int)answerCount);
+
+    [self changeQuestion];
 }
-
-
-
-
 
 
 
@@ -408,6 +423,8 @@ BOOL questionSelected = true;
         UIImage *imege = [[UIImage alloc] initWithContentsOfFile:aImagePath];
         rightAndWrong.image = imege;
         rightAndWrong.hidden = false;
+        
+        NSLog(@"right Sound");
         //スリープ処理
         //        [NSThread sleepForTimeInterval:0.5];
         //  rightAndWrong.hidden = true;
@@ -416,11 +433,13 @@ BOOL questionSelected = true;
     else{
         
         //不正解のイメージを表示させる
-        NSString *aImagePath = [[NSBundle mainBundle] pathForResource:@"wrong" ofType:@"jpg"];
+        NSString *aImagePath = [[NSBundle mainBundle] pathForResource:@"wrong" ofType:@"mp3"];
         UIImage *imege = [[UIImage alloc] initWithContentsOfFile:aImagePath];
         rightAndWrong.image = imege;
         rightAndWrong.hidden = false;
         
+        NSLog(@"wrong Sound");
+
         //スリープ処理
         //[NSThread sleepForTimeInterval:0.5];
         

@@ -20,6 +20,7 @@
 		1D8937B515F73DF7005962EB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D8937B415F73DF7005962EB /* AppDelegate.m */; };
 		1D8937B815F73DF7005962EB /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D8937B615F73DF7005962EB /* MainStoryboard.storyboard */; };
 		1D8937BB15F73DF7005962EB /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D8937BA15F73DF7005962EB /* ViewController.m */; };
+		1DCD602915FDAA82002EF3C5 /* QuestionOperator.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DCD602815FDAA81002EF3C5 /* QuestionOperator.m */; };
 		1DE3143615F8869F00213ADA /* image_5.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1DE3143415F8869F00213ADA /* image_5.jpg */; };
 		1DE3143715F8869F00213ADA /* image_6.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1DE3143515F8869F00213ADA /* image_6.jpg */; };
 		1DE3143B15F8A19100213ADA /* wrong.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1DE3143915F8A19100213ADA /* wrong.jpg */; };
@@ -54,6 +55,8 @@
 		1D8937B715F73DF7005962EB /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		1D8937B915F73DF7005962EB /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		1D8937BA15F73DF7005962EB /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		1DCD602715FDAA81002EF3C5 /* QuestionOperator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionOperator.h; sourceTree = "<group>"; };
+		1DCD602815FDAA81002EF3C5 /* QuestionOperator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionOperator.m; sourceTree = "<group>"; };
 		1DE3143415F8869F00213ADA /* image_5.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image_5.jpg; sourceTree = "<group>"; };
 		1DE3143515F8869F00213ADA /* image_6.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image_6.jpg; sourceTree = "<group>"; };
 		1DE3143915F8A19100213ADA /* wrong.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = wrong.jpg; sourceTree = "<group>"; };
@@ -131,15 +134,17 @@
 				1D8937B615F73DF7005962EB /* MainStoryboard.storyboard */,
 				1D8937B915F73DF7005962EB /* ViewController.h */,
 				1D8937BA15F73DF7005962EB /* ViewController.m */,
+				1DCD602715FDAA81002EF3C5 /* QuestionOperator.h */,
+				1DCD602815FDAA81002EF3C5 /* QuestionOperator.m */,
 				E98A86EE15F85FD600607254 /* QuestionViewController.h */,
 				E98A86EF15F85FD600607254 /* QuestionViewController.m */,
+				1D3BE72815FB895900B44577 /* ReadQuestionText.h */,
+				1D3BE72915FB895900B44577 /* ReadQuestionText.m */,
 				E908FE2615F8E39700FA93D2 /* ResultViewController.h */,
 				E908FE2715F8E39700FA93D2 /* ResultViewController.m */,
 				E9EF892F15FB0C220014F193 /* RankingViewController.h */,
 				E9EF893015FB0C220014F193 /* RankingViewController.m */,
 				1D8937AB15F73DF7005962EB /* Supporting Files */,
-				1D3BE72815FB895900B44577 /* ReadQuestionText.h */,
-				1D3BE72915FB895900B44577 /* ReadQuestionText.m */,
 			);
 			path = CyberAgent;
 			sourceTree = "<group>";
@@ -147,8 +152,20 @@
 		1D8937AB15F73DF7005962EB /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				1DCD602615FD9F9E002EF3C5 /* image */,
 				1D3BE72E15FBCAF300B44577 /* Sounds */,
 				1D3BE72C15FB97BF00B44577 /* QuestionText.csv */,
+				1D8937AC15F73DF7005962EB /* CyberAgent-Info.plist */,
+				1D8937AD15F73DF7005962EB /* InfoPlist.strings */,
+				1D8937B015F73DF7005962EB /* main.m */,
+				1D8937B215F73DF7005962EB /* CyberAgent-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1DCD602615FD9F9E002EF3C5 /* image */ = {
+			isa = PBXGroup;
+			children = (
 				1DE3143D15F8BFBA00213ADA /* image_0.jpg */,
 				1DE3143E15F8BFBA00213ADA /* image_1.jpg */,
 				1DE3143F15F8BFBA00213ADA /* image_2.jpg */,
@@ -158,12 +175,8 @@
 				1DE3143A15F8A19100213ADA /* right.jpg */,
 				1DE3143415F8869F00213ADA /* image_5.jpg */,
 				1DE3143515F8869F00213ADA /* image_6.jpg */,
-				1D8937AC15F73DF7005962EB /* CyberAgent-Info.plist */,
-				1D8937AD15F73DF7005962EB /* InfoPlist.strings */,
-				1D8937B015F73DF7005962EB /* main.m */,
-				1D8937B215F73DF7005962EB /* CyberAgent-Prefix.pch */,
 			);
-			name = "Supporting Files";
+			name = image;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -248,6 +261,7 @@
 				E908FE2815F8E39700FA93D2 /* ResultViewController.m in Sources */,
 				E9EF893115FB0C220014F193 /* RankingViewController.m in Sources */,
 				1D3BE72A15FB895900B44577 /* ReadQuestionText.m in Sources */,
+				1DCD602915FDAA82002EF3C5 /* QuestionOperator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -281,7 +295,7 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Hiroshi Ueno (6A4MV8MYLK)";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -296,6 +310,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "B6850564-73E5-43E0-AD42-BF1A28F9E3F1";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -308,7 +323,7 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Hiroshi Ueno (6A4MV8MYLK)";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
@@ -317,6 +332,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "B6850564-73E5-43E0-AD42-BF1A28F9E3F1";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};

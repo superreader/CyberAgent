@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface QuestionViewController : UIViewController{
-    IBOutlet UILabel *label;
+    IBOutlet UILabel *questionQuantityNum;
 }
 
 //クラスメソッド
@@ -23,7 +23,7 @@
 -(void)setQuestionQuantity: (NSString*)qq;
 -(void)AnswerSound;
 
-@property  (nonatomic, retain) IBOutlet UILabel *label;
+@property  (nonatomic, retain) IBOutlet UILabel *questionQuantityNum;
 
 @property (strong, nonatomic) NSString *questionNumLabel;
 
