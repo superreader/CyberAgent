@@ -1,5 +1,5 @@
 //
-//  Ranking50ViewController.h
+//  Result50ViewController.h
 //  CyberAgent
 //
 //  Created by 柏木 翔太 on 12/09/10.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface Ranking50ViewController : UIViewController{
+@interface Result50ViewController : UIViewController{
     
     NSInteger ans;//正解数格納用変数
     
@@ -23,10 +23,12 @@
     
 }
 
+
 @property (weak, nonatomic) IBOutlet UILabel *ResultLabel;
 
 @property (weak, nonatomic) IBOutlet UILabel *yourRank;
 
-@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet UITableView *tableview;
+
 
 @end

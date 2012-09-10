@@ -1,21 +1,21 @@
 //
-//  Ranking50ViewController.m
+//  Result50ViewController.m
 //  CyberAgent
 //
 //  Created by 柏木 翔太 on 12/09/10.
 //  Copyright (c) 2012年 上野 博司. All rights reserved.
 //
 
-#import "Ranking50ViewController.h"
+#import "Result50ViewController.h"
 
-@interface Ranking50ViewController ()
+@interface Result50ViewController ()
 
 @end
 
-@implementation Ranking50ViewController
+@implementation Result50ViewController
 @synthesize ResultLabel;
 @synthesize yourRank;
-@synthesize tableView;
+@synthesize tableview;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -160,7 +160,7 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [self setResultLabel:nil];
     [self setYourRank:nil];
-    [self setTableView:nil];
+    [self setTableview:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }
