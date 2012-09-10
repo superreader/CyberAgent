@@ -33,17 +33,17 @@
 //           左が正解だったらFalse
 bool questionAns = false;
 //現在の問題数
-int sequence = 0;
-NSMutableArray *anArray ;
+int sequence;
+NSMutableArray *anArray;
 //正解数
-int answerCount = 0;
+int answerCount;
 //問題数
-int numQuestion = 5;
+int numQuestion;
 
 //正誤判定
 bool questionResult = false;
 
-//問題を答えたかどうかノ判定
+//問題を答えたかどうかの判定
 BOOL questionSelected = true;
 
 
@@ -62,9 +62,13 @@ BOOL questionSelected = true;
  */
 - (void)viewDidLoad
 {
-    
+    //現在の問題数
     sequence = 0;
-    answerCount= 0;
+    //正解数
+    answerCount = 0;
+    //問題数
+    numQuestion = 0;
+    //Timer管理の変数
     qOperator = 0.0;
 
     //一つ前の画面で問題数を設定したのでその数字の格納
@@ -72,19 +76,17 @@ BOOL questionSelected = true;
     NSString *nq = [ViewController Qnum];
     numQuestion = [nq intValue];
     
-    
-    NSString *ImagePath = [[NSBundle mainBundle] pathForResource:@"image_5" ofType:@"jpg"];
-    UIImage *imege = [[UIImage alloc] initWithContentsOfFile:ImagePath];
-    Questionimg.image = imege;
- 
-    
+//    
+//    NSString *ImagePath = [[NSBundle mainBundle] pathForResource:@"image_5" ofType:@"jpg"];
+//    UIImage *imege = [[UIImage alloc] initWithContentsOfFile:ImagePath];
+//    Questionimg.image = imege;
+// 
+//    
     
     
     //問題文の設定
     anArray = [[NSMutableArray alloc] init];
     anArray= [ReadQuestionText SetTextToArray];
-    
-    
   
     
     //タイマーの部分
@@ -135,15 +137,29 @@ BOOL questionSelected = true;
 
 -(void)questionOperator:(NSTimer *)timer {
 
-    if (qOperator  > 2.0 || qOperator < 0.01) {
+    //時間切れによる不正解
+    if (!questionSelected || qOperator  > 4.0) {
+        NSLog(@"時間切れによる不正解");
+        //問題は不正解
+        questionResult = false;
+        //不正解音を鳴らす
+        [self AnswerSound];
+    }
+
+    if (qOperator  > 4.0 || qOperator < 0.01) {
+        if(!questionSelected){
+            [self AnswerSound];
+        }
         [self changeQuestion];
     }
 
     qOperator = qOperator + 0.01;
     
+
+    
     
     //問題の終了判定
-    if (sequence >= numQuestion /*&& [timer isValid]*/) {
+    if (sequence == numQuestion) {
         [timer invalidate];
         
         ResultViewController *rvc= [self.storyboard instantiateViewControllerWithIdentifier:@"ResultViewController"];
@@ -191,14 +207,7 @@ BOOL questionSelected = true;
     
     
         
-    //時間切れによる不正解
-    if (!questionSelected) {
-        NSLog(@"時間切れによる不正解");
-        
-    }else{
-           }
-    
-    
+       
     
     if(questionResult){
         //正解数を数える
@@ -207,23 +216,6 @@ BOOL questionSelected = true;
     
     //問題文をすすめる
     sequence++;
-    
-    
-        
-    
-//    //問題の終了判定
-//    if (sequence >= numQuestion /*&& [timer isValid]*/) {
-//        [timer invalidate];
-//        
-//        ResultViewController *rvc= [self.storyboard instantiateViewControllerWithIdentifier:@"ResultViewController"];
-//        [self presentModalViewController:rvc animated:YES ];
-//        NSLog(@"正解数は %d です",(int)answerCount);
-//        
-//        NSLog(@"stop");
-//    }
-//    NSLog(@"changeQuestion  answerCount = %d",(int)answerCount);
-
-    
 }
 
 /*
