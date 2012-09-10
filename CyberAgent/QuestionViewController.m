@@ -203,13 +203,13 @@ BOOL questionSelected = true;
     //右が正解
     if (answerSelect == 0) {
         
-        //ロックされているボタンの開放
-        [leftButton setTitle:questionNotAnsButtonText forState:UIControlStateDisabled];
-        [rightButton setTitle:questionAnsButtonText forState:UIControlStateDisabled];
+//        //ロックされているボタンの開放
+//        [leftButton setTitle:questionNotAnsButtonText forState:UIControlStateDisabled];
+//        [rightButton setTitle:questionAnsButtonText forState:UIControlStateDisabled];
 
         
-       // rightButton.titleLabel.text = questionAnsButtonText;
-       // leftButton.titleLabel.text = questionNotAnsButtonText;
+        rightButton.titleLabel.text = questionAnsButtonText;
+        leftButton.titleLabel.text = questionNotAnsButtonText;
         //右が正解なのでtrue
         questionAns = true;
 
@@ -217,13 +217,13 @@ BOOL questionSelected = true;
     //左が正解
     else if(answerSelect == 1){
         
-        //ロックされているボタンの開放
-        [leftButton setTitle:questionAnsButtonText forState:UIControlStateDisabled];
-        [rightButton setTitle:questionNotAnsButtonText forState:UIControlStateDisabled];
+//        //ロックされているボタンの開放
+//        [leftButton setTitle:questionAnsButtonText forState:UIControlStateDisabled];
+//        [rightButton setTitle:questionNotAnsButtonText forState:UIControlStateDisabled];
 
         
-      //  leftButton.titleLabel.text = questionAnsButtonText;
-      //  rightButton.titleLabel.text = questionNotAnsButtonText;
+        leftButton.titleLabel.text = questionAnsButtonText;
+        rightButton.titleLabel.text = questionNotAnsButtonText;
         //左が正解なのでfalse
         questionAns = false;
     }
@@ -266,13 +266,15 @@ BOOL questionSelected = true;
     if (questionAns) {
         NSLog(@"正解！！！");
 
+        questionResult = true;
+
+        
         //正解時に音を鳴らす
         [self AnswerSound];
 
         
         //正解数を数える
         answerCount++;
-        questionResult = true;
         
         //正解のイメージを表示させる
         NSString *aImagePath = [[NSBundle mainBundle] pathForResource:@"right" ofType:@"jpg"];
@@ -289,13 +291,14 @@ BOOL questionSelected = true;
     }
     else{
         NSLog(@"不正解！！！");
-        
-        
-        //不正解時に音を鳴らす
-        [self AnswerSound];
+
         
         //不正解だった
         questionResult = false;
+
+        
+        //不正解時に音を鳴らす
+        [self AnswerSound];
         
         
         //不正解のイメージを表示させる
@@ -331,6 +334,9 @@ BOOL questionSelected = true;
     
     if(!questionAns){
         NSLog(@"正解！！！");
+        //不正解だった
+        questionResult = false;
+
         
         //正解時に音を鳴らす
         [self AnswerSound];
@@ -338,8 +344,6 @@ BOOL questionSelected = true;
         
         //正解数を数える
         answerCount++;
-        //正解できた
-        questionResult = true;
         
         //正解のイメージを表示させる
         NSString *aImagePath = [[NSBundle mainBundle] pathForResource:@"right" ofType:@"jpg"];
@@ -358,12 +362,14 @@ BOOL questionSelected = true;
     else{
         NSLog(@"不正解！！！");
         
+        
+        //不正解だった
+        questionResult = false;
+
         //不正解時に音を鳴らす
         [self AnswerSound];
 
         
-        //不正解だった
-        questionResult = false;
 
         
         //不正解のイメージを表示させる
