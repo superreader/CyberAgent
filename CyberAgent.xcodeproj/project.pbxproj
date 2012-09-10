@@ -32,6 +32,7 @@
 		1DE3144615F8BFBA00213ADA /* image_4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1DE3144115F8BFBA00213ADA /* image_4.jpg */; };
 		E908FE2815F8E39700FA93D2 /* ResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E908FE2715F8E39700FA93D2 /* ResultViewController.m */; };
 		E98A86F015F85FD600607254 /* QuestionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E98A86EF15F85FD600607254 /* QuestionViewController.m */; };
+		E9A2598A15FDDE1300EAA76F /* Ranking50ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9A2598915FDDE1300EAA76F /* Ranking50ViewController.m */; };
 		E9EF893115FB0C220014F193 /* RankingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9EF893015FB0C220014F193 /* RankingViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -70,6 +71,8 @@
 		E908FE2715F8E39700FA93D2 /* ResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResultViewController.m; sourceTree = "<group>"; };
 		E98A86EE15F85FD600607254 /* QuestionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionViewController.h; sourceTree = "<group>"; };
 		E98A86EF15F85FD600607254 /* QuestionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionViewController.m; sourceTree = "<group>"; };
+		E9A2598815FDDE1300EAA76F /* Ranking50ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Ranking50ViewController.h; sourceTree = "<group>"; };
+		E9A2598915FDDE1300EAA76F /* Ranking50ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Ranking50ViewController.m; sourceTree = "<group>"; };
 		E9EF892F15FB0C220014F193 /* RankingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RankingViewController.h; sourceTree = "<group>"; };
 		E9EF893015FB0C220014F193 /* RankingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RankingViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -144,6 +147,8 @@
 				E908FE2715F8E39700FA93D2 /* ResultViewController.m */,
 				E9EF892F15FB0C220014F193 /* RankingViewController.h */,
 				E9EF893015FB0C220014F193 /* RankingViewController.m */,
+				E9A2598815FDDE1300EAA76F /* Ranking50ViewController.h */,
+				E9A2598915FDDE1300EAA76F /* Ranking50ViewController.m */,
 				1D8937AB15F73DF7005962EB /* Supporting Files */,
 			);
 			path = CyberAgent;
@@ -262,6 +267,7 @@
 				E9EF893115FB0C220014F193 /* RankingViewController.m in Sources */,
 				1D3BE72A15FB895900B44577 /* ReadQuestionText.m in Sources */,
 				1DCD602915FDAA82002EF3C5 /* QuestionOperator.m in Sources */,
+				E9A2598A15FDDE1300EAA76F /* Ranking50ViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
