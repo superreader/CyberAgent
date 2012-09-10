@@ -61,6 +61,10 @@ BOOL questionSelected = true;
  */
 - (void)viewDidLoad
 {
+    
+    sequence = 0;
+    answerCount= 0;
+
     //一つ前の画面で問題数を設定したのでその数字の格納
     //問題数の受け渡し
     NSString *nq = [ViewController Qnum];
@@ -129,6 +133,7 @@ BOOL questionSelected = true;
  */
 - (void)changeQuestion:(NSTimer *)timer {
 
+    
     //問題に答えられたかどうかのbool値の初期化
     questionSelected = true;
     
@@ -268,7 +273,6 @@ BOOL questionSelected = true;
 
         questionResult = true;
 
-        
         //正解時に音を鳴らす
         [self AnswerSound];
 

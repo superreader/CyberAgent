@@ -42,6 +42,14 @@
         [matrics addObject:items]; // matrics に入れる。
     }
 
+    int i = [matrics count];
+    
+    while (--i >0)
+    {
+        int j = rand() % (i+1);
+        [matrics exchangeObjectAtIndex:i withObjectAtIndex:j];
+    }
+    
 
     
     
