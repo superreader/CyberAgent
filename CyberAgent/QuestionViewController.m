@@ -75,6 +75,7 @@ BOOL questionSelected = true;
     //問題数の受け渡し
     NSString *nq = [ViewController Qnum];
     numQuestion = [nq intValue];
+    numQuestion = 7;
     
 //    
 //    NSString *ImagePath = [[NSBundle mainBundle] pathForResource:@"image_5" ofType:@"jpg"];
@@ -86,7 +87,20 @@ BOOL questionSelected = true;
     
     //問題文の設定
     anArray = [[NSMutableArray alloc] init];
-    anArray= [ReadQuestionText SetTextToArray];
+    anArray = [ReadQuestionText SetTextToArray];
+    
+    NSMutableArray *question = [[NSMutableArray alloc] init];
+    
+    NSLog(@"count = %d",[anArray count]);
+    for (int i = 0; i < 10; i++) {
+        
+        question = [anArray objectAtIndex:i];
+        for(int j = 0; j < 4 ; j++){
+            NSString *text = [question objectAtIndex:j];
+            NSLog(@"test Text = %@", text);
+        }
+    }
+
   
     
     //タイマーの部分
@@ -146,22 +160,21 @@ BOOL questionSelected = true;
         [self AnswerSound];
     }
 
+    //新しい問題に遷移
     if (qOperator  > 4.0 || qOperator < 0.01) {
-        if(!questionSelected){
-            [self AnswerSound];
-        }
+        sequence++;
         [self changeQuestion];
     }
 
+    //タイマーを管理する数字を更新する
     qOperator = qOperator + 0.01;
-    
-
     
     
     //問題の終了判定
     if (sequence == numQuestion) {
         [timer invalidate];
         
+        [anArray removeAllObjects];
         ResultViewController *rvc= [self.storyboard instantiateViewControllerWithIdentifier:@"ResultViewController"];
         [self presentModalViewController:rvc animated:YES ];
         NSLog(@"正解数は %d です",(int)answerCount);
@@ -183,39 +196,35 @@ BOOL questionSelected = true;
     //問題に答えられたかどうかのbool値の初期化
     questionSelected = true;
     
+    NSMutableArray *question = [[NSMutableArray alloc] init];
 
     
     //問題のセット
-    NSMutableArray *quastion = [[NSMutableArray alloc] init];
-    quastion = [anArray objectAtIndex:sequence];
+    question = [anArray objectAtIndex:sequence];
     
     
     //問題画像をセット
-    NSString *imageName = [quastion objectAtIndex:0];
+    NSString *imageName = [question objectAtIndex:0];
     NSString *imagePath = [[NSBundle mainBundle] pathForResource:imageName ofType:@"jpg"];    //問題文の種類の呼び出し
     UIImage *image = [[UIImage alloc] initWithContentsOfFile:imagePath];
     Questionimg.image = image;
     
     
     //問題文をセット
-    NSString *questionText = [quastion objectAtIndex:1];
+    NSString *questionText = [question objectAtIndex:1];
     QuestionString.text = questionText;
  
     
     //問題ボタンの設定
-    [self setButton:quastion];
+    [self setButton:question];
     
-    
-        
-       
-    
+
+    //正解数を数える
     if(questionResult){
-        //正解数を数える
         answerCount = answerCount + 1;
     }
     
     //問題文をすすめる
-    sequence++;
 }
 
 /*
@@ -286,8 +295,6 @@ BOOL questionSelected = true;
 -(IBAction) judgmentQuastionRight:(UIButton *)sender{
     
    
-   
-    [rightButton setTitle:@"ぽち" forState:UIControlStateHighlighted];
     //右が正解だった場合
     if (questionAns) {
         NSLog(@"正解！！！");
@@ -347,7 +354,6 @@ BOOL questionSelected = true;
  */
 -(IBAction) judgmentQuastionLeft:(UIButton *)sender{
     
-    [leftButton setTitle:@"ぽち" forState:UIControlStateHighlighted];
     
     if(!questionAns){
         NSLog(@"正解！！！");
