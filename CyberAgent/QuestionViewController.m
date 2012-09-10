@@ -238,8 +238,9 @@ BOOL questionSelected = true;
     if (answerSelect == 0) {
         
         //ボタンのラベルの設定
-        rightButton.titleLabel.text = questionAnsButtonText;
-        leftButton.titleLabel.text = questionNotAnsButtonText;
+        [rightButton setTitle:questionAnsButtonText forState:UIControlStateNormal];
+        [leftButton setTitle:questionNotAnsButtonText forState:UIControlStateNormal];
+
         //右が正解なのでtrue
         questionAns = true;
 
@@ -248,8 +249,9 @@ BOOL questionSelected = true;
     else if(answerSelect == 1){
         
         //ボタンのラベルの設定
-        leftButton.titleLabel.text = questionAnsButtonText;
-        rightButton.titleLabel.text = questionNotAnsButtonText;
+        [rightButton setTitle:questionNotAnsButtonText forState:UIControlStateNormal];
+        [leftButton setTitle:questionAnsButtonText forState:UIControlStateNormal];
+
         //左が正解なのでfalse
         questionAns = false;
     }
@@ -283,11 +285,9 @@ BOOL questionSelected = true;
  */
 -(IBAction) judgmentQuastionRight:(UIButton *)sender{
     
-    //ボタンを押したので次の問題までロック！！
-    [leftButton setTitle:@"押せません" forState:UIControlStateDisabled];
-    [rightButton setTitle:@"押せません" forState:UIControlStateDisabled];
-
-    
+   
+   
+    [rightButton setTitle:@"ぽち" forState:UIControlStateHighlighted];
     //右が正解だった場合
     if (questionAns) {
         NSLog(@"正解！！！");
@@ -347,6 +347,7 @@ BOOL questionSelected = true;
  */
 -(IBAction) judgmentQuastionLeft:(UIButton *)sender{
     
+    [leftButton setTitle:@"ぽち" forState:UIControlStateHighlighted];
     
     if(!questionAns){
         NSLog(@"正解！！！");
