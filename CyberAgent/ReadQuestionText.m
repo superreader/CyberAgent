@@ -30,6 +30,8 @@
  */
 +(NSMutableArray*)SetTextToArray{
     
+    srandom(time(NULL));
+            
     NSString *text = [self ReadCSVFile];
     NSArray* lines = [text componentsSeparatedByString:@"\n"];
     
@@ -46,7 +48,7 @@
     
     while (--i >0)
     {
-        int j = rand() % (i+1);
+        int j = random() % (i+1);
         [matrics exchangeObjectAtIndex:i withObjectAtIndex:j];
     }
     

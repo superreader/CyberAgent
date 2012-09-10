@@ -239,7 +239,8 @@ BOOL questionSelected = true;
     NSString *questionAnsButtonText = [quastion objectAtIndex:2];
     NSString *questionNotAnsButtonText = [quastion objectAtIndex:3];
    
-    NSInteger answerSelect = rand() % 2;
+    srandom(time(NULL));
+    NSInteger answerSelect = random() % 2;
     
     NSLog(@"answerSelect %d",answerSelect);
 
