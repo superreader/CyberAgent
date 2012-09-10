@@ -285,10 +285,7 @@ BOOL questionSelected = true;
  */
 -(IBAction) judgmentQuastionRight:(UIButton *)sender{
     
-   
-   
-    [rightButton setTitle:@"ぽち" forState:UIControlStateHighlighted];
-    //右が正解だった場合
+   //右が正解だった場合
     if (questionAns) {
         NSLog(@"正解！！！");
 
@@ -340,15 +337,11 @@ BOOL questionSelected = true;
 
 }
 
-
-
 /*
  問題の正解か不正解の判定（左ボタン）
  */
 -(IBAction) judgmentQuastionLeft:(UIButton *)sender{
-    
-    [leftButton setTitle:@"ぽち" forState:UIControlStateHighlighted];
-    
+        
     if(!questionAns){
         NSLog(@"正解！！！");
         //正解だった
