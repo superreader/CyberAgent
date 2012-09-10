@@ -12,7 +12,7 @@
     
     NSInteger ans;//正解数格納用変数
     
-    NSInteger num;//何回目のゲームンなのかを記録する変数
+    NSInteger numfif;//何回目のゲームンなのかを記録する変数
     
     NSUserDefaults *ud;//結果の保存用
     
