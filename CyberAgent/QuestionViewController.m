@@ -65,7 +65,7 @@ BOOL questionSelected = true;
     
     sequence = 0;
     answerCount= 0;
-    num = 0.0;
+    qOperator = 0.0;
 
     //一つ前の画面で問題数を設定したのでその数字の格納
     //問題数の受け渡し
@@ -92,7 +92,7 @@ BOOL questionSelected = true;
     [NSTimer
     scheduledTimerWithTimeInterval:0.01
     target:self
-    selector:@selector(tmp:)
+    selector:@selector(questionOperator:)
     userInfo:nil
     repeats:YES];
     
@@ -133,13 +133,13 @@ BOOL questionSelected = true;
     return ansCount;
 }
 
--(void)tmp:(NSTimer *)timer {
+-(void)questionOperator:(NSTimer *)timer {
 
-    if (num  > 2.0 || num < 0.01) {
+    if (qOperator  > 2.0 || qOperator < 0.01) {
         [self changeQuestion];
     }
 
-    num = num + 0.01;
+    qOperator = qOperator + 0.01;
     
     
     //問題の終了判定
@@ -160,12 +160,13 @@ BOOL questionSelected = true;
  */
 - (void)changeQuestion{
 
-    num = 0.0;
+    
+    rightAndWrong.hidden = true;
+    
+    qOperator = 0.0;
     //問題に答えられたかどうかのbool値の初期化
     questionSelected = true;
     
-
-
 
     
     //問題のセット
@@ -268,7 +269,7 @@ BOOL questionSelected = true;
     SystemSoundID soundID;
     
     //正解時
-    if (questionAns) {
+    if (questionResult) {
         NSString *path = [[NSBundle mainBundle] pathForResource:@"right" ofType:@"wav"];
         NSURL *url = [NSURL fileURLWithPath:path];
         AudioServicesCreateSystemSoundID((__bridge CFURLRef)url, &soundID);
@@ -311,10 +312,7 @@ BOOL questionSelected = true;
         UIImage *imege = [[UIImage alloc] initWithContentsOfFile:aImagePath];
         rightAndWrong.image = imege;
         rightAndWrong.hidden = false;
-        [self.view addSubview:rightAndWrong];
-        //rightAndWrong.hidden = true;
-        
-        
+        [NSThread sleepForTimeInterval:1.0];
 
 
     }
@@ -332,8 +330,12 @@ BOOL questionSelected = true;
         
         //不正解のイメージを表示させる
         NSString *aImagePath = [[NSBundle mainBundle] pathForResource:@"wrong" ofType:@"jpg"];
-        UIImage *img = [[UIImage alloc] initWithContentsOfFile:aImagePath];
-        UIImageView *image = [[UIImageView alloc] initWithImage:img];
+        UIImage *imege = [[UIImage alloc] initWithContentsOfFile:aImagePath];
+        rightAndWrong.image = imege;
+        rightAndWrong.hidden = false;
+        [NSThread sleepForTimeInterval:1.0];
+
+
         
     }
 
@@ -341,13 +343,8 @@ BOOL questionSelected = true;
     //問題には答えた(正解かどうかはどうでもいい)
     questionSelected = true;
     
-//    // タイマーを停止したい場合
-//    [timer invalidate];
-//    NSLog(@"Timer Status : %d",[timer isValid]);
-//
-    
     NSLog(@"push button answerCount = %d",(int)answerCount);
-    num = 0.0;
+    qOperator = 0.0;
 
 }
 
@@ -359,32 +356,22 @@ BOOL questionSelected = true;
 -(IBAction) judgmentQuastionLeft:(UIButton *)sender{
     
     
-    //ボタンを押したので次の問題までロック！！
-    [leftButton setTitle:@"押せません" forState:UIControlStateDisabled];
-    [rightButton setTitle:@"押せません" forState:UIControlStateDisabled];
-    
-    
     if(!questionAns){
         NSLog(@"正解！！！");
-        //不正解だった
-        questionResult = false;
+        //正解だった
+        questionResult = true;
 
-        
         //正解時に音を鳴らす
         [self AnswerSound];
         
-        
-        
+                
         //正解のイメージを表示させる
         NSString *aImagePath = [[NSBundle mainBundle] pathForResource:@"right" ofType:@"jpg"];
-        UIImage *img = [[UIImage alloc] initWithContentsOfFile:aImagePath];
-        UIImageView *image = [[UIImageView alloc] initWithImage:img];
-        
-        //正解イメージのセット
-        rightAndWrong = image;
-        rightAndWrong.hidden = NO;
-//        rightAndWrong.hidden = true;
-        
+        UIImage *imege = [[UIImage alloc] initWithContentsOfFile:aImagePath];
+        rightAndWrong.image = imege;
+        rightAndWrong.hidden = false;
+        [NSThread sleepForTimeInterval:1.0];
+
         
 
     }
@@ -401,9 +388,12 @@ BOOL questionSelected = true;
         
         //不正解のイメージを表示させる
         NSString *aImagePath = [[NSBundle mainBundle] pathForResource:@"wrong" ofType:@"jpg"];
-        UIImage *img = [[UIImage alloc] initWithContentsOfFile:aImagePath];
-        UIImageView *image = [[UIImageView alloc] initWithImage:img];
-        
+        UIImage *imege = [[UIImage alloc] initWithContentsOfFile:aImagePath];
+        rightAndWrong.image = imege;
+        rightAndWrong.hidden = false;
+        [NSThread sleepForTimeInterval:1.0];
+
+
 
     }
     //問題には答えた(正解かどうかはどうでもいい)
@@ -412,139 +402,10 @@ BOOL questionSelected = true;
     
     NSLog(@"push button answerCount = %d",(int)answerCount);
 
-    num = 0.0;
+    qOperator = 0.0;
 }
 
 
 
-/*
- 正解か不正解かの表示
-*/
--(void)rightAndWorng:(NSTimer *)timer{
-    
-    //正誤表示
-    if(questionResult){
-        
-        //正解のイメージを表示させる
-        NSString *aImagePath = [[NSBundle mainBundle] pathForResource:@"right" ofType:@"jpg"];
-        UIImage *imege = [[UIImage alloc] initWithContentsOfFile:aImagePath];
-        rightAndWrong.image = imege;
-        rightAndWrong.hidden = false;
-        
-        NSLog(@"right Sound");
-        //スリープ処理
-        //        [NSThread sleepForTimeInterval:0.5];
-        //  rightAndWrong.hidden = true;
-        
-    }
-    else{
-        
-        //不正解のイメージを表示させる
-        NSString *aImagePath = [[NSBundle mainBundle] pathForResource:@"wrong" ofType:@"mp3"];
-        UIImage *imege = [[UIImage alloc] initWithContentsOfFile:aImagePath];
-        rightAndWrong.image = imege;
-        rightAndWrong.hidden = false;
-        
-        NSLog(@"wrong Sound");
-
-        //スリープ処理
-        //[NSThread sleepForTimeInterval:0.5];
-        
-    }
-
-}
-//
-////問題文を設定する
-//-(void)setQuestion{
-//    anArray = [[NSMutableArray alloc] init];
-//    
-//    
-//    
-//    //    for(int num = 0 ;num < 5;num++){
-//    NSMutableArray *quastion = [[NSMutableArray alloc] init];
-//    //画像の名前、問題、問題の正解、問題の不正解
-//    NSString *imageName = [NSString stringWithFormat:@"image_0"];
-//    NSString *quastionText = [NSString stringWithFormat:@"彼らの芸歴は30年より"];
-//    NSString *answer = [NSString stringWithFormat:@"短い"];
-//    NSString *notAnswer = [NSString stringWithFormat:@"長い"];
-//    [quastion addObject:imageName];
-//    [quastion addObject:quastionText];
-//    [quastion addObject:answer];
-//    [quastion addObject:notAnswer];
-//    
-//    [anArray addObject:quastion];
-//    
-//    
-//    quastion = [[NSMutableArray alloc] init];
-//    //画像の名前、問題、問題の正解、問題の不正解(FUZIWARA)
-//    imageName = [NSString stringWithFormat:@"image_1"];
-//    quastionText = [NSString stringWithFormat:@"彼らの芸歴は20年より"];
-//    answer = [NSString stringWithFormat:@"長い"];
-//    notAnswer = [NSString stringWithFormat:@"短い"];
-//    [quastion addObject:imageName];
-//    [quastion addObject:quastionText];
-//    [quastion addObject:answer];
-//    [quastion addObject:notAnswer];
-//    
-//    [anArray addObject:quastion];
-//    
-//    
-//    quastion = [[NSMutableArray alloc] init];
-//    //画像の名前、問題、問題の正解、問題の不正解(とんねるず)
-//    imageName = [NSString stringWithFormat:@"image_2"];
-//    quastionText = [NSString stringWithFormat:@"彼らの芸歴は30年より"];
-//    answer = [NSString stringWithFormat:@"長い"];
-//    notAnswer = [NSString stringWithFormat:@"短い"];
-//    [quastion addObject:imageName];
-//    [quastion addObject:quastionText];
-//    [quastion addObject:answer];
-//    [quastion addObject:notAnswer];
-//    
-//    [anArray addObject:quastion];
-//    
-//    
-//    
-//    quastion = [[NSMutableArray alloc] init];
-//    //画像の名前、問題、問題の正解、問題の不正解(くりーむしちゅー)
-//    imageName = [NSString stringWithFormat:@"image_3"];
-//    quastionText = [NSString stringWithFormat:@"彼らの芸歴は20年より"];
-//    answer = [NSString stringWithFormat:@"短い"];
-//    notAnswer = [NSString stringWithFormat:@"長い"];
-//    [quastion addObject:imageName];
-//    [quastion addObject:quastionText];
-//    [quastion addObject:answer];
-//    [quastion addObject:notAnswer];
-//    [anArray addObject:quastion];
-//    
-//    
-//    
-//    quastion = [[NSMutableArray alloc] init];
-//    //画像の名前、問題、問題の正解、問題の不正解(キャイ～ン)
-//    imageName = [NSString stringWithFormat:@"image_4"];
-//    quastionText = [NSString stringWithFormat:@"彼らの芸歴は20年より"];
-//    answer = [NSString stringWithFormat:@"長い"];
-//    notAnswer = [NSString stringWithFormat:@"短い"];
-//    [quastion addObject:imageName];
-//    [quastion addObject:quastionText];
-//    [quastion addObject:answer];
-//    [quastion addObject:notAnswer];
-//    
-//    [anArray addObject:quastion];
-//    
-//    
-//    quastion = [[NSMutableArray alloc] init];
-//    //画像の名前、問題、問題の正解、問題の不正解(キャイ～ン)
-//    imageName = [NSString stringWithFormat:@"right"];
-//    quastionText = [NSString stringWithFormat:@"end"];
-//    answer = [NSString stringWithFormat:@"end"];
-//    notAnswer = [NSString stringWithFormat:@"end"];
-//    [quastion addObject:imageName];
-//    [quastion addObject:quastionText];
-//    [quastion addObject:answer];
-//    [quastion addObject:notAnswer];
-//    
-//    [anArray addObject:quastion];
-//    //  }
-//}
 
 @end
