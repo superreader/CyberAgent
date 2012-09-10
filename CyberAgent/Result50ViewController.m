@@ -15,7 +15,7 @@
 @implementation Result50ViewController
 @synthesize ResultLabel;
 @synthesize yourRank;
-@synthesize tableView;
+@synthesize tableview;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -29,7 +29,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [super viewDidLoad];
     
     //ans = (int)[QuestionViewController answerNum];
     
@@ -39,11 +38,12 @@
     
     self.ResultLabel.text = [NSString stringWithFormat:@"正解数は%d問です！！",ans];
     
-    ud50 = [NSUserDefaults standardUserDefaults];//保存先のオブジェクトの宣言
-    num50 = [ud50 integerForKey:@"KEY_num50"];//何回目のプレイかを記憶する変数numの宣言
+    ud = [NSUserDefaults standardUserDefaults];//保存先のオブジェクトの宣言
+    numfif = [ud integerForKey:@"KEY_numfif"];//何回目のプレイかを記憶する変数numの宣言
     
     //    int array[num+1];//int配列の宣言
-    [ud50 setInteger:ans forKey:[NSString stringWithFormat:@"%d",num50]];//Keyに変数numを指定し、ansの値を保存先オブジェクトに保存
+    
+    [ud setInteger:ans forKey:[NSString stringWithFormat:@"50-%d",numfif]];//Keyに変数numを指定し、ansの値を保存先オブジェクトに保存
     
     /*
      //int型配列に今までの結果をコピー
@@ -78,8 +78,8 @@
      NSLog(@"ソート後int配列内の表示終了");
      */
     
-    num50++;
-    [ud50 setInteger:num50 forKey:@"KEY_num50"];
+    numfif++;
+    [ud setInteger:numfif forKey:@"KEY_numfif"];
     
     // Do any additional setup after loading the view.
 }
@@ -90,21 +90,21 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return num50;
+    return numfif;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     //ランキングデータのロードとソート開始
-    int array[num50];//ソート用配列の宣言
-    for(i=0;i<=num50;i++){
-        s = [ud50 integerForKey:[NSString stringWithFormat:@"%d",i]];  // Keyに変数iを指定し、内容をinteger型として取得
+    int array[numfif];//ソート用配列の宣言
+    for(i=0;i<=numfif;i++){
+        s = [ud integerForKey:[NSString stringWithFormat:@"50-%d",i]];  // Keyに変数iを指定し、内容をinteger型として取得
         array[i]=s;//配列に代入
     }
     
     //int配列のソート
-    for (i = 0; i <num50; i++) {
-        for (j = num50 ; j > i; j--) {
+    for (i = 0; i <numfif; i++) {
+        for (j = numfif ; j > i; j--) {
             if (array[j-1] < array[j]) {
                 tmp = array[j-1];
                 array[j-1] = array[j];
@@ -115,9 +115,9 @@
     //ランキングデータのロードとソート終了
     
     //ansの結果がランキング中で何位なのかを調べる
-    for(i=0;i<=num50;i++){
-        if(array[num50-i]==ans){
-            zyuni=(num50-i+1);//同立の場合は直近の結果が上位になる数式アルゴリズム
+    for(i=0;i<=numfif;i++){
+        if(array[numfif-i]==ans){
+            zyuni=(numfif-i+1);//同立の場合は直近の結果が上位になる数式アルゴリズム
         }
     }
     
@@ -156,14 +156,11 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
 
 //tableの設定終了
 
-
-
-
 - (void)viewDidUnload
 {
     [self setResultLabel:nil];
     [self setYourRank:nil];
-    [self setTableView:nil];
+    [self setTableview:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }
