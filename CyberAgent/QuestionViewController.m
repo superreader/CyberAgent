@@ -239,6 +239,7 @@ BOOL questionSelected = true;
     NSString *questionAnsButtonText = [quastion objectAtIndex:2];
     NSString *questionNotAnsButtonText = [quastion objectAtIndex:3];
    
+    //タイムシードを使って毎回同じ値が出ないようにした
     srandom(time(NULL));
     NSInteger answerSelect = random() % 2;
     
