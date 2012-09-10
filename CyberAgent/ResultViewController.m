@@ -117,11 +117,11 @@
     
     //ansの結果がランキング中で何位なのかを調べる
     for(i=0;i<=num;i++){
-        if(array[i]==ans){
-            zyuni=i+1;
+        if(array[num-i]==ans){
+            zyuni=(num-i+1);//同立の場合は直近の結果が上位になる数式アルゴリズム
         }
     }
-    
+
     //結果が何位かの表示
     self.yourRank.text = [NSString stringWithFormat:@"あなたの順位は%d位です！！",zyuni];
     
@@ -134,6 +134,11 @@
     
     //セルに表示する内容を代入
     cell.textLabel.text = [NSString stringWithFormat:@"%d位　　　　　　　　%d問",(indexPath.row+1),array[indexPath.row]];
+    
+    //セルの選択時の処理をなくす(ハイライトをなくす)
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    
+    //セルインクタンスを返す
     return cell;
 }
 
@@ -143,13 +148,12 @@
 forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (indexPath.row  == zyuni-1) {
-        cell.backgroundColor = [UIColor colorWithHue:0.61
-                                          saturation:0.09
-                                          brightness:0.99
+        cell.backgroundColor = [UIColor colorWithHue:0.33
+                                          saturation:1.0
+                                          brightness:1.0
                                                alpha:1.0];
     }
 }
-
 
 //tableの設定終了
 

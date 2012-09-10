@@ -117,8 +117,13 @@
         cell = [[UITableViewCell alloc] initWithFrame:CGRectZero reuseIdentifier:MyIdentifier];
     }
     
-    //セルに表示する内容をを代入
-    cell.textLabel.text = [NSString stringWithFormat:@"%d位　　　　　　　　　　%d問",(indexPath.row+1),array[indexPath.row]];
+    //セルに表示する内容を代入
+    cell.textLabel.text = [NSString stringWithFormat:@"%d位　　　　　　　　%d問",(indexPath.row+1),array[indexPath.row]];
+    
+    //セルの選択時の処理をなくす(ハイライトをなくす)
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    
+    //セルインクタンスを返す
     return cell;
 }
 
