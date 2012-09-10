@@ -31,7 +31,6 @@
 		1DE3144515F8BFBA00213ADA /* image_3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1DE3144015F8BFBA00213ADA /* image_3.jpg */; };
 		1DE3144615F8BFBA00213ADA /* image_4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1DE3144115F8BFBA00213ADA /* image_4.jpg */; };
 		E908FE2815F8E39700FA93D2 /* ResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E908FE2715F8E39700FA93D2 /* ResultViewController.m */; };
-		E91B6BB715FDCCA800931CDB /* Result50ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E91B6BB615FDCCA800931CDB /* Result50ViewController.m */; };
 		E98A86F015F85FD600607254 /* QuestionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E98A86EF15F85FD600607254 /* QuestionViewController.m */; };
 		E9EF893115FB0C220014F193 /* RankingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9EF893015FB0C220014F193 /* RankingViewController.m */; };
 /* End PBXBuildFile section */
@@ -69,8 +68,6 @@
 		1DE3144115F8BFBA00213ADA /* image_4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image_4.jpg; sourceTree = "<group>"; };
 		E908FE2615F8E39700FA93D2 /* ResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResultViewController.h; sourceTree = "<group>"; };
 		E908FE2715F8E39700FA93D2 /* ResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResultViewController.m; sourceTree = "<group>"; };
-		E91B6BB515FDCCA800931CDB /* Result50ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Result50ViewController.h; path = ../Result50ViewController.h; sourceTree = "<group>"; };
-		E91B6BB615FDCCA800931CDB /* Result50ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Result50ViewController.m; path = ../Result50ViewController.m; sourceTree = "<group>"; };
 		E98A86EE15F85FD600607254 /* QuestionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionViewController.h; sourceTree = "<group>"; };
 		E98A86EF15F85FD600607254 /* QuestionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionViewController.m; sourceTree = "<group>"; };
 		E9EF892F15FB0C220014F193 /* RankingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RankingViewController.h; sourceTree = "<group>"; };
@@ -145,8 +142,6 @@
 				1D3BE72915FB895900B44577 /* ReadQuestionText.m */,
 				E908FE2615F8E39700FA93D2 /* ResultViewController.h */,
 				E908FE2715F8E39700FA93D2 /* ResultViewController.m */,
-				E91B6BB515FDCCA800931CDB /* Result50ViewController.h */,
-				E91B6BB615FDCCA800931CDB /* Result50ViewController.m */,
 				E9EF892F15FB0C220014F193 /* RankingViewController.h */,
 				E9EF893015FB0C220014F193 /* RankingViewController.m */,
 				1D8937AB15F73DF7005962EB /* Supporting Files */,
@@ -267,7 +262,6 @@
 				E9EF893115FB0C220014F193 /* RankingViewController.m in Sources */,
 				1D3BE72A15FB895900B44577 /* ReadQuestionText.m in Sources */,
 				1DCD602915FDAA82002EF3C5 /* QuestionOperator.m in Sources */,
-				E91B6BB715FDCCA800931CDB /* Result50ViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
