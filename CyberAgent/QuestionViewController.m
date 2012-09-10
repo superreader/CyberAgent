@@ -65,6 +65,7 @@ BOOL questionSelected = true;
     
     sequence = 0;
     answerCount= 0;
+    num = 0.0;
 
     //一つ前の画面で問題数を設定したのでその数字の格納
     //問題数の受け渡し
@@ -89,7 +90,7 @@ BOOL questionSelected = true;
     //タイマーの部分
     NSLog(@"start");
     [NSTimer
-    scheduledTimerWithTimeInterval:3.5
+    scheduledTimerWithTimeInterval:0.01
     target:self
     selector:@selector(tmp:)
     userInfo:nil
@@ -133,8 +134,14 @@ BOOL questionSelected = true;
 }
 
 -(void)tmp:(NSTimer *)timer {
-    [timer invalidate];
-    [self changeQuestion];
+
+    if (num  > 2.0 || num < 0.01) {
+        [self changeQuestion];
+    }
+
+    num = num + 0.01;
+    
+    
     //問題の終了判定
     if (sequence >= numQuestion /*&& [timer isValid]*/) {
         [timer invalidate];
@@ -153,7 +160,7 @@ BOOL questionSelected = true;
  */
 - (void)changeQuestion{
 
-    
+    num = 0.0;
     //問題に答えられたかどうかのbool値の初期化
     questionSelected = true;
     
@@ -340,7 +347,7 @@ BOOL questionSelected = true;
 //
     
     NSLog(@"push button answerCount = %d",(int)answerCount);
-    [self changeQuestion];
+    num = 0.0;
 
 }
 
@@ -405,7 +412,7 @@ BOOL questionSelected = true;
     
     NSLog(@"push button answerCount = %d",(int)answerCount);
 
-    [self changeQuestion];
+    num = 0.0;
 }
 
 

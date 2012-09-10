@@ -10,6 +10,8 @@
 
 @interface QuestionViewController : UIViewController{
     IBOutlet UILabel *questionQuantityNum;
+    double num;
+
 }
 
 //クラスメソッド
