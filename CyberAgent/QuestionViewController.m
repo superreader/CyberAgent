@@ -88,8 +88,11 @@ int resultShow;
 //    Questionimg.image = imege;
 // 
 //    
-    
-    
+    //プログレスバー初期設定
+    pv.progress = 1.0;
+    //プログレスバーの色の変更
+    pv.progressTintColor = [UIColor colorWithRed:0.0f green:1.0f blue:0.0f alpha:1.0f];
+
     //問題文の設定
     anArray = [[NSMutableArray alloc] init];
     anArray = [ReadQuestionText SetTextToArray];
