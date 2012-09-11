@@ -46,6 +46,8 @@ bool questionResult = false;
 //問題を答えたかどうかの判定
 BOOL questionSelected = true;
 
+int resultShow;
+
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -70,6 +72,8 @@ BOOL questionSelected = true;
     numQuestion = 0;
     //Timer管理の変数
     qOperator = 0.0;
+    
+    resultShow = 0;
 
     //一つ前の画面で問題数を設定したのでその数字の格納
     //問題数の受け渡し
@@ -151,6 +155,35 @@ BOOL questionSelected = true;
 
 -(void)questionOperator:(NSTimer *)timer {
 
+    
+    
+    NSLog(@"result Show = %d",resultShow);
+    //正解したかの画像を表示させる
+    if (resultShow == 1){
+    //正解のイメージを表示させる
+        NSString *aImagePath = [[NSBundle mainBundle] pathForResource:@"right" ofType:@"jpg"];
+        UIImage *imege = [[UIImage alloc] initWithContentsOfFile:aImagePath];
+        rightAndWrong.image = imege;
+        rightAndWrong.hidden = false;
+        NSLog(@"right show");
+
+        [NSThread sleepForTimeInterval:0.5];
+        resultShow = 0;
+        [super viewDidLoad];
+
+    }
+    else if(resultShow == 2){
+        NSString *aImagePath = [[NSBundle mainBundle] pathForResource:@"wrong" ofType:@"jpg"];
+        UIImage *imege = [[UIImage alloc] initWithContentsOfFile:aImagePath];
+        rightAndWrong.image = imege;
+        rightAndWrong.hidden = false;
+        
+        NSLog(@"wrong show");
+        [NSThread sleepForTimeInterval:0.5];
+        resultShow = 0;
+        
+    }
+
     //時間切れによる不正解
     if (!questionSelected || qOperator  > 4.0) {
         NSLog(@"時間切れによる不正解");
@@ -162,21 +195,32 @@ BOOL questionSelected = true;
 
     //新しい問題に遷移
     if (qOperator  > 4.0 || qOperator < 0.01) {
-        sequence++;
         [self changeQuestion];
+        sequence++;
+        NSLog(@"%d",numQuestion);
+
     }
 
     //タイマーを管理する数字を更新する
     qOperator = qOperator + 0.01;
     
-    
+   
     //問題の終了判定
     if (sequence == numQuestion) {
         [timer invalidate];
         
         [anArray removeAllObjects];
-        ResultViewController *rvc= [self.storyboard instantiateViewControllerWithIdentifier:@"ResultViewController"];
-        [self presentModalViewController:rvc animated:YES ];
+        
+        
+ //       if (questionQuantityNum) {
+            ResultViewController *rvc= [self.storyboard instantiateViewControllerWithIdentifier:@"ResultViewController"];
+            [self presentModalViewController:rvc animated:YES ];
+
+//        }
+//        else if([questionQuantityNum.text isEqualToString:@"50"]){
+//        ResultViewController *rvc= [self.storyboard instantiateViewControllerWithIdentifier:@"Result50ViewController"];
+//        [self presentModalViewController:rvc animated:YES ];
+//        }
         NSLog(@"正解数は %d です",(int)answerCount);
         
         NSLog(@"stop");
@@ -307,14 +351,7 @@ BOOL questionSelected = true;
 
         
               
-        //正解のイメージを表示させる
-        NSString *aImagePath = [[NSBundle mainBundle] pathForResource:@"right" ofType:@"jpg"];
-        UIImage *imege = [[UIImage alloc] initWithContentsOfFile:aImagePath];
-        rightAndWrong.image = imege;
-        rightAndWrong.hidden = false;
-        [NSThread sleepForTimeInterval:1.0];
-
-
+        resultShow = 1;
     }
     else{
         NSLog(@"不正解！！！");
@@ -327,13 +364,15 @@ BOOL questionSelected = true;
         //不正解時に音を鳴らす
         [self AnswerSound];
         
-        
+        resultShow = 2;
+        AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
+
         //不正解のイメージを表示させる
-        NSString *aImagePath = [[NSBundle mainBundle] pathForResource:@"wrong" ofType:@"jpg"];
-        UIImage *imege = [[UIImage alloc] initWithContentsOfFile:aImagePath];
-        rightAndWrong.image = imege;
-        rightAndWrong.hidden = false;
-        [NSThread sleepForTimeInterval:1.0];
+//        NSString *aImagePath = [[NSBundle mainBundle] pathForResource:@"wrong" ofType:@"jpg"];
+//        UIImage *imege = [[UIImage alloc] initWithContentsOfFile:aImagePath];
+//        rightAndWrong.image = imege;
+//        rightAndWrong.hidden = false;
+//        [NSThread sleepForTimeInterval:1.0];
 
 
         
@@ -363,13 +402,7 @@ BOOL questionSelected = true;
         
                 
         //正解のイメージを表示させる
-        NSString *aImagePath = [[NSBundle mainBundle] pathForResource:@"right" ofType:@"jpg"];
-        UIImage *imege = [[UIImage alloc] initWithContentsOfFile:aImagePath];
-        rightAndWrong.image = imege;
-        rightAndWrong.hidden = false;
-        [NSThread sleepForTimeInterval:1.0];
-
-        
+        resultShow = 1;
 
     }
     else{
@@ -384,12 +417,9 @@ BOOL questionSelected = true;
 
         
         //不正解のイメージを表示させる
-        NSString *aImagePath = [[NSBundle mainBundle] pathForResource:@"wrong" ofType:@"jpg"];
-        UIImage *imege = [[UIImage alloc] initWithContentsOfFile:aImagePath];
-        rightAndWrong.image = imege;
-        rightAndWrong.hidden = false;
-        [NSThread sleepForTimeInterval:1.0];
-
+        resultShow = 2;
+        
+        AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
 
 
     }
