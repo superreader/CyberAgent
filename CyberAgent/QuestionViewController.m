@@ -90,7 +90,17 @@ BOOL infiniteMode;
     //一つ前の画面で問題数を設定したのでその数字の格納
     //問題数の受け渡し
     nq = [ViewController Qnum];
-    
+//    
+//    NSString *ImagePath = [[NSBundle mainBundle] pathForResource:@"image_5" ofType:@"jpg"];
+//    UIImage *imege = [[UIImage alloc] initWithContentsOfFile:ImagePath];
+//    Questionimg.image = imege;
+// 
+//    
+    //プログレスバー初期設定
+    pv.progress = 1.0;
+    //プログレスバーの色の変更
+    pv.progressTintColor = [UIColor colorWithRed:0.0f green:1.0f blue:0.0f alpha:1.0f];
+
     //問題数の設定が無限かどうか
     if ([nq isEqualToString:@"200"]){
         infiniteMode = true;
@@ -103,7 +113,6 @@ BOOL infiniteMode;
         numQuestion = 7;
         infiniteMode = false;
     }
-    
     
     //問題文の設定
     anArray = [[NSMutableArray alloc] init];
