@@ -338,7 +338,8 @@ int questionArrayLength;
    
     //タイムシードを使って毎回同じ値が出ないようにした
     srandom(time(NULL));
-    NSInteger answerSelect = random() % 2;
+ //   NSInteger answerSelect = random() % 2;
+    NSInteger answerSelect = 0;
     
     NSLog(@"answerSelect %d",answerSelect);
 
