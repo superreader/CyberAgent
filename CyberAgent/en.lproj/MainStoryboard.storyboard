@@ -189,6 +189,7 @@
                         <outlet property="QuestionString" destination="L28-SR-kOf" id="9zj-X8-iQg"/>
                         <outlet property="Questionimg" destination="e1m-OB-Isx" id="bPf-bz-3Qx"/>
                         <outlet property="leftButton" destination="Z7j-rW-iKG" id="5mp-C3-34d"/>
+                        <outlet property="pv" destination="ZfI-vQ-1mz" id="Ub7-VW-FUm"/>
                         <outlet property="rightButton" destination="9fB-7R-ofD" id="S87-N8-6Sh"/>
                     </connections>
                 </viewController>
@@ -496,6 +497,7 @@
                 <relationship kind="outlet" name="QuestionString" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="Questionimg" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="leftButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="pv" candidateClass="UIProgressView"/>
                 <relationship kind="outlet" name="questionQuantityNum" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="rightAndWrong" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="rightButton" candidateClass="UIButton"/>
