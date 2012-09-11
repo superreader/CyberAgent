@@ -9,14 +9,22 @@
 #import <UIKit/UIKit.h>
 
 @interface ViewController : UIViewController{
-     UISegmentedControl * segment1;
+
+//    UISegmentedControl * segment1;
 }
 
 + (NSString*)Qnum;
 
+- (IBAction)startBtn1:(id)sender;
+
+- (IBAction)startBtn2:(id)sender;
+
+- (IBAction)startBtn3:(id)sender;
+
+- (IBAction)startBtn4:(id)sender;
+
 //test
 - (IBAction)questionQuantity:(id)sender;
-- (IBAction)btnStart:(id)sender;
 
 @property (nonatomic, retain) IBOutlet
 UISegmentedControl * segment1;

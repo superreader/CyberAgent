@@ -15,7 +15,24 @@
 
 @implementation ViewController
 
+
 static  NSString *Qnum;
+
+- (IBAction)startBtn1:(id)sender {
+    Qnum = [NSString stringWithFormat:@"10"];
+}
+
+- (IBAction)startBtn2:(id)sender {
+    Qnum = [NSString stringWithFormat:@"20"];
+}
+
+- (IBAction)startBtn3:(id)sender {
+    Qnum = [NSString stringWithFormat:@"30"];
+}
+
+- (IBAction)startBtn4:(id)sender {
+    Qnum = [NSString stringWithFormat:@"200"];
+}
 
 - (void)viewDidLoad
 {
@@ -27,6 +44,7 @@ static  NSString *Qnum;
 
 - (void)viewDidUnload
 {
+
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }
@@ -36,6 +54,7 @@ static  NSString *Qnum;
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
+/*
 //セグメントで選ばれた問題数を表示
 - (IBAction)questionQuantity:(id)sender {
     int index = [sender selectedSegmentIndex];
@@ -55,13 +74,12 @@ static  NSString *Qnum;
   
     NSLog(@"Qnum = %@",Qnum);
 }
+ */
 
 + (NSString*)Qnum {
     NSLog(@"qnum:%@",Qnum);
     return Qnum;
 }
-
-
 
 //- (IBAction)btnStart:(id)sender {
 //    // サブ画面のビューコントローラを取得

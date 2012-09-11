@@ -250,12 +250,12 @@ int questionArrayLength;
             ResultViewController *rvc= [self.storyboard instantiateViewControllerWithIdentifier:@"ResultViewController"];
            [self presentModalViewController:rvc animated:YES ];
         }
-        else if([nq isEqualToString:@"50"]){
+        else if([nq isEqualToString:@"20"]){
             NSLog(@"Finished 50 question");
             Result50ViewController *rvc50= [self.storyboard instantiateViewControllerWithIdentifier:@"Result50ViewController"];
             [self presentModalViewController:rvc50 animated:YES ];
         }
-        else if([nq isEqualToString:@"100"]){
+        else if([nq isEqualToString:@"30"]){
             NSLog(@"Finished 100 question");
             Result100ViewController *rvc100 = [self.storyboard instantiateViewControllerWithIdentifier:@"Result100ViewController"];
             [self presentModalViewController:rvc100 animated:YES ];
