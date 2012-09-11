@@ -52,7 +52,8 @@ NSString *nq;
 //問題数が無限の設定かどうか
 BOOL infiniteMode;
 
-
+//問題が入っているarrayの残りの大きさ
+int questionArrayLength;
 
 //初期設定
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -83,6 +84,8 @@ BOOL infiniteMode;
     
     resultShow = 0;
     
+    questionArrayLength = 0;
+    
     //問題数が無限かどうか
     infiniteMode=false;
     
@@ -110,7 +113,7 @@ BOOL infiniteMode;
     else{
         //問題数の設定
         numQuestion = [nq intValue];
-        numQuestion = 7;
+        //numQuestion = 10;
         infiniteMode = false;
     }
     
@@ -172,9 +175,11 @@ BOOL infiniteMode;
     
     
     //問題数無限大の時に設定の問題が足りなくなったらもっかい問題を取りに行く
-    if([anArray count] == sequence){
+    if([anArray count] == questionArrayLength +1){
+        questionArrayLength = 0;
         anArray = [[NSMutableArray alloc] init];
         anArray = [ReadQuestionText SetTextToArray];
+        questionArrayLength = 0;
     }
 
     //プログレスバーの値を変更する
@@ -214,12 +219,14 @@ BOOL infiniteMode;
         questionResult = false;
         //不正解音を鳴らす
         [self AnswerSound];
+        AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
     }
 
     //新しい問題に遷移
     if (qOperator  > 4.0 || qOperator < 0.01) {
         [self changeQuestion];
         sequence++;
+        questionArrayLength++;
         NSLog(@"%d",numQuestion);
 
     }
@@ -227,9 +234,9 @@ BOOL infiniteMode;
     //タイマーを管理する数字を更新する
     qOperator = qOperator + 0.01;
     
-   
+    NSLog(@"sequence = %d",sequence);
     //問題の終了判定
-    if (sequence == numQuestion && !infiniteMode) {
+    if (sequence == numQuestion+1 && !infiniteMode) {
 
         [timer invalidate];
         
@@ -290,7 +297,7 @@ BOOL infiniteMode;
 
     
     //問題のセット
-    question = [anArray objectAtIndex:sequence];
+    question = [anArray objectAtIndex:questionArrayLength];
     
     
     //問題画像をセット
