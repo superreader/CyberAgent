@@ -1,20 +1,21 @@
 //
-//  Result100ViewController.m
+//  ResultInfinityViewController.m
 //  CyberAgent
 //
 //  Created by 柏木 翔太 on 12/09/11.
 //  Copyright (c) 2012年 上野 博司. All rights reserved.
+//
 
-#import "Result100ViewController.h"
+#import "ResultInfinityViewController.h"
 
-@interface Result100ViewController ()
+@interface ResultInfinityViewController ()
 
 @end
 
-@implementation Result100ViewController
+@implementation ResultInfinityViewController
 @synthesize ResultLabel;
 @synthesize yourRank;
-@synthesize TableView;
+@synthesize tableView;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -38,11 +39,11 @@
     self.ResultLabel.text = [NSString stringWithFormat:@"正解数は%d問です！！",ans];
     
     ud = [NSUserDefaults standardUserDefaults];//保存先のオブジェクトの宣言
-    numhun = [ud integerForKey:@"KEY_numhun"];//何回目のプレイかを記憶する変数numの宣言
+    numinf = [ud integerForKey:@"KEY_numinf"];//何回目のプレイかを記憶する変数numの宣言
     
     //    int array[num+1];//int配列の宣言
     
-    [ud setInteger:ans forKey:[NSString stringWithFormat:@"100-%d",numhun]];//Keyに変数numを指定し、ansの値を保存先オブジェクトに保存
+    [ud setInteger:ans forKey:[NSString stringWithFormat:@"inf-%d",numinf]];//Keyに変数numを指定し、ansの値を保存先オブジェクトに保存
     
     /*
      //int型配列に今までの結果をコピー
@@ -77,8 +78,8 @@
      NSLog(@"ソート後int配列内の表示終了");
      */
     
-    numhun++;
-    [ud setInteger:numhun forKey:@"KEY_numhun"];
+    numinf++;
+    [ud setInteger:numinf forKey:@"KEY_numinf"];
     
     // Do any additional setup after loading the view.
 }
@@ -89,21 +90,21 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return numhun;
+    return numinf;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     //ランキングデータのロードとソート開始
-    int array[numhun];//ソート用配列の宣言
-    for(i=0;i<=numhun;i++){
-        s = [ud integerForKey:[NSString stringWithFormat:@"100-%d",i]];  // Keyに変数iを指定し、内容をinteger型として取得
+    int array[numinf];//ソート用配列の宣言
+    for(i=0;i<=numinf;i++){
+        s = [ud integerForKey:[NSString stringWithFormat:@"inf-%d",i]];  // Keyに変数iを指定し、内容をinteger型として取得
         array[i]=s;//配列に代入
     }
     
     //int配列のソート
-    for (i = 0; i <numhun; i++) {
-        for (j = numhun; j > i; j--) {
+    for (i = 0; i <numinf; i++) {
+        for (j = numinf; j > i; j--) {
             if (array[j-1] < array[j]) {
                 tmp = array[j-1];
                 array[j-1] = array[j];
@@ -114,9 +115,9 @@
     //ランキングデータのロードとソート終了
     
     //ansの結果がランキング中で何位なのかを調べる
-    for(i=0;i<=numhun;i++){
-        if(array[numhun-i]==ans){
-            zyuni=(numhun-i+1);//同立の場合は直近の結果が上位になる数式アルゴリズム
+    for(i=0;i<=numinf;i++){
+        if(array[numinf-i]==ans){
+            zyuni=(numinf-i+1);//同立の場合は直近の結果が上位になる数式アルゴリズム
         }
     }
     
