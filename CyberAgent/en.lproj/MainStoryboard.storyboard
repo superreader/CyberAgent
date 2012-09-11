@@ -744,7 +744,7 @@
             <relationships>
                 <relationship kind="action" name="judgmentQuastionLeft:" candidateClass="UIButton"/>
                 <relationship kind="action" name="judgmentQuastionRight:" candidateClass="UIButton"/>
-                <relationship kind="action" name="shuffleQuestionImage:" candidateClass="NSInteger"/>
+                <relationship kind="action" name="shuffleQuestionImage:"/>
                 <relationship kind="outlet" name="QuestionString" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="Questionimg" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="leftButton" candidateClass="UIButton"/>
@@ -752,6 +752,27 @@
                 <relationship kind="outlet" name="questionQuantityNum" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="rightAndWrong" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="rightButton" candidateClass="UIButton"/>
+            </relationships>
+        </class>
+        <class className="Ranking100ViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/Ranking100ViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="RankingToptxt" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="Ranking50ViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/Ranking50ViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="RankingToptxt" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="RankingInfinityViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/RankingInfinityViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="RankingToptxt" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
             </relationships>
         </class>
         <class className="RankingViewController" superclassName="UIViewController">
