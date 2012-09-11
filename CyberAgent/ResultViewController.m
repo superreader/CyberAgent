@@ -33,9 +33,9 @@
 {
     [super viewDidLoad];
     
-    //ans = (int)[QuestionViewController answerNum];
+    ans = (int)[QuestionViewController answerNum];
     
-    ans = rand() % 100;//0～9の数値をランダムに取得
+    //ans = rand() % 100;//0～9の数値をランダムに取得
     //ans = (int)[QuestionViewController answerNum];
     
     

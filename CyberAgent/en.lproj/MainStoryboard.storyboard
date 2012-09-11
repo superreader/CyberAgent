@@ -294,7 +294,7 @@
         <scene sceneID="cDF-ZY-dfx">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nny-8B-pse" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewController id="xbL-Nz-9vt" customClass="Result100ViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Result100ViewController" id="xbL-Nz-9vt" customClass="Result100ViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9lb-l2-ZBz">
                         <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -353,7 +353,7 @@
         <scene sceneID="s5J-z2-eaq">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mwg-CY-b4l" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewController id="sN4-fp-Csu" customClass="Result50ViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Result50ViewController" id="sN4-fp-Csu" customClass="Result50ViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gG6-rN-bj2">
                         <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>

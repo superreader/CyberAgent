@@ -10,6 +10,9 @@
 #import "ViewController.h"
 #import "QuestionViewController.h"
 #import "ResultViewController.h"
+#import "Result50ViewController.h"
+#import "Result100ViewController.h"
+
 #import "ReadQuestionText.h"
 #import <AudioToolbox/AudioToolbox.h>
 #import <AudioToolbox/AudioServices.h>
@@ -46,8 +49,14 @@ bool questionResult = false;
 //問題を答えたかどうかの判定
 BOOL questionSelected = true;
 
+//正解したかどうかの表示を行うかどうかの値 0:非表示 1:正解 2:不正解
 int resultShow;
 
+//問題数
+NSString *nq;
+
+//問題数が無限の設定かどうか
+BOOL infiniteMode;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -77,37 +86,26 @@ int resultShow;
 
     //一つ前の画面で問題数を設定したのでその数字の格納
     //問題数の受け渡し
-    NSString *nq = [ViewController Qnum];
-    numQuestion = [nq intValue];
-    numQuestion = 7;
+    nq = [ViewController Qnum];
     
-//    
-//    NSString *ImagePath = [[NSBundle mainBundle] pathForResource:@"image_5" ofType:@"jpg"];
-//    UIImage *imege = [[UIImage alloc] initWithContentsOfFile:ImagePath];
-//    Questionimg.image = imege;
-// 
-//    
+    //問題数の設定が無限かどうか
+    if ([nq isEqualToString:@"200"]){
+        infiniteMode = true;
+    }
+    //問題数に制限あり
+    else{
+        //問題数の設定
+        numQuestion = [nq intValue];
+        numQuestion = 7;
+        infiniteMode = false;
+    }
     
     
     //問題文の設定
     anArray = [[NSMutableArray alloc] init];
     anArray = [ReadQuestionText SetTextToArray];
     
-    NSMutableArray *question = [[NSMutableArray alloc] init];
-    
-    NSLog(@"count = %d",[anArray count]);
-    for (int i = 0; i < 10; i++) {
-        
-        question = [anArray objectAtIndex:i];
-        for(int j = 0; j < 4 ; j++){
-            NSString *text = [question objectAtIndex:j];
-            NSLog(@"test Text = %@", text);
-        }
-    }
-
-  
-    
-    //タイマーの部分
+     //タイマーの部分
     NSLog(@"start");
     [NSTimer
     scheduledTimerWithTimeInterval:0.01
@@ -138,6 +136,7 @@ int resultShow;
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
+
 //前の画面から問題数の受け渡し
 -(void)setQuestionQuantity: (NSString*)qq{
     
@@ -156,8 +155,9 @@ int resultShow;
 -(void)questionOperator:(NSTimer *)timer {
 
     
-    
     NSLog(@"result Show = %d",resultShow);
+  
+    
     //正解したかの画像を表示させる
     if (resultShow == 1){
     //正解のイメージを表示させる
@@ -167,9 +167,9 @@ int resultShow;
         rightAndWrong.hidden = false;
         NSLog(@"right show");
 
-        [NSThread sleepForTimeInterval:0.5];
+        [NSThread sleepForTimeInterval:1];
         resultShow = 0;
-        [super viewDidLoad];
+  //      [super viewDidLoad];
 
     }
     else if(resultShow == 2){
@@ -179,11 +179,12 @@ int resultShow;
         rightAndWrong.hidden = false;
         
         NSLog(@"wrong show");
-        [NSThread sleepForTimeInterval:0.5];
+        [NSThread sleepForTimeInterval:1];
         resultShow = 0;
         
     }
 
+    
     //時間切れによる不正解
     if (!questionSelected || qOperator  > 4.0) {
         NSLog(@"時間切れによる不正解");
@@ -207,20 +208,30 @@ int resultShow;
    
     //問題の終了判定
     if (sequence == numQuestion) {
+
         [timer invalidate];
         
+        //問題文の開放
         [anArray removeAllObjects];
         
         
- //       if (questionQuantityNum) {
+        //問題数に応じて行き先を変える
+       if ([nq isEqualToString:@"10"]) {
+           NSLog(@"Finished 10 question");
             ResultViewController *rvc= [self.storyboard instantiateViewControllerWithIdentifier:@"ResultViewController"];
-            [self presentModalViewController:rvc animated:YES ];
+           [self presentModalViewController:rvc animated:YES ];
+        }
+        else if([nq isEqualToString:@"50"]){
+            NSLog(@"Finished 50 question");
+            Result50ViewController *rvc50= [self.storyboard instantiateViewControllerWithIdentifier:@"Result50ViewController"];
+            [self presentModalViewController:rvc50 animated:YES ];
+        }
+        else if([nq isEqualToString:@"100"]){
+            NSLog(@"Finished 100 question");
+            Result100ViewController *rvc100 = [self.storyboard instantiateViewControllerWithIdentifier:@"Result100ViewController"];
+            [self presentModalViewController:rvc100 animated:YES ];
+        }
 
-//        }
-//        else if([questionQuantityNum.text isEqualToString:@"50"]){
-//        ResultViewController *rvc= [self.storyboard instantiateViewControllerWithIdentifier:@"Result50ViewController"];
-//        [self presentModalViewController:rvc animated:YES ];
-//        }
         NSLog(@"正解数は %d です",(int)answerCount);
         
         NSLog(@"stop");
