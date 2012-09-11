@@ -9,13 +9,6 @@
 
 #import "ViewController.h"
 #import "QuestionViewController.h"
-#import "ResultViewController.h"
-#import "Result50ViewController.h"
-#import "Result100ViewController.h"
-
-#import "ReadQuestionText.h"
-#import <AudioToolbox/AudioToolbox.h>
-#import <AudioToolbox/AudioServices.h>
 
 @interface QuestionViewController ()
 
@@ -59,6 +52,9 @@ NSString *nq;
 //問題数が無限の設定かどうか
 BOOL infiniteMode;
 
+
+
+//初期設定
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -68,6 +64,8 @@ BOOL infiniteMode;
     }
     return self;
 }
+
+
 
 /*
  問題のスタート設定
@@ -84,7 +82,11 @@ BOOL infiniteMode;
     qOperator = 0.0;
     
     resultShow = 0;
-
+    
+    //問題数が無限かどうか
+    infiniteMode=false;
+    
+    
     //一つ前の画面で問題数を設定したのでその数字の格納
     //問題数の受け渡し
     nq = [ViewController Qnum];
@@ -92,6 +94,7 @@ BOOL infiniteMode;
     //問題数の設定が無限かどうか
     if ([nq isEqualToString:@"200"]){
         infiniteMode = true;
+        numQuestion = 2000;
     }
     //問題数に制限あり
     else{
@@ -154,16 +157,22 @@ BOOL infiniteMode;
     return ansCount;
 }
 
+
+//問題を呼び出したり色々な設定を行うところ
 -(void)questionOperator:(NSTimer *)timer {
+    
+    
+    //問題数無限大の時に設定の問題が足りなくなったらもっかい問題を取りに行く
+    if([anArray count] == sequence){
+        anArray = [[NSMutableArray alloc] init];
+        anArray = [ReadQuestionText SetTextToArray];
+    }
 
     //プログレスバーの値を変更する
     pv.progress = 1-(qOperator/4);
     
-    NSLog(@"result Show = %d",resultShow);
-  
     
     //正解したかの画像を表示させる
-    
     if (resultShow == 1){
     //正解のイメージを表示させる
         NSString *aImagePath = [[NSBundle mainBundle] pathForResource:@"right" ofType:@"jpg"];
@@ -172,9 +181,8 @@ BOOL infiniteMode;
         rightAndWrong.hidden = false;
         NSLog(@"right show");
 
-        [NSThread sleepForTimeInterval:1];
+      //  [NSThread sleepForTimeInterval:1];
         resultShow = 0;
-  //      [super viewDidLoad];
 
     }
     else if(resultShow == 2){
@@ -184,7 +192,7 @@ BOOL infiniteMode;
         rightAndWrong.hidden = false;
         
         NSLog(@"wrong show");
-        [NSThread sleepForTimeInterval:1];
+       // [NSThread sleepForTimeInterval:1];
         resultShow = 0;
         
     }
@@ -212,7 +220,7 @@ BOOL infiniteMode;
     
    
     //問題の終了判定
-    if (sequence == numQuestion) {
+    if (sequence == numQuestion && !infiniteMode) {
 
         [timer invalidate];
         
@@ -240,6 +248,19 @@ BOOL infiniteMode;
         NSLog(@"正解数は %d です",(int)answerCount);
         
         NSLog(@"stop");
+    }
+    //問題数無限大で問題を間違えたら結果に行く(sequenceは初期のバグ取り)
+    else if(infiniteMode && !questionResult && sequence > 1) {
+        [timer invalidate];
+        
+        //問題文の開放
+        [anArray removeAllObjects];
+        
+        
+        NSLog(@"Finished infinite question");
+        ResultInfinityViewController *rvc= [self.storyboard instantiateViewControllerWithIdentifier:@"ResultInfinityViewController"];
+        [self presentModalViewController:rvc animated:YES ];
+        
     }
     
 }

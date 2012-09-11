@@ -6,7 +6,9 @@
 //  Copyright (c) 2012年 上野 博司. All rights reserved.
 //
 
+#import "QuestionViewController.h"
 #import "ResultInfinityViewController.h"
+
 
 @interface ResultInfinityViewController ()
 
@@ -30,9 +32,9 @@
 {
     [super viewDidLoad];
     
-    //ans = (int)[QuestionViewController answerNum];
+    ans = (int)[QuestionViewController answerNum];
     
-    ans = rand() % 100;//0～9の数値をランダムに取得
+    //ans = rand() % 100;//0～9の数値をランダムに取得
     //ans = (int)[QuestionViewController answerNum];
     
     

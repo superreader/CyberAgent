@@ -8,6 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
+
+#import "ResultViewController.h"
+#import "Result50ViewController.h"
+#import "Result100ViewController.h"
+#import "ResultInfinityViewController.h"
+
+#import "ReadQuestionText.h"
+#import <AudioToolbox/AudioToolbox.h>
+#import <AudioToolbox/AudioServices.h>
+
 @interface QuestionViewController : UIViewController{
     IBOutlet UILabel *questionQuantityNum;
     double qOperator;
