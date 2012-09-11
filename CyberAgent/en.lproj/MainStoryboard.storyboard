@@ -219,7 +219,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="wlD-PX-piy">
-                                <rect key="frame" x="13" y="318" width="295" height="74"/>
+                                <rect key="frame" x="11" y="318" width="299" height="74"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                                 <state key="normal" title="無制限正解数ランキング">
@@ -237,7 +237,7 @@
                                 <rect key="frame" x="13" y="236" width="295" height="74"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
-                                <state key="normal" title="100問正解数ランキング">
+                                <state key="normal" title="30問正解数ランキング">
                                     <color key="titleColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -252,7 +252,7 @@
                                 <rect key="frame" x="13" y="154" width="295" height="74"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
-                                <state key="normal" title="50問正解数ランキング">
+                                <state key="normal" title="20問正解数ランキング">
                                     <color key="titleColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -869,7 +869,7 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="zlY-55-ezS"/>
-        <segue reference="3p8-qZ-Fxn"/>
+        <segue reference="8Ys-TS-FUu"/>
         <segue reference="k3m-dq-2yW"/>
     </inferredMetricsTieBreakers>
 </document>
