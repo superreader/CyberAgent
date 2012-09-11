@@ -40,4 +40,7 @@
 @property (strong, nonatomic) IBOutlet UIButton *rightButton;
 
 
+@property (weak, nonatomic) IBOutlet UIProgressView *pv;
+
+
 @end

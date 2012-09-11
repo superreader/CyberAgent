@@ -28,6 +28,7 @@
 @synthesize rightAndWrong;
 @synthesize leftButton;
 @synthesize rightButton;
+@synthesize pv;
 
 @synthesize questionQuantityNum;
 
@@ -126,6 +127,7 @@ BOOL infiniteMode;
     [self setRightAndWrong:nil];
     [self setLeftButton:nil];
     [self setRightButton:nil];
+    [self setPv:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }
@@ -154,11 +156,14 @@ BOOL infiniteMode;
 
 -(void)questionOperator:(NSTimer *)timer {
 
+    //プログレスバーの値を変更する
+    pv.progress = 1-(qOperator/4);
     
     NSLog(@"result Show = %d",resultShow);
   
     
     //正解したかの画像を表示させる
+    
     if (resultShow == 1){
     //正解のイメージを表示させる
         NSString *aImagePath = [[NSBundle mainBundle] pathForResource:@"right" ofType:@"jpg"];
