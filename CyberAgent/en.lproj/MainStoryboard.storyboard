@@ -107,11 +107,11 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="e1m-OB-Isx">
-                                <rect key="frame" x="20" y="20" width="280" height="243"/>
+                                <rect key="frame" x="10" y="11" width="300" height="264"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Z7j-rW-iKG">
-                                <rect key="frame" x="20" y="344" width="134" height="96"/>
+                                <rect key="frame" x="10" y="358" width="142" height="90"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="31"/>
                                 <state key="normal" title="左">
@@ -126,7 +126,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="9fB-7R-ofD">
-                                <rect key="frame" x="172" y="344" width="130" height="96"/>
+                                <rect key="frame" x="168" y="357" width="142" height="91"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="31"/>
                                 <state key="normal" title="右">
@@ -141,16 +141,16 @@
                                 </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="問題文" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="L28-SR-kOf">
-                                <rect key="frame" x="26" y="279" width="274" height="51"/>
+                                <rect key="frame" x="23" y="302" width="274" height="51"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="5vH-eq-0o9">
-                                <rect key="frame" x="83" y="35" width="154" height="213"/>
+                            <progressView opaque="NO" contentMode="scaleToFill" progress="0.5" id="ZfI-vQ-1mz">
+                                <rect key="frame" x="10" y="285" width="300" height="9"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
+                            </progressView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -159,7 +159,6 @@
                         <outlet property="QuestionString" destination="L28-SR-kOf" id="9zj-X8-iQg"/>
                         <outlet property="Questionimg" destination="e1m-OB-Isx" id="bPf-bz-3Qx"/>
                         <outlet property="leftButton" destination="Z7j-rW-iKG" id="5mp-C3-34d"/>
-                        <outlet property="rightAndWrong" destination="5vH-eq-0o9" id="tCw-yN-G2a"/>
                         <outlet property="rightButton" destination="9fB-7R-ofD" id="S87-N8-6Sh"/>
                     </connections>
                 </viewController>
@@ -345,7 +344,7 @@
             <relationships>
                 <relationship kind="action" name="judgmentQuastionLeft:" candidateClass="UIButton"/>
                 <relationship kind="action" name="judgmentQuastionRight:" candidateClass="UIButton"/>
-                <relationship kind="action" name="shuffleQuestionImage:"/>
+                <relationship kind="action" name="shuffleQuestionImage:" candidateClass="NSInteger"/>
                 <relationship kind="outlet" name="QuestionString" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="Questionimg" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="leftButton" candidateClass="UIButton"/>
