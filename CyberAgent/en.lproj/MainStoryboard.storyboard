@@ -47,7 +47,7 @@
                                 </connections>
                             </segmentedControl>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="TpL-2M-vwg">
-                                <rect key="frame" x="0.0" y="403" width="36" height="29"/>
+                                <rect key="frame" x="0.0" y="358" width="36" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="tmp">
@@ -62,7 +62,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="aTT-FS-0Sj">
-                                <rect key="frame" x="0.0" y="434" width="55" height="26"/>
+                                <rect key="frame" x="0.0" y="394" width="49" height="18"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="tmp50">
@@ -74,6 +74,21 @@
                                 </state>
                                 <connections>
                                     <segue destination="sN4-fp-Csu" kind="modal" id="MS8-60-sHg"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="q0W-iE-kxJ">
+                                <rect key="frame" x="0.0" y="419" width="55" height="17"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="tmp100">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="xbL-Nz-9vt" kind="modal" id="IUx-Ky-Vly"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="D5y-rS-JH7">
@@ -107,7 +122,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="e1m-OB-Isx">
-                                <rect key="frame" x="10" y="11" width="300" height="264"/>
+                                <rect key="frame" x="10" y="7" width="300" height="270"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Z7j-rW-iKG">
@@ -141,14 +156,14 @@
                                 </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="問題文" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="L28-SR-kOf">
-                                <rect key="frame" x="23" y="302" width="274" height="51"/>
+                                <rect key="frame" x="23" y="300" width="274" height="51"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <progressView opaque="NO" contentMode="scaleToFill" progress="0.5" id="ZfI-vQ-1mz">
-                                <rect key="frame" x="10" y="285" width="300" height="9"/>
+                                <rect key="frame" x="10" y="286" width="300" height="9"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </progressView>
                         </subviews>
@@ -214,7 +229,7 @@
                     </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="-151" y="763"/>
+            <point key="canvasLocation" x="-508" y="899"/>
         </scene>
         <!--Result View Controller-->
         <scene sceneID="nwy-R8-0xh">
@@ -225,7 +240,7 @@
                         <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="正解数" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="lQ8-0g-Dvl">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="10問中正解数" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="lQ8-0g-Dvl">
                                 <rect key="frame" x="18" y="0.0" width="285" height="51"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="32"/>
@@ -248,7 +263,7 @@
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Hb6-lC-Nmq">
-                                <rect key="frame" x="8" y="89" width="305" height="319"/>
+                                <rect key="frame" x="8" y="84" width="305" height="324"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
@@ -273,7 +288,66 @@
                     </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="307" y="800"/>
+            <point key="canvasLocation" x="46" y="899"/>
+        </scene>
+        <!--Result100 View Controller-->
+        <scene sceneID="cDF-ZY-dfx">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Nny-8B-pse" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="xbL-Nz-9vt" customClass="Result100ViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9lb-l2-ZBz">
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="100問中正解数" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="daJ-XC-MfS">
+                                <rect key="frame" x="19" y="0.0" width="285" height="51"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <color key="textColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="あなたの順位" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="cDb-Dt-0lX">
+                                <rect key="frame" x="21" y="42" width="280" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <color key="textColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="H5L-Xu-0xu">
+                                <rect key="frame" x="8" y="78" width="305" height="331"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="xbL-Nz-9vt" id="b8X-co-lpC"/>
+                                    <outlet property="delegate" destination="xbL-Nz-9vt" id="brJ-ak-HaA"/>
+                                </connections>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="H3k-Jf-hLb">
+                                <rect key="frame" x="87" y="417" width="165" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="TOP">
+                                    <color key="titleColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="2" kind="modal" id="9ZH-4B-ICN"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="ResultLabel" destination="daJ-XC-MfS" id="iHZ-AN-Dp0"/>
+                        <outlet property="TableView" destination="H5L-Xu-0xu" id="c5D-sw-WUG"/>
+                        <outlet property="yourRank" destination="cDb-Dt-0lX" id="m54-nz-5V0"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="1228" y="899"/>
         </scene>
         <!--Result50 View Controller-->
         <scene sceneID="s5J-z2-eaq">
@@ -284,7 +358,7 @@
                         <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="正解数" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="asJ-4s-57E">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="50問中正解数" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="asJ-4s-57E">
                                 <rect key="frame" x="19" y="-5" width="285" height="51"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="32"/>
@@ -299,7 +373,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="L3e-ZI-5LF">
-                                <rect key="frame" x="8" y="70" width="305" height="319"/>
+                                <rect key="frame" x="8" y="73" width="305" height="331"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
@@ -308,7 +382,7 @@
                                 </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="TYV-9a-7Nf">
-                                <rect key="frame" x="8" y="409" width="165" height="37"/>
+                                <rect key="frame" x="87" y="412" width="165" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="TOP">
@@ -332,7 +406,7 @@
                     </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="723" y="418"/>
+            <point key="canvasLocation" x="602" y="899"/>
         </scene>
     </scenes>
     <resources>
@@ -344,7 +418,7 @@
             <relationships>
                 <relationship kind="action" name="judgmentQuastionLeft:" candidateClass="UIButton"/>
                 <relationship kind="action" name="judgmentQuastionRight:" candidateClass="UIButton"/>
-                <relationship kind="action" name="shuffleQuestionImage:" candidateClass="NSInteger"/>
+                <relationship kind="action" name="shuffleQuestionImage:"/>
                 <relationship kind="outlet" name="QuestionString" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="Questionimg" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="leftButton" candidateClass="UIButton"/>
@@ -358,6 +432,14 @@
             <relationships>
                 <relationship kind="outlet" name="RankingTopTxt" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="Result100ViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/Result100ViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="ResultLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="TableView" candidateClass="UITableView"/>
+                <relationship kind="outlet" name="yourRank" candidateClass="UILabel"/>
             </relationships>
         </class>
         <class className="Result50ViewController" superclassName="UIViewController">
@@ -391,6 +473,6 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="H1S-I0-l4R"/>
+        <segue reference="9ZH-4B-ICN"/>
     </inferredMetricsTieBreakers>
 </document>
