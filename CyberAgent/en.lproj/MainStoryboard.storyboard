@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2549" systemVersion="11E53" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="2">
     <dependencies>
-        <deployment defaultVersion="1296" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1498"/>
     </dependencies>
     <scenes>
@@ -15,7 +14,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="ready.jpg" id="cIG-Sf-PaB">
-                                <rect key="frame" x="20" y="14" width="280" height="192"/>
+                                <rect key="frame" x="7" y="7" width="307" height="212"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="o6y-e8-d4k">
@@ -34,7 +33,7 @@
                                 </connections>
                             </button>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="ikb-xI-k81">
-                                <rect key="frame" x="20" y="227" width="280" height="44"/>
+                                <rect key="frame" x="20" y="234" width="280" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <segments>
                                     <segment title="10"/>
@@ -298,7 +297,7 @@
                     </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="1621" y="-964"/>
+            <point key="canvasLocation" x="1869" y="-1364"/>
         </scene>
         <!--Ranking50 View Controller-->
         <scene sceneID="Oa0-8P-JYo">
@@ -364,7 +363,7 @@
                     </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="698" y="-1373"/>
+            <point key="canvasLocation" x="658" y="-1373"/>
         </scene>
         <!--Ranking100 View Controller-->
         <scene sceneID="L13-lW-12w">
@@ -430,7 +429,7 @@
                     </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="1195" y="-1373"/>
+            <point key="canvasLocation" x="1259" y="-1381"/>
         </scene>
         <!--Ranking View Controller-->
         <scene sceneID="hLL-e7-gHn">
@@ -496,7 +495,7 @@
                     </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="309" y="-964"/>
+            <point key="canvasLocation" x="41" y="-1373"/>
         </scene>
         <!--Result View Controller-->
         <scene sceneID="nwy-R8-0xh">
@@ -829,7 +828,7 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
+        <segue reference="zlY-55-ezS"/>
         <segue reference="3p8-qZ-Fxn"/>
-        <segue reference="g7c-HM-ykU"/>
     </inferredMetricsTieBreakers>
 </document>
