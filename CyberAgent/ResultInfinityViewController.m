@@ -124,7 +124,7 @@
     }
     
     //結果が何位かの表示
-    self.yourRank.text = [NSString stringWithFormat:@"あなたの順位は%d位です！！",zyuni];
+    self.yourRank.text = [NSString stringWithFormat:@"連続%d問正解！！",zyuni];
     
     static NSString *MyIdentifier = @"MyIdentifer";
     
