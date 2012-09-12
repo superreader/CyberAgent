@@ -21,7 +21,15 @@
 @interface QuestionViewController : UIViewController{
     IBOutlet UILabel *questionQuantityNum;
     double qOperator;
-
+    UIImageView *iv;
+    UINavigationBar* objectNaviBar;
+    
+    
+    // ナビゲーションアイテムを生成
+    UINavigationItem* naviItem;
+    
+    // 戻るボタンを生成
+    UIBarButtonItem* backButton;
 }
 
 //クラスメソッド
