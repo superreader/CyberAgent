@@ -95,7 +95,7 @@
     
     //全てのデータをint型配列に代入
     for(i=0;i<=num;i++){
-        s = [ud integerForKey:[NSString stringWithFormat:@"hun-%d",i]];  // Keyに変数iを指定し、内容をinteger型として取得
+        s = [ud integerForKey:[NSString stringWithFormat:@"100-%d",i]];  // Keyに変数iを指定し、内容をinteger型として取得
         array[i]=s;//配列に代入
     }
     
@@ -118,7 +118,7 @@
     }
     
     //セルに表示する内容を代入
-    cell.textLabel.text = [NSString stringWithFormat:@"%d位　　　　　　　　%d問",(indexPath.row+1),array[indexPath.row]];
+    cell.textLabel.text = [NSString stringWithFormat:@"%d位　　　　　　　　　%d問",(indexPath.row+1),array[indexPath.row]];
     
     //セルの選択時の処理をなくす(ハイライトをなくす)
     cell.selectionStyle = UITableViewCellSelectionStyleNone;

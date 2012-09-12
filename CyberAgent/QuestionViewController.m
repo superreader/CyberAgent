@@ -98,7 +98,11 @@ int questionArrayLength;
 //    UIImage *imege = [[UIImage alloc] initWithContentsOfFile:ImagePath];
 //    Questionimg.image = imege;
 // 
-//    
+//
+    
+    
+    
+    
     //プログレスバー初期設定
     pv.progress = 1.0;
     //プログレスバーの色の変更
@@ -130,10 +134,64 @@ int questionArrayLength;
     userInfo:nil
     repeats:YES];
     
+    
+    
+    
+    
+    
+    
+    
+    
     [super viewDidLoad];
     
+    
+    
+//    
+//    UIButton *backButton = [UIButton buttonWithType:101];
+//    [backButton addTarget:self action:@selector(doBack:)
+//         forControlEvents:UIControlEventTouchUpInside];
+//    [backButton setTitle:@"戻る" forState:UIControlStateNormal];
+//    
+//    UIBarButtonItem *backItem = [[UIBarButtonItem alloc]
+//                                 initWithCustomView:backButton];
+//    
+//    self.navigationItem.leftBarButtonItems = [NSArray arrayWithObjects:backItem, nil];
+//    
+    // ナビゲーションバーを生成
+    objectNaviBar = [[UINavigationBar alloc] initWithFrame:CGRectMake(0, 0, 350, 50)];
+    
+    
+    // ナビゲーションアイテムを生成
+    naviItem = [[UINavigationItem alloc] initWithTitle:@""];
+    
+    // 戻るボタンを生成
+    backButton = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStyleBordered target:self action:@selector(doBack:)];
+    
+    
+    // ナビゲーションアイテムの右側に戻るボタンを設置
+    naviItem.leftBarButtonItem = backButton;
+    
+    // ナビゲーションバーにナビゲーションアイテムを設置
+    [objectNaviBar pushNavigationItem:naviItem animated:YES];
+    
+    // ビューにナビゲーションアイテムを設置
+    [self.view addSubview:objectNaviBar];
+    
  	// Do any additional setup after loading the view.
+    
+    
+    
 }
+// 戻るボタンの実装
+- (void)doBack:(id)sender
+{
+    NSLog(@"back");
+ //   [self.navigationController popViewControllerAnimated:YES];
+    ViewController *vc= [self.storyboard instantiateViewControllerWithIdentifier:@"ViewController"];
+    [self presentModalViewController:vc animated:YES ];
+
+}
+
 
 - (void)viewDidUnload
 {
@@ -189,22 +247,18 @@ int questionArrayLength;
     //正解したかの画像を表示させる
     if (resultShow == 1){
     //正解のイメージを表示させる
-        NSString *aImagePath = [[NSBundle mainBundle] pathForResource:@"right" ofType:@"jpg"];
+        NSString *aImagePath = [[NSBundle mainBundle] pathForResource:@"seikai" ofType:@"png"];
         UIImage *image = [[UIImage alloc] initWithContentsOfFile:aImagePath];
         iv = [[UIImageView alloc] initWithImage:image];
         
-//        UIImageView *iv2 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@""]];
-        
-        //  rightAndWrong.image = imege;
-      //  rightAndWrong.hidden = false;
     
         [self.view addSubview:iv];
         NSLog(@"right show");
-        
-       // [NSThread sleepForTimeInterval:1];
-        
+    
+        iv.frame = CGRectMake(0, 0, 400, 300);
+        iv.center = CGPointMake(150, 150);
         [UIView beginAnimations:nil context:nil];  // 条件指定開始
-        [UIView setAnimationDuration:0.2];  // 2秒かけてアニメーションを終了させる
+        [UIView setAnimationDuration:0.2];  // 0.2秒かけてアニメーションを終了させる
         [UIView setAnimationDelay:0.1];  // 3秒後にアニメーションを開始する
         [UIView setAnimationRepeatCount:1.0];  // アニメーションを5回繰り返す
         [UIView setAnimationCurve:UIViewAnimationCurveLinear];  // アニメーションは一定速度
@@ -217,13 +271,26 @@ int questionArrayLength;
 
     }
     else if(resultShow == 2){
-        NSString *aImagePath = [[NSBundle mainBundle] pathForResource:@"wrong" ofType:@"jpg"];
-        UIImage *imege = [[UIImage alloc] initWithContentsOfFile:aImagePath];
-        rightAndWrong.image = imege;
-        rightAndWrong.hidden = false;
+        NSString *aImagePath = [[NSBundle mainBundle] pathForResource:@"huseikai" ofType:@"png"];
+        UIImage *image = [[UIImage alloc] initWithContentsOfFile:aImagePath];
+        iv = [[UIImageView alloc] initWithImage:image];
         
+        
+        [self.view addSubview:iv];
         NSLog(@"wrong show");
-       // [NSThread sleepForTimeInterval:1];
+        
+        iv.frame = CGRectMake(0, 0, 400, 300);
+        iv.center = CGPointMake(175, 150);
+        [UIView beginAnimations:nil context:nil];  // 条件指定開始
+        [UIView setAnimationDuration:0.2];  // 2秒かけてアニメーションを終了させる
+        [UIView setAnimationDelay:0.1];  // 3秒後にアニメーションを開始する
+        [UIView setAnimationRepeatCount:1.0];  // アニメーションを5回繰り返す
+        [UIView setAnimationCurve:UIViewAnimationCurveLinear];  // アニメーションは一定速度
+        iv.alpha = 0.0;
+        
+        [UIView commitAnimations];  // アニメーション開始！
+        // [iv removeFromSuperview];
+        
         resultShow = 0;
         
     }
@@ -241,6 +308,9 @@ int questionArrayLength;
 
     //新しい問題に遷移
     if (qOperator  > 4.0 || qOperator < 0.01) {
+        NSString *str = [NSString stringWithFormat : @"%d", sequence+1];
+        str = [NSString stringWithFormat:@"問 %@",str];
+        naviItem.title = str;
         [self changeQuestion];
         sequence++;
         questionArrayLength++;
@@ -251,7 +321,6 @@ int questionArrayLength;
     //タイマーを管理する数字を更新する
     qOperator = qOperator + 0.01;
     
-    NSLog(@"sequence = %d",sequence);
     //問題の終了判定
     if (sequence == numQuestion+1 && !infiniteMode) {
 
@@ -267,12 +336,12 @@ int questionArrayLength;
             ResultViewController *rvc= [self.storyboard instantiateViewControllerWithIdentifier:@"ResultViewController"];
            [self presentModalViewController:rvc animated:YES ];
         }
-        else if([nq isEqualToString:@"50"]){
+        else if([nq isEqualToString:@"20"]){
             NSLog(@"Finished 50 question");
             Result50ViewController *rvc50= [self.storyboard instantiateViewControllerWithIdentifier:@"Result50ViewController"];
             [self presentModalViewController:rvc50 animated:YES ];
         }
-        else if([nq isEqualToString:@"100"]){
+        else if([nq isEqualToString:@"30"]){
             NSLog(@"Finished 100 question");
             Result100ViewController *rvc100 = [self.storyboard instantiateViewControllerWithIdentifier:@"Result100ViewController"];
             [self presentModalViewController:rvc100 animated:YES ];

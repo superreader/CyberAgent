@@ -123,7 +123,7 @@
     }
     
     //結果が何位かの表示
-    self.yourRank.text = [NSString stringWithFormat:@"あなたの順位は%d位です！！",zyuni];
+    self.yourRank.text = [NSString stringWithFormat:@"30問中%d問正解！！",zyuni];
     
     static NSString *MyIdentifier = @"MyIdentifer";
     
@@ -133,7 +133,7 @@
     }
     
     //セルに表示する内容を代入
-    cell.textLabel.text = [NSString stringWithFormat:@"%d位　　　　　　　　%d問",(indexPath.row+1),array[indexPath.row]];
+    cell.textLabel.text = [NSString stringWithFormat:@"%d位　　　　　　　　　　　　%d問",(indexPath.row+1),array[indexPath.row]];
     
     //セルの選択時の処理をなくす(ハイライトをなくす)
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
