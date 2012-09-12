@@ -54,27 +54,6 @@ static  NSString *Qnum;
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
-/*
-//セグメントで選ばれた問題数を表示
-- (IBAction)questionQuantity:(id)sender {
-    int index = [sender selectedSegmentIndex];
-    Qnum = [NSString stringWithFormat:@"10"];
-    if (index == 0) {
-         Qnum = [NSString stringWithFormat:@"10"];
-    }
-    else if(index == 1){
-        Qnum = [NSString stringWithFormat:@"50"];
-    }
-    else if(index == 2){
-        Qnum = [NSString stringWithFormat:@"100"];
-    }
-    else if(index == 3){
-        Qnum = [NSString stringWithFormat:@"200"];
-    }
-  
-    NSLog(@"Qnum = %@",Qnum);
-}
- */
 
 + (NSString*)Qnum {
     NSLog(@"qnum:%@",Qnum);

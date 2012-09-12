@@ -55,6 +55,12 @@ BOOL infiniteMode;
 //問題が入っているarrayの残りの大きさ
 int questionArrayLength;
 
+//バックボタンを起動させるかどうか
+BOOL backBtn;
+
+
+BOOL questionFinished;
+
 //初期設定
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -88,6 +94,12 @@ int questionArrayLength;
     
     //問題数が無限かどうか
     infiniteMode=false;
+    
+    //バックボタンを起動させるか
+    backBtn = false;
+    
+    
+    questionFinished = false;
     
     
     //一つ前の画面で問題数を設定したのでその数字の格納
@@ -134,41 +146,17 @@ int questionArrayLength;
     userInfo:nil
     repeats:YES];
     
-    
-    
-    
-    
-    
-    
-    
-    
     [super viewDidLoad];
     
     
     
-//    
-//    UIButton *backButton = [UIButton buttonWithType:101];
-//    [backButton addTarget:self action:@selector(doBack:)
-//         forControlEvents:UIControlEventTouchUpInside];
-//    [backButton setTitle:@"戻る" forState:UIControlStateNormal];
-//    
-//    UIBarButtonItem *backItem = [[UIBarButtonItem alloc]
-//                                 initWithCustomView:backButton];
-//    
-//    self.navigationItem.leftBarButtonItems = [NSArray arrayWithObjects:backItem, nil];
-//    
     // ナビゲーションバーを生成
     objectNaviBar = [[UINavigationBar alloc] initWithFrame:CGRectMake(0, 0, 320, 44)];
-    
-
     objectNaviBar.tintColor = [UIColor blackColor];
     
-//    objectNaviBar.sizeToFit = [UINavigationBar defaultSize];
     // ナビゲーションアイテムを生成
     
     naviItem = [[UINavigationItem alloc] initWithTitle:@""];
-    
-
     
     // 戻るボタンを生成
     backButton = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStyleBordered target:self action:@selector(doBack:)];
@@ -185,19 +173,13 @@ int questionArrayLength;
     
  	// Do any additional setup after loading the view.
     
-    
-    
 }
+
 // 戻るボタンの実装
 - (void)doBack:(id)sender
 {
-    NSLog(@"back");
- //   [self.navigationController popViewControllerAnimated:YES];
-    ViewController *vc= [self.storyboard instantiateViewControllerWithIdentifier:@"ViewController"];
-    [self presentModalViewController:vc animated:YES ];
-
+    backBtn = true;
 }
-
 
 - (void)viewDidUnload
 {
@@ -238,6 +220,7 @@ int questionArrayLength;
 -(void)questionOperator:(NSTimer *)timer {
     
     
+   
     //問題数無限大の時に設定の問題が足りなくなったらもっかい問題を取りに行く
     if([anArray count] == questionArrayLength +1){
         questionArrayLength = 0;
@@ -245,36 +228,141 @@ int questionArrayLength;
         anArray = [ReadQuestionText SetTextToArray];
         questionArrayLength = 0;
     }
-
+    
     //プログレスバーの値を変更する
     pv.progress = 1-(qOperator/4);
     
     
+    //バックボタンを起動させる
+    if (backBtn) {
+        [timer invalidate];
+        //問題文の開放
+        [anArray removeAllObjects];
+        NSLog(@"back");
+        //   [self.navigationController popViewControllerAnimated:YES];
+        ViewController *vc= [self.storyboard instantiateViewControllerWithIdentifier:@"ViewController"];
+        [self presentModalViewController:vc animated:YES ];
+
+    }
+    
+    
+    
+    //時間切れによる不正解
+    if (!questionSelected || qOperator  > 4.0) {
+        NSLog(@"時間切れによる不正解");
+        //問題は不正解
+        questionResult = false;
+        //不正解音を鳴らす
+        [self AnswerSound];
+        AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
+    }
+    
+    
+    if (qOperator  > 4.0 || qOperator < 0.01) {
+        sequence++;
+        questionArrayLength++;
+    }
+    
+
+    //問題の終了条件に入ったかどうか
+    [self checkFinishedQuestion:timer];
+    
+    
+
+    //新しい問題に遷移
+    if ((qOperator  > 4.0 || qOperator < 0.01 )&& !questionFinished) {
+        NSString *str = [NSString stringWithFormat : @"%d", sequence];
+        str = [NSString stringWithFormat:@"問 %@",str];
+        naviItem.title = str;
+        [self changeQuestion];
+        NSLog(@"%d",numQuestion);
+        
+    }
+    
+    //タイマーを管理する数字を更新する
+    qOperator = qOperator + 0.01;
+    
+      
+}
+
+-(void)checkFinishedQuestion:(NSTimer *)timer {
+    
+    //問題の終了判定
+    if (sequence-1 == numQuestion && !infiniteMode) {
+        
+        [timer invalidate];
+        
+        //問題文の開放
+        [anArray removeAllObjects];
+        
+        //問題数に応じて行き先を変える
+        if ([nq isEqualToString:@"10"]) {
+            NSLog(@"Finished 10 question");
+            ResultViewController *rvc= [self.storyboard instantiateViewControllerWithIdentifier:@"ResultViewController"];
+            [self presentModalViewController:rvc animated:YES];
+        }
+        else if([nq isEqualToString:@"20"]){
+            NSLog(@"Finished 50 question");
+            Result50ViewController *rvc50= [self.storyboard instantiateViewControllerWithIdentifier:@"Result50ViewController"];
+            [self presentModalViewController:rvc50 animated:YES ];
+        }
+        else if([nq isEqualToString:@"30"]){
+            NSLog(@"Finished 100 question");
+            Result100ViewController *rvc100 = [self.storyboard instantiateViewControllerWithIdentifier:@"Result100ViewController"];
+            [self presentModalViewController:rvc100 animated:YES ];
+        }
+        
+        NSLog(@"正解数は %d です",(int)answerCount);
+        
+        NSLog(@"stop");
+        questionFinished = true;
+    }
+    //問題数無限大で問題を間違えたら結果に行く(sequenceは初期のバグ取り)
+    else if(infiniteMode && !questionResult && sequence > 1) {
+        [timer invalidate];
+        
+        //問題文の開放
+        [anArray removeAllObjects];
+        
+        
+        NSLog(@"Finished infinite question");
+        ResultInfinityViewController *rvc= [self.storyboard instantiateViewControllerWithIdentifier:@"ResultInfinityViewController"];
+        [self presentModalViewController:rvc animated:YES ];
+        
+        
+        questionFinished = true;
+
+    }
+
+}
+
+-(void) questionResultShow{
+    
     //正解したかの画像を表示させる
     if (resultShow == 1){
-    //正解のイメージを表示させる
+        //正解のイメージを表示させる
         NSString *aImagePath = [[NSBundle mainBundle] pathForResource:@"seikai" ofType:@"png"];
         UIImage *image = [[UIImage alloc] initWithContentsOfFile:aImagePath];
         iv = [[UIImageView alloc] initWithImage:image];
         
-    
+        
         [self.view addSubview:iv];
         NSLog(@"right show");
-    
+        
         iv.frame = CGRectMake(0, 0, 400, 300);
         iv.center = CGPointMake(150, 150);
         [UIView beginAnimations:nil context:nil];  // 条件指定開始
-        [UIView setAnimationDuration:0.2];  // 0.2秒かけてアニメーションを終了させる
+        [UIView setAnimationDuration:0.4];  // 0.2秒かけてアニメーションを終了させる
         [UIView setAnimationDelay:0.1];  // 3秒後にアニメーションを開始する
         [UIView setAnimationRepeatCount:1.0];  // アニメーションを5回繰り返す
         [UIView setAnimationCurve:UIViewAnimationCurveLinear];  // アニメーションは一定速度
         iv.alpha = 0.0;
         
         [UIView commitAnimations];  // アニメーション開始！
-       // [iv removeFromSuperview];
+        // [iv removeFromSuperview];
         
         resultShow = 0;
-
+        
     }
     else if(resultShow == 2){
         NSString *aImagePath = [[NSBundle mainBundle] pathForResource:@"huseikai" ofType:@"png"];
@@ -295,83 +383,12 @@ int questionArrayLength;
         iv.alpha = 0.0;
         
         [UIView commitAnimations];  // アニメーション開始！
-        // [iv removeFromSuperview];
-        
         resultShow = 0;
         
     }
 
-    
-    //時間切れによる不正解
-    if (!questionSelected || qOperator  > 4.0) {
-        NSLog(@"時間切れによる不正解");
-        //問題は不正解
-        questionResult = false;
-        //不正解音を鳴らす
-        [self AnswerSound];
-        AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
-    }
-
-    //新しい問題に遷移
-    if (qOperator  > 4.0 || qOperator < 0.01) {
-        NSString *str = [NSString stringWithFormat : @"%d", sequence+1];
-        str = [NSString stringWithFormat:@"問 %@",str];
-        naviItem.title = str;
-        [self changeQuestion];
-        sequence++;
-        questionArrayLength++;
-        NSLog(@"%d",numQuestion);
-
-    }
-
-    //タイマーを管理する数字を更新する
-    qOperator = qOperator + 0.01;
-    
-    //問題の終了判定
-    if (sequence == numQuestion+1 && !infiniteMode) {
-
-        [timer invalidate];
-        
-        //問題文の開放
-        [anArray removeAllObjects];
-        
-        
-        //問題数に応じて行き先を変える
-       if ([nq isEqualToString:@"10"]) {
-           NSLog(@"Finished 10 question");
-            ResultViewController *rvc= [self.storyboard instantiateViewControllerWithIdentifier:@"ResultViewController"];
-           [self presentModalViewController:rvc animated:YES ];
-        }
-        else if([nq isEqualToString:@"20"]){
-            NSLog(@"Finished 50 question");
-            Result50ViewController *rvc50= [self.storyboard instantiateViewControllerWithIdentifier:@"Result50ViewController"];
-            [self presentModalViewController:rvc50 animated:YES ];
-        }
-        else if([nq isEqualToString:@"30"]){
-            NSLog(@"Finished 100 question");
-            Result100ViewController *rvc100 = [self.storyboard instantiateViewControllerWithIdentifier:@"Result100ViewController"];
-            [self presentModalViewController:rvc100 animated:YES ];
-        }
-
-        NSLog(@"正解数は %d です",(int)answerCount);
-        
-        NSLog(@"stop");
-    }
-    //問題数無限大で問題を間違えたら結果に行く(sequenceは初期のバグ取り)
-    else if(infiniteMode && !questionResult && sequence > 1) {
-        [timer invalidate];
-        
-        //問題文の開放
-        [anArray removeAllObjects];
-        
-        
-        NSLog(@"Finished infinite question");
-        ResultInfinityViewController *rvc= [self.storyboard instantiateViewControllerWithIdentifier:@"ResultInfinityViewController"];
-        [self presentModalViewController:rvc animated:YES ];
-        
-    }
-    
 }
+
 
 /*
  問題を変える
@@ -530,6 +547,9 @@ int questionArrayLength;
     
     NSLog(@"push button answerCount = %d",(int)answerCount);
     qOperator = 0.0;
+    
+    
+    [self questionResultShow];
 
 }
 
@@ -576,6 +596,9 @@ int questionArrayLength;
     NSLog(@"push button answerCount = %d",(int)answerCount);
 
     qOperator = 0.0;
+    
+    [self questionResultShow];
+
 }
 
 
