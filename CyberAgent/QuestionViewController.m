@@ -158,11 +158,17 @@ int questionArrayLength;
 //    self.navigationItem.leftBarButtonItems = [NSArray arrayWithObjects:backItem, nil];
 //    
     // ナビゲーションバーを生成
-    objectNaviBar = [[UINavigationBar alloc] initWithFrame:CGRectMake(0, 0, 350, 50)];
+    objectNaviBar = [[UINavigationBar alloc] initWithFrame:CGRectMake(0, 0, 320, 44)];
     
+
+    objectNaviBar.tintColor = [UIColor blackColor];
     
+//    objectNaviBar.sizeToFit = [UINavigationBar defaultSize];
     // ナビゲーションアイテムを生成
+    
     naviItem = [[UINavigationItem alloc] initWithTitle:@""];
+    
+
     
     // 戻るボタンを生成
     backButton = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStyleBordered target:self action:@selector(doBack:)];
