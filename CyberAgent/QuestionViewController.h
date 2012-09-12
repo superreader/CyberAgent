@@ -21,6 +21,7 @@
 @interface QuestionViewController : UIViewController{
     IBOutlet UILabel *questionQuantityNum;
     double qOperator;
+    UIImageView *iv;
 
 }
 

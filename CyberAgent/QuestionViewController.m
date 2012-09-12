@@ -190,12 +190,29 @@ int questionArrayLength;
     if (resultShow == 1){
     //正解のイメージを表示させる
         NSString *aImagePath = [[NSBundle mainBundle] pathForResource:@"right" ofType:@"jpg"];
-        UIImage *imege = [[UIImage alloc] initWithContentsOfFile:aImagePath];
-        rightAndWrong.image = imege;
-        rightAndWrong.hidden = false;
+        UIImage *image = [[UIImage alloc] initWithContentsOfFile:aImagePath];
+        iv = [[UIImageView alloc] initWithImage:image];
+        
+//        UIImageView *iv2 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@""]];
+        
+        //  rightAndWrong.image = imege;
+      //  rightAndWrong.hidden = false;
+    
+        [self.view addSubview:iv];
         NSLog(@"right show");
-
-      //  [NSThread sleepForTimeInterval:1];
+        
+       // [NSThread sleepForTimeInterval:1];
+        
+        [UIView beginAnimations:nil context:nil];  // 条件指定開始
+        [UIView setAnimationDuration:0.2];  // 2秒かけてアニメーションを終了させる
+        [UIView setAnimationDelay:0.1];  // 3秒後にアニメーションを開始する
+        [UIView setAnimationRepeatCount:1.0];  // アニメーションを5回繰り返す
+        [UIView setAnimationCurve:UIViewAnimationCurveLinear];  // アニメーションは一定速度
+        iv.alpha = 0.0;
+        
+        [UIView commitAnimations];  // アニメーション開始！
+       // [iv removeFromSuperview];
+        
         resultShow = 0;
 
     }
@@ -338,8 +355,8 @@ int questionArrayLength;
    
     //タイムシードを使って毎回同じ値が出ないようにした
     srandom(time(NULL));
- //   NSInteger answerSelect = random() % 2;
-    NSInteger answerSelect = 0;
+    NSInteger answerSelect = random() % 2;
+ //   NSInteger answerSelect = 0;
     
     NSLog(@"answerSelect %d",answerSelect);
 

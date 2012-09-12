@@ -77,7 +77,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="e1m-OB-Isx">
-                                <rect key="frame" x="10" y="7" width="300" height="270"/>
+                                <rect key="frame" x="10" y="52" width="300" height="225"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                             <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Z7j-rW-iKG">
@@ -121,15 +121,26 @@
                                 <rect key="frame" x="10" y="286" width="300" height="9"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </progressView>
+                            <navigationBar contentMode="scaleToFill" id="ZaI-Mu-Zlr">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem id="ECR-oT-3ef"/>
+                                </items>
+                            </navigationBar>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="Egg-ct-MZz">
+                                <rect key="frame" x="34" y="95" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Ehs-gM-ItK"/>
                     <connections>
                         <outlet property="QuestionString" destination="L28-SR-kOf" id="9zj-X8-iQg"/>
                         <outlet property="Questionimg" destination="e1m-OB-Isx" id="bPf-bz-3Qx"/>
                         <outlet property="leftButton" destination="Z7j-rW-iKG" id="5mp-C3-34d"/>
                         <outlet property="pv" destination="ZfI-vQ-1mz" id="Ub7-VW-FUm"/>
+                        <outlet property="rightAndWrong" destination="Egg-ct-MZz" id="SxP-hb-nvS"/>
                         <outlet property="rightButton" destination="9fB-7R-ofD" id="S87-N8-6Sh"/>
                     </connections>
                 </viewController>
@@ -738,91 +749,6 @@
     <resources>
         <image name="ready.jpg" width="400" height="400"/>
     </resources>
-    <classes>
-        <class className="QuestionViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/QuestionViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="judgmentQuastionLeft:" candidateClass="UIButton"/>
-                <relationship kind="action" name="judgmentQuastionRight:" candidateClass="UIButton"/>
-                <relationship kind="action" name="shuffleQuestionImage:"/>
-                <relationship kind="outlet" name="QuestionString" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="Questionimg" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="leftButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="pv" candidateClass="UIProgressView"/>
-                <relationship kind="outlet" name="questionQuantityNum" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="rightAndWrong" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="rightButton" candidateClass="UIButton"/>
-            </relationships>
-        </class>
-        <class className="Ranking100ViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/Ranking100ViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="RankingToptxt" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-        <class className="Ranking50ViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/Ranking50ViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="RankingToptxt" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-        <class className="RankingInfinityViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/RankingInfinityViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="RankingToptxt" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-        <class className="RankingViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/RankingViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="RankingTopTxt" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-        <class className="Result100ViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/Result100ViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="ResultLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="TableView" candidateClass="UITableView"/>
-                <relationship kind="outlet" name="yourRank" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="Result50ViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/Result50ViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="ResultLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="tableview" candidateClass="UITableView"/>
-                <relationship kind="outlet" name="yourRank" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="ResultInfinityViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ResultInfinityViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="ResultLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
-                <relationship kind="outlet" name="yourRank" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="ResultViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ResultViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="ResultLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
-                <relationship kind="outlet" name="yourRank" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="ViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="btnStart:"/>
-                <relationship kind="action" name="questionQuantity:"/>
-                <relationship kind="outlet" name="segment1" candidateClass="UISegmentedControl"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
