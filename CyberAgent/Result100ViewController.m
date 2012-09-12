@@ -37,7 +37,7 @@
     //ans = (int)[QuestionViewController answerNum];
     
     
-    self.ResultLabel.text = [NSString stringWithFormat:@"正解数は%d問です！！",ans];
+    self.ResultLabel.text = [NSString stringWithFormat:@"30問中%d問正解！！",ans];
     
     ud = [NSUserDefaults standardUserDefaults];//保存先のオブジェクトの宣言
     numhun = [ud integerForKey:@"KEY_numhun"];//何回目のプレイかを記憶する変数numの宣言
@@ -123,7 +123,7 @@
     }
     
     //結果が何位かの表示
-    self.yourRank.text = [NSString stringWithFormat:@"30問中%d問正解！！",zyuni];
+    self.yourRank.text = [NSString stringWithFormat:@"あなたの順位は%d位です",zyuni];
     
     static NSString *MyIdentifier = @"MyIdentifer";
     
