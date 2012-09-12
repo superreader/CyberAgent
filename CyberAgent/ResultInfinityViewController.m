@@ -47,39 +47,9 @@
     
     [ud setInteger:ans forKey:[NSString stringWithFormat:@"inf-%d",numinf]];//Keyに変数numを指定し、ansの値を保存先オブジェクトに保存
     
-    /*
-     //int型配列に今までの結果をコピー
-     for(i=0;i<=num;i++){
-     s = [ud integerForKey:[NSString stringWithFormat:@"%d",i]];  // Keyに変数iを指定し、内容をinteger型として取得
-     array[i]=s;//配列に代入
-     }
-     
-     //int配列内の表示
-     NSLog(@"int配列内の表示開始");
-     for(i=0;i<=num;i++){
-     NSLog(@"%d",array[i]);
-     }
-     NSLog(@"int配列内の表示終了");
-     
-     //int配列のソート
-     for (i = 0; i <num; i++) {
-     for (j = num ; j > i; j--) {
-     if (array[j-1] < array[j]) {
-     tmp = array[j-1];
-     array[j-1] = array[j];
-     array[j] = tmp;
-     }
-     }
-     }
-     
-     //ソート後int配列の表示
-     NSLog(@"ソート後int配列内の表示開始");
-     for(i=0;i<=num;i++){
-     NSLog(@"%d",array[i]);
-     }
-     NSLog(@"ソート後int配列内の表示終了");
-     */
-    
+    //tableViewの背景を透明にする
+    self.tableView.backgroundColor = [UIColor clearColor];
+
     numinf++;
     [ud setInteger:numinf forKey:@"KEY_numinf"];
     
@@ -141,6 +111,9 @@
     
     //セルの選択時の処理をなくす(ハイライトをなくす)
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    
+    //セルの文字色を変える
+    cell.textLabel.textColor = [UIColor whiteColor];
     
     //セルインクタンスを返す
     return cell;

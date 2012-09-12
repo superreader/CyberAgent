@@ -47,6 +47,9 @@
 //    int array[num+1];//int配列の宣言
     [ud setInteger:ans forKey:[NSString stringWithFormat:@"%d",num]];//Keyに変数numを指定し、ansの値を保存先オブジェクトに保存
     
+    //tableViewの背景を透明にする
+    self.tableView.backgroundColor = [UIColor clearColor];
+    
 /*
     //int型配列に今までの結果をコピー
     for(i=0;i<=num;i++){
@@ -141,6 +144,9 @@
     
     //セルの選択時の処理をなくす(ハイライトをなくす)
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    
+    //セルの文字色を変える
+    cell.textLabel.textColor = [UIColor whiteColor];
     
     //セルインクタンスを返す
     return cell;
