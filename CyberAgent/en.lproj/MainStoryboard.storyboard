@@ -19,7 +19,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="o6y-e8-d4k">
-                                <rect key="frame" x="20" y="158" width="280" height="50"/>
+                                <rect key="frame" x="20" y="165" width="280" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
                                 <state key="normal" title="10問トライアル" backgroundImage="btn7.jpg">
@@ -35,7 +35,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="D5y-rS-JH7">
-                                <rect key="frame" x="20" y="390" width="280" height="50"/>
+                                <rect key="frame" x="20" y="397" width="280" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
                                 <state key="normal" title="ランキング" backgroundImage="btn7.jpg">
@@ -49,7 +49,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Zjf-23-O27">
-                                <rect key="frame" x="20" y="332" width="280" height="50"/>
+                                <rect key="frame" x="20" y="339" width="280" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
                                 <state key="normal" title="連続正解トライアル" backgroundImage="btn7.jpg">
@@ -65,7 +65,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="gVa-rg-b0A">
-                                <rect key="frame" x="20" y="274" width="280" height="50"/>
+                                <rect key="frame" x="20" y="281" width="280" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
                                 <state key="normal" title="30問トライアル" backgroundImage="btn7.jpg">
@@ -81,7 +81,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="25X-6Z-Zdp">
-                                <rect key="frame" x="20" y="216" width="280" height="50"/>
+                                <rect key="frame" x="20" y="223" width="280" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
                                 <state key="normal" title="20問トライアル" backgroundImage="btn7.jpg">
@@ -97,7 +97,7 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="qfK-hL-iFn">
-                                <rect key="frame" x="20" y="8" width="280" height="142"/>
+                                <rect key="frame" x="20" y="8" width="280" height="149"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
@@ -180,43 +180,21 @@
             </objects>
             <point key="canvasLocation" x="1621" y="-120"/>
         </scene>
-        <!--View Controller - RankingViewSelect-->
+        <!--Ranking View Select View Controller - RankingViewSelectViewController-->
         <scene sceneID="gKc-6m-LiM">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dQw-Uz-xNf" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewController storyboardIdentifier="RankkingViewSelect" title="RankingViewSelect" id="2Vb-lo-pNq" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RankingViewSelectViewController" title="RankingViewSelectViewController" id="2Vb-lo-pNq" customClass="RankingViewSelectViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ap1-rT-e5l">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="back.png" id="h8X-k9-CkT">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="ランキング" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="TPB-ix-2kj">
-                                <rect key="frame" x="20" y="0.0" width="280" height="72"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="45"/>
-                                <color key="textColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="cnn-4Z-1cr">
-                                <rect key="frame" x="72" y="406" width="176" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="TOP" backgroundImage="btn7.jpg">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="2" kind="modal" id="8Ys-TS-FUu"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Ju8-gg-myg">
-                                <rect key="frame" x="13" y="72" width="295" height="74"/>
+                                <rect key="frame" x="13" y="56" width="295" height="90"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                                 <state key="normal" title="10問正解数ランキング" backgroundImage="btn7.jpg">
@@ -231,7 +209,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="wlD-PX-piy">
-                                <rect key="frame" x="11" y="318" width="299" height="74"/>
+                                <rect key="frame" x="13" y="355" width="295" height="90"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                                 <state key="normal" title="連続正解数ランキング" backgroundImage="btn7.jpg">
@@ -246,7 +224,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="P0X-e8-XbR">
-                                <rect key="frame" x="13" y="236" width="295" height="74"/>
+                                <rect key="frame" x="13" y="257" width="295" height="90"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                                 <state key="normal" title="30問正解数ランキング" backgroundImage="btn7.jpg">
@@ -261,7 +239,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="DIW-QW-laj">
-                                <rect key="frame" x="13" y="154" width="295" height="74"/>
+                                <rect key="frame" x="13" y="154" width="295" height="95"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                                 <state key="normal" title="20問正解数ランキング" backgroundImage="btn7.jpg">
@@ -280,7 +258,7 @@
                     </view>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="940" y="-736"/>
+            <point key="canvasLocation" x="922" y="-742"/>
         </scene>
         <!--Ranking Infinity View Controller-->
         <scene sceneID="IrN-xT-RWS">
@@ -288,7 +266,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QEG-Qf-EsR" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="lno-SG-ioV" customClass="RankingInfinityViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1fo-ae-PIr">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="back.png" id="gsl-DU-WfC">
@@ -296,7 +274,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="6W3-Z7-2yi">
-                                <rect key="frame" x="6" y="53" width="306" height="340"/>
+                                <rect key="frame" x="6" y="60" width="306" height="330"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
@@ -304,15 +282,8 @@
                                     <outlet property="delegate" destination="lno-SG-ioV" id="sJX-GQ-JEp"/>
                                 </connections>
                             </tableView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="連続正解数ランキング" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="iNM-DG-Tba">
-                                <rect key="frame" x="-5" y="0.0" width="331" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <color key="textColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="z9Z-E2-jEY">
-                                <rect key="frame" x="6" y="401" width="145" height="50"/>
+                                <rect key="frame" x="88" y="402" width="145" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="TOP" backgroundImage="btn7.jpg">
@@ -326,31 +297,15 @@
                                     <segue destination="2" kind="modal" id="cT9-kn-6QL"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="j1X-0i-lIc">
-                                <rect key="frame" x="167" y="402" width="145" height="49"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="ランキング" backgroundImage="btn7.jpg">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="2Vb-lo-pNq" kind="modal" id="2cC-jV-VlY"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <connections>
-                        <outlet property="RankingToptxt" destination="iNM-DG-Tba" id="JYq-OD-ghq"/>
                         <outlet property="tableView" destination="6W3-Z7-2yi" id="9SU-iq-NMA"/>
                     </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="1869" y="-1364"/>
+            <point key="canvasLocation" x="1868" y="-1373"/>
         </scene>
         <!--Ranking50 View Controller-->
         <scene sceneID="Oa0-8P-JYo">
@@ -358,7 +313,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IA6-Nz-3E1" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="XJ9-Gr-g8g" customClass="Ranking50ViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="v7r-Vm-zDG">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="back.png" id="Gvt-60-CAW">
@@ -366,7 +321,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="9wA-jk-T4X">
-                                <rect key="frame" x="7" y="53" width="306" height="340"/>
+                                <rect key="frame" x="7" y="60" width="306" height="330"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
@@ -374,15 +329,8 @@
                                     <outlet property="delegate" destination="XJ9-Gr-g8g" id="uc2-p6-w7c"/>
                                 </connections>
                             </tableView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="20問正解数ランキング" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="X3A-qB-YFQ">
-                                <rect key="frame" x="3" y="0.0" width="314" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <color key="textColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="3pa-AE-pyG">
-                                <rect key="frame" x="7" y="401" width="145" height="50"/>
+                                <rect key="frame" x="88" y="403" width="145" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="TOP" backgroundImage="btn7.jpg">
@@ -396,26 +344,10 @@
                                     <segue destination="2" kind="modal" id="ZuG-t6-HL4"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="mbZ-ns-154">
-                                <rect key="frame" x="165" y="401" width="148" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="ランキング" backgroundImage="btn7.jpg">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="2Vb-lo-pNq" kind="modal" id="iMC-eT-hch"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <connections>
-                        <outlet property="RankingToptxt" destination="X3A-qB-YFQ" id="BNC-xc-9po"/>
                         <outlet property="tableView" destination="9wA-jk-T4X" id="a1A-UV-R4M"/>
                     </connections>
                 </viewController>
@@ -428,7 +360,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4xG-Ie-WeO" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="bzr-eY-jgw" customClass="Ranking100ViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tqz-bx-nhr">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="back.png" id="xsV-rR-hPp">
@@ -436,7 +368,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="YwI-hR-tdh">
-                                <rect key="frame" x="7" y="53" width="306" height="340"/>
+                                <rect key="frame" x="7" y="60" width="306" height="330"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
@@ -444,15 +376,8 @@
                                     <outlet property="delegate" destination="bzr-eY-jgw" id="RPe-4o-av7"/>
                                 </connections>
                             </tableView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="30問正解数ランキング" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="6n3-1X-yfF">
-                                <rect key="frame" x="-4" y="0.0" width="331" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <color key="textColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="mec-Mo-aBg">
-                                <rect key="frame" x="7" y="401" width="145" height="50"/>
+                                <rect key="frame" x="88" y="402" width="145" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="TOP" backgroundImage="btn7.jpg">
@@ -466,26 +391,10 @@
                                     <segue destination="2" kind="modal" id="vG1-6T-8vk"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="X4Y-w7-c2M">
-                                <rect key="frame" x="168" y="401" width="145" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="ランキング" backgroundImage="btn7.jpg">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="2Vb-lo-pNq" kind="modal" id="kZv-eu-1qi"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <connections>
-                        <outlet property="RankingToptxt" destination="6n3-1X-yfF" id="M8m-VW-IOU"/>
                         <outlet property="tableView" destination="YwI-hR-tdh" id="DHo-F6-Tbg"/>
                     </connections>
                 </viewController>
@@ -498,7 +407,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8lv-Y6-XeR" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="H2D-pM-3Ie" customClass="RankingViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vdm-fs-95N">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="back.png" id="xI6-4l-XhS">
@@ -506,7 +415,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Si0-Zv-LgI">
-                                <rect key="frame" x="7" y="54" width="306" height="340"/>
+                                <rect key="frame" x="7" y="61" width="306" height="330"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
@@ -514,15 +423,8 @@
                                     <outlet property="delegate" destination="H2D-pM-3Ie" id="Xcn-Yj-qGa"/>
                                 </connections>
                             </tableView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="10問正解数ランキング" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="Jrs-zT-aab">
-                                <rect key="frame" x="0.0" y="0.0" width="314" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <color key="textColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="9eY-3B-wRX">
-                                <rect key="frame" x="7" y="402" width="145" height="46"/>
+                                <rect key="frame" x="88" y="403" width="145" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="TOP" backgroundImage="btn7.jpg">
@@ -536,26 +438,10 @@
                                     <segue destination="2" kind="modal" id="3p8-qZ-Fxn"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="5mS-JZ-3xz">
-                                <rect key="frame" x="168" y="402" width="145" height="46"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="ランキング" backgroundImage="btn7.jpg">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="2Vb-lo-pNq" kind="modal" id="zlY-55-ezS"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <connections>
-                        <outlet property="RankingTopTxt" destination="Jrs-zT-aab" id="lhS-AX-Odr"/>
                         <outlet property="tableView" destination="Si0-Zv-LgI" id="C9b-iG-oMu"/>
                     </connections>
                 </viewController>
@@ -579,11 +465,11 @@
                                 <rect key="frame" x="18" y="-4" width="285" height="51"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="32"/>
-                                <color key="textColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="fLF-8e-IJD">
-                                <rect key="frame" x="43" y="405" width="235" height="48"/>
+                                <rect key="frame" x="43" y="406" width="225" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="TOP" backgroundImage="btn7.jpg">
@@ -610,7 +496,7 @@
                                 <rect key="frame" x="8" y="37" width="305" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                <color key="textColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -642,14 +528,14 @@
                                 <rect key="frame" x="19" y="-3" width="285" height="51"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="32"/>
-                                <color key="textColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="あなたの順位" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="D4L-lo-JF5">
                                 <rect key="frame" x="8" y="40" width="305" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                <color key="textColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Ufe-sn-hly">
@@ -662,7 +548,7 @@
                                 </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="V8b-vO-ChK">
-                                <rect key="frame" x="39" y="406" width="244" height="47"/>
+                                <rect key="frame" x="49" y="406" width="225" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="TOP" backgroundImage="btn7.jpg">
@@ -705,14 +591,14 @@
                                 <rect key="frame" x="19" y="-3" width="285" height="51"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="32"/>
-                                <color key="textColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="あなたの順位" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="cDb-Dt-0lX">
                                 <rect key="frame" x="8" y="39" width="305" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                <color key="textColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="H5L-Xu-0xu">
@@ -725,7 +611,7 @@
                                 </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="H3k-Jf-hLb">
-                                <rect key="frame" x="39" y="406" width="244" height="47"/>
+                                <rect key="frame" x="49" y="406" width="225" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="TOP" backgroundImage="btn7.jpg">
@@ -749,7 +635,7 @@
                     </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="1296" y="579"/>
+            <point key="canvasLocation" x="1432" y="579"/>
         </scene>
         <!--Result50 View Controller-->
         <scene sceneID="s5J-z2-eaq">
@@ -768,14 +654,14 @@
                                 <rect key="frame" x="18" y="-5" width="285" height="51"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="32"/>
-                                <color key="textColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="あなたの順位" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="Bnv-1s-fgd">
                                 <rect key="frame" x="0.0" y="32" width="305" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                <color key="textColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="L3e-ZI-5LF">
@@ -788,7 +674,7 @@
                                 </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="TYV-9a-7Nf">
-                                <rect key="frame" x="39" y="402" width="244" height="48"/>
+                                <rect key="frame" x="48" y="404" width="225" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="TOP" backgroundImage="btn7.jpg">
@@ -863,6 +749,9 @@
                 <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
             </relationships>
         </class>
+        <class className="RankingViewSelectViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/RankingViewSelectViewController.h"/>
+        </class>
         <class className="Result100ViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/Result100ViewController.h"/>
             <relationships>
@@ -913,8 +802,7 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="2cC-jV-VlY"/>
-        <segue reference="8Ys-TS-FUu"/>
-        <segue reference="k3m-dq-2yW"/>
+        <segue reference="bHf-rJ-qSO"/>
+        <segue reference="H1S-I0-l4R"/>
     </inferredMetricsTieBreakers>
 </document>

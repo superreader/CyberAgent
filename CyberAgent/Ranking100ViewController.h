@@ -20,6 +20,17 @@
     int tmp;//ソート時に使う一時的な変数
     int s;//保存されている数値を配列にコピーする時に使う一次変数
     
+    UINavigationBar* objectNaviBar;
+    
+    
+    // ナビゲーションアイテムを生成
+    UINavigationItem* naviItem;
+    
+    // 戻るボタンを生成
+    UIBarButtonItem* backButton;
+    
+
+    
 }
 
 @property (weak, nonatomic) IBOutlet UILabel *RankingToptxt;

@@ -246,7 +246,6 @@ BOOL questionFinished;
     }
     
     
-    
     //時間切れによる不正解
     if (!questionSelected || qOperator  > 4.0) {
         NSLog(@"時間切れによる不正解");

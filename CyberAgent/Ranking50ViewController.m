@@ -7,6 +7,7 @@
 //
 
 #import "Ranking50ViewController.h"
+#import "RankingViewSelectViewController.h"
 
 @interface Ranking50ViewController ()
 
@@ -15,6 +16,10 @@
 @implementation Ranking50ViewController
 @synthesize RankingToptxt;
 @synthesize tableView;
+
+//バックボタンを起動させるかどうか
+BOOL backBtn;
+
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -73,7 +78,45 @@
      NSLog(@"ソート後int配列内の表示終了");
      */
     
+    // ナビゲーションバーを生成
+    objectNaviBar = [[UINavigationBar alloc] initWithFrame:CGRectMake(0, 0, 320, 44)];
+    objectNaviBar.tintColor = [UIColor blackColor];
+    
+    // ナビゲーションアイテムを生成
+    
+    naviItem = [[UINavigationItem alloc] initWithTitle:@""];
+    
+    // 戻るボタンを生成
+    backButton = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStyleBordered target:self action:@selector(doBack:)];
+    
+    //バックボタンを起動させるか
+    backBtn = false;
+    
+    // ナビゲーションアイテムの右側に戻るボタンを設置
+    naviItem.leftBarButtonItem = backButton;
+    
+    // ナビゲーションバーにナビゲーションアイテムを設置
+    [objectNaviBar pushNavigationItem:naviItem animated:YES];
+    
+    // ビューにナビゲーションアイテムを設置
+    [self.view addSubview:objectNaviBar];
+    
+    NSString *str = [NSString stringWithFormat : @"20問中正解数ランキング"];
+    str = [NSString stringWithFormat:@"%@",str];
+    naviItem.title = str;
+    
+    
 	// Do any additional setup after loading the view.
+}
+
+// 戻るボタンの実装
+- (void)doBack:(id)sender
+{
+    backBtn = true;
+    RankingViewSelectViewController *vc= [self.storyboard instantiateViewControllerWithIdentifier:@"RankingViewSelectViewController"];
+    [self presentModalViewController:vc animated:YES ];
+    
+    
 }
 
 
