@@ -14,7 +14,6 @@
 @end
 
 @implementation Ranking100ViewController
-@synthesize RankingToptxt;
 @synthesize tableView;
 
 //バックボタンを起動させるかどうか
@@ -35,11 +34,6 @@ BOOL backBtn;
     
     ud = [NSUserDefaults standardUserDefaults];//保存先のオブジェクトの宣言
     num = [ud integerForKey:@"KEY_numhun"];//何回目のプレイかを記憶する変数numをロード
-    
-    //一度もプレイしていない場合の処理
-    if(num==0){
-        self.RankingToptxt.text = @"まだ結果はありません";
-    }
     
     
     /*
@@ -99,10 +93,15 @@ BOOL backBtn;
     // ビューにナビゲーションアイテムを設置
     [self.view addSubview:objectNaviBar];
     
-    NSString *str = [NSString stringWithFormat : @"30問中正解数ランキング"];
-    str = [NSString stringWithFormat:@"%@",str];
-    naviItem.title = str;
-    
+    if(num==0){
+        NSString *str = [NSString stringWithFormat : @"まだプレイしていません"];
+        str = [NSString stringWithFormat:@"%@",str];
+        naviItem.title = str;
+    }else{
+        NSString *str = [NSString stringWithFormat : @"30問中正解数ランキング"];
+        str = [NSString stringWithFormat:@"%@",str];
+        naviItem.title = str;
+    }
     
 	// Do any additional setup after loading the view.
 }
@@ -157,8 +156,11 @@ BOOL backBtn;
         cell = [[UITableViewCell alloc] initWithFrame:CGRectZero reuseIdentifier:MyIdentifier];
     }
     
+    //アラインを中央にする。
+    cell.textLabel.textAlignment = UITextAlignmentCenter;
+    
     //セルに表示する内容を代入
-    cell.textLabel.text = [NSString stringWithFormat:@"%d位　　　　　　　　　%d問",(indexPath.row+1),array[indexPath.row]];
+    cell.textLabel.text = [NSString stringWithFormat:@"%d位　　    　　　%d問",(indexPath.row+1),array[indexPath.row]];
     
     //セルの選択時の処理をなくす(ハイライトをなくす)
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
@@ -171,7 +173,6 @@ BOOL backBtn;
 
 - (void)viewDidUnload
 {
-    [self setRankingToptxt:nil];
     [self setTableView:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.

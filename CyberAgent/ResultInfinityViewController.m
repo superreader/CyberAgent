@@ -133,8 +133,11 @@
         cell = [[UITableViewCell alloc] initWithFrame:CGRectZero reuseIdentifier:MyIdentifier];
     }
     
+    //アラインを中央にする。
+    cell.textLabel.textAlignment = UITextAlignmentCenter;
+    
     //セルに表示する内容を代入
-    cell.textLabel.text = [NSString stringWithFormat:@"%d位　　　　　　　　　%d問",(indexPath.row+1),array[indexPath.row]];
+    cell.textLabel.text = [NSString stringWithFormat:@"%d位　　    　　　%d問",(indexPath.row+1),array[indexPath.row]];
     
     //セルの選択時の処理をなくす(ハイライトをなくす)
     cell.selectionStyle = UITableViewCellSelectionStyleNone;

@@ -33,9 +33,6 @@
     
 }
 
-
-@property (weak, nonatomic) IBOutlet UILabel *RankingToptxt;
-
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end
