@@ -96,7 +96,7 @@
                                     <segue destination="Gbo-CV-c2X" kind="modal" id="T1o-vo-30j"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="topimg.png" id="qfK-hL-iFn">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="topimg1.png" id="qfK-hL-iFn">
                                 <rect key="frame" x="20" y="8" width="280" height="150"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -727,7 +727,7 @@
     <resources>
         <image name="back.png" width="640" height="960"/>
         <image name="btn7.jpg" width="117" height="32"/>
-        <image name="topimg.png" width="271" height="143"/>
+        <image name="topimg1.png" width="271" height="143"/>
     </resources>
     <classes>
         <class className="CountDownViewController" superclassName="UIViewController">
