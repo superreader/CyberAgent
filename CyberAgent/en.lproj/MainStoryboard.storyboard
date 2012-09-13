@@ -97,7 +97,7 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="topimg.png" id="qfK-hL-iFn">
-                                <rect key="frame" x="18" y="23" width="280" height="150"/>
+                                <rect key="frame" x="20" y="11" width="280" height="150"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
