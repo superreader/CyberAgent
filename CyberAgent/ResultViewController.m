@@ -44,10 +44,10 @@
     
     //tableViewの背景を透明にする
     self.tableView.backgroundColor = [UIColor clearColor];
-        
+    
     num++;
     [ud setInteger:num forKey:@"KEY_num"];
-    
+        
     // Do any additional setup after loading the view.
 }
 
@@ -87,11 +87,7 @@
             zyuni=(num-i+1);//同立の場合は直近の結果が上位になる数式アルゴリズム
         }
     }
-    
-    
-    NSLog(@"zyuniの数値=%d",zyuni);
-
-    
+        
     //結果が何位かの表示
     self.yourRank.text = [NSString stringWithFormat:@"あなたの順位は%d位です！！",zyuni];
     
@@ -133,7 +129,6 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
 }
 
 //tableの設定終了
-
 
 - (void)viewDidUnload
 {
