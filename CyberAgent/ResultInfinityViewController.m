@@ -32,14 +32,14 @@
 {
     [super viewDidLoad];
     
-    ans = 50;//(int)[QuestionViewController answerNum];
+    ans = (int)[QuestionViewController answerNum];
     
     SystemSoundID soundID;
     UIImageView *iv;
 
     
     //全問正解時の処理
-    if (ans >= 60){
+    if (ans >= 40 && ans < 50 ){
         
         //正解のイメージを表示させる
         NSString *aImagePath = [[NSBundle mainBundle] pathForResource:@"hosi1" ofType:@"png"];
