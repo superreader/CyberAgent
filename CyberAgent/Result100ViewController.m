@@ -31,7 +31,7 @@
 {
     [super viewDidLoad];
     
-    ans = (int)[QuestionViewController answerNum];
+    ans = 30;//(int)[QuestionViewController answerNum];
     
     //全問正解時の処理
     if (ans == 30){
@@ -39,7 +39,7 @@
         UIImageView *iv;
         
         //正解のイメージを表示させる
-        NSString *aImagePath = [[NSBundle mainBundle] pathForResource:@"oukan" ofType:@"png"];
+        NSString *aImagePath = [[NSBundle mainBundle] pathForResource:@"crown-gold" ofType:@"png"];
         UIImage *image = [[UIImage alloc] initWithContentsOfFile:aImagePath];
         iv = [[UIImageView alloc] initWithImage:image];
         

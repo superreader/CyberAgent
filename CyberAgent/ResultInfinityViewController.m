@@ -32,14 +32,94 @@
 {
     [super viewDidLoad];
     
-    ans = (int)[QuestionViewController answerNum];
+    ans = 50;//(int)[QuestionViewController answerNum];
     
     SystemSoundID soundID;
     UIImageView *iv;
 
     
     //全問正解時の処理
-    if (ans >= 100){
+    if (ans >= 60){
+        
+        //正解のイメージを表示させる
+        NSString *aImagePath = [[NSBundle mainBundle] pathForResource:@"hosi1" ofType:@"png"];
+        UIImage *image = [[UIImage alloc] initWithContentsOfFile:aImagePath];
+        iv = [[UIImageView alloc] initWithImage:image];
+        
+        [self.view addSubview:iv];
+        NSLog(@"全問正解エフェクト");
+        
+        iv.frame = CGRectMake(0, 0, 300, 300);
+        iv.center = CGPointMake(160, 150);
+        [UIView beginAnimations:nil context:nil];  // 条件指定開始
+        [UIView setAnimationDuration:1];  // 0.2秒かけてアニメーションを終了させる
+        [UIView setAnimationDelay:0.1];  // 3秒後にアニメーションを開始する
+        [UIView setAnimationRepeatCount:1.0];  // アニメーションを5回繰り返す
+        [UIView setAnimationCurve:UIViewAnimationCurveLinear];  // アニメーションは一定速度
+        iv.alpha = 0.0;
+        
+        [UIView commitAnimations];  // アニメーション開始！
+        
+        //音を鳴らす
+        NSString *path = [[NSBundle mainBundle] pathForResource:@"hakusyu" ofType:@"mp3"];
+        NSURL *url = [NSURL fileURLWithPath:path];
+        AudioServicesCreateSystemSoundID((__bridge CFURLRef)url, &soundID);
+        AudioServicesPlaySystemSound(soundID);
+    }else if(ans >= 50 && ans <70){
+        
+        //正解のイメージを表示させる
+        NSString *aImagePath = [[NSBundle mainBundle] pathForResource:@"hosi2" ofType:@"png"];
+        UIImage *image = [[UIImage alloc] initWithContentsOfFile:aImagePath];
+        iv = [[UIImageView alloc] initWithImage:image];
+        
+        [self.view addSubview:iv];
+        NSLog(@"全問正解エフェクト");
+        
+        iv.frame = CGRectMake(0, 0, 300, 300);
+        iv.center = CGPointMake(160, 150);
+        [UIView beginAnimations:nil context:nil];  // 条件指定開始
+        [UIView setAnimationDuration:1];  // 0.2秒かけてアニメーションを終了させる
+        [UIView setAnimationDelay:0.1];  // 3秒後にアニメーションを開始する
+        [UIView setAnimationRepeatCount:1.0];  // アニメーションを5回繰り返す
+        [UIView setAnimationCurve:UIViewAnimationCurveLinear];  // アニメーションは一定速度
+        iv.alpha = 0.0;
+        
+        [UIView commitAnimations];  // アニメーション開始！
+        
+        //音を鳴らす
+        NSString *path = [[NSBundle mainBundle] pathForResource:@"hakusyu" ofType:@"mp3"];
+        NSURL *url = [NSURL fileURLWithPath:path];
+        AudioServicesCreateSystemSoundID((__bridge CFURLRef)url, &soundID);
+        AudioServicesPlaySystemSound(soundID);
+        
+    }else if(ans >= 70 && ans <100){
+        
+        //正解のイメージを表示させる
+        NSString *aImagePath = [[NSBundle mainBundle] pathForResource:@"hosi3" ofType:@"png"];
+        UIImage *image = [[UIImage alloc] initWithContentsOfFile:aImagePath];
+        iv = [[UIImageView alloc] initWithImage:image];
+        
+        [self.view addSubview:iv];
+        NSLog(@"全問正解エフェクト");
+        
+        iv.frame = CGRectMake(0, 0, 300, 300);
+        iv.center = CGPointMake(160, 150);
+        [UIView beginAnimations:nil context:nil];  // 条件指定開始
+        [UIView setAnimationDuration:1];  // 0.2秒かけてアニメーションを終了させる
+        [UIView setAnimationDelay:0.1];  // 3秒後にアニメーションを開始する
+        [UIView setAnimationRepeatCount:1.0];  // アニメーションを5回繰り返す
+        [UIView setAnimationCurve:UIViewAnimationCurveLinear];  // アニメーションは一定速度
+        iv.alpha = 0.0;
+        
+        [UIView commitAnimations];  // アニメーション開始！
+        
+        //音を鳴らす
+        NSString *path = [[NSBundle mainBundle] pathForResource:@"hakusyu" ofType:@"mp3"];
+        NSURL *url = [NSURL fileURLWithPath:path];
+        AudioServicesCreateSystemSoundID((__bridge CFURLRef)url, &soundID);
+        AudioServicesPlaySystemSound(soundID);
+        
+    }else if(ans >= 100 ){
         
         //正解のイメージを表示させる
         NSString *aImagePath = [[NSBundle mainBundle] pathForResource:@"oukan" ofType:@"png"];
@@ -66,7 +146,6 @@
         AudioServicesCreateSystemSoundID((__bridge CFURLRef)url, &soundID);
         AudioServicesPlaySystemSound(soundID);
     }
-    
     
     self.ResultLabel.text = [NSString stringWithFormat:@"連続%d問正解！！",ans];
     
