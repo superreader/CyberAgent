@@ -270,6 +270,7 @@ BOOL flag = false;
         questionResult = false;
         //不正解音を鳴らす
         [self AnswerSound];
+        resultShow = 2;
         AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
     }
     
@@ -287,6 +288,11 @@ BOOL flag = false;
 
     //新しい問題に遷移
     if ((qOperator  > 4.0 || qOperator < 0.01 )&& !questionFinished) {
+        if(!questionResult){
+            [self questionResultShow];
+        }
+        questionResult = false;
+        
         NSString *str = [NSString stringWithFormat : @"%d", sequence];
         str = [NSString stringWithFormat:@"問 %@",str];
         naviItem.title = str;
