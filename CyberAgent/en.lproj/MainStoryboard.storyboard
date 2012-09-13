@@ -96,8 +96,8 @@
                                     <segue destination="Gbo-CV-c2X" kind="modal" id="T1o-vo-30j"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="qfK-hL-iFn">
-                                <rect key="frame" x="20" y="9" width="280" height="149"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="topimg.png" id="qfK-hL-iFn">
+                                <rect key="frame" x="20" y="8" width="280" height="150"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
@@ -128,7 +128,7 @@
                     </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="1339" y="-129"/>
+            <point key="canvasLocation" x="1362" y="-120"/>
         </scene>
         <!--Question View Controller-->
         <scene sceneID="Bf2-cD-s4V">
@@ -306,7 +306,7 @@
                                 </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="z9Z-E2-jEY">
-                                <rect key="frame" x="88" y="400" width="145" height="45"/>
+                                <rect key="frame" x="88" y="399" width="145" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="TOP" backgroundImage="btn7.jpg">
@@ -353,7 +353,7 @@
                                 </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="3pa-AE-pyG">
-                                <rect key="frame" x="88" y="401" width="145" height="45"/>
+                                <rect key="frame" x="88" y="400" width="145" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="TOP" backgroundImage="btn7.jpg">
@@ -400,7 +400,7 @@
                                 </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="mec-Mo-aBg">
-                                <rect key="frame" x="88" y="400" width="145" height="45"/>
+                                <rect key="frame" x="88" y="399" width="145" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="TOP" backgroundImage="btn7.jpg">
@@ -447,7 +447,7 @@
                                 </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="9eY-3B-wRX">
-                                <rect key="frame" x="88" y="401" width="145" height="45"/>
+                                <rect key="frame" x="88" y="400" width="145" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="TOP" backgroundImage="btn7.jpg">
@@ -492,7 +492,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="fLF-8e-IJD">
-                                <rect key="frame" x="43" y="406" width="225" height="45"/>
+                                <rect key="frame" x="80" y="406" width="160" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="TOP" backgroundImage="btn7.jpg">
@@ -571,7 +571,7 @@
                                 </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="V8b-vO-ChK">
-                                <rect key="frame" x="81" y="406" width="160" height="45"/>
+                                <rect key="frame" x="80" y="406" width="160" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="TOP" backgroundImage="btn7.jpg">
@@ -727,14 +727,108 @@
     <resources>
         <image name="back.png" width="640" height="960"/>
         <image name="btn7.jpg" width="117" height="32"/>
+        <image name="topimg.png" width="271" height="143"/>
     </resources>
+    <classes>
+        <class className="CountDownViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CountDownViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="CountDown" candidateClass="UIImageView"/>
+            </relationships>
+        </class>
+        <class className="QuestionViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/QuestionViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="judgmentQuastionLeft:" candidateClass="UIButton"/>
+                <relationship kind="action" name="judgmentQuastionRight:" candidateClass="UIButton"/>
+                <relationship kind="action" name="shuffleQuestionImage:" candidateClass="NSInteger"/>
+                <relationship kind="outlet" name="QuestionString" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="Questionimg" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="leftButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="pv" candidateClass="UIProgressView"/>
+                <relationship kind="outlet" name="questionQuantityNum" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="rightAndWrong" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="rightButton" candidateClass="UIButton"/>
+            </relationships>
+        </class>
+        <class className="Ranking100ViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/Ranking100ViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="Ranking50ViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/Ranking50ViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="RankingInfinityViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/RankingInfinityViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="RankingViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/RankingViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="RankingViewSelectViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/RankingViewSelectViewController.h"/>
+        </class>
+        <class className="Result100ViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/Result100ViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="ResultLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="TableView" candidateClass="UITableView"/>
+                <relationship kind="outlet" name="yourRank" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="Result50ViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/Result50ViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="ResultLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="tableview" candidateClass="UITableView"/>
+                <relationship kind="outlet" name="yourRank" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="ResultInfinityViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ResultInfinityViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="ResultLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
+                <relationship kind="outlet" name="yourRank" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="ResultViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ResultViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="ResultLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
+                <relationship kind="outlet" name="yourRank" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="ViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="questionQuantity:"/>
+                <relationship kind="action" name="startBtn1:"/>
+                <relationship kind="action" name="startBtn2:"/>
+                <relationship kind="action" name="startBtn3:"/>
+                <relationship kind="action" name="startBtn4:"/>
+                <relationship kind="outlet" name="segment1" candidateClass="UISegmentedControl"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="H1S-I0-l4R"/>
-        <segue reference="ZCB-N0-XuB"/>
+        <segue reference="cT9-kn-6QL"/>
+        <segue reference="T1o-vo-30j"/>
     </inferredMetricsTieBreakers>
 </document>
