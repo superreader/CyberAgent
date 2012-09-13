@@ -291,7 +291,7 @@ BOOL flag = false;
         if(!questionResult){
             [self questionResultShow];
         }
-        questionResult = false;
+        //questionResult = false;
         
         NSString *str = [NSString stringWithFormat : @"%d", sequence];
         str = [NSString stringWithFormat:@"問 %@",str];

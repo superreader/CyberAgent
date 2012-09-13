@@ -101,13 +101,14 @@
 //    NSIndexPath *ipath = [NSIndexPath indexPathForRow:zyuni inSection:0];
 //    [self.tableView scrollToRowAtIndexPath:ipath atScrollPosition:UITableViewScrollPositionTop animated:YES];
 
-//    self.tableView.scrollEnabled = YES;
-//
-//    
+    self.tableView.scrollEnabled = YES;
+
+    
 //    NSIndexPath* iPath = [NSIndexPath indexPathForRow:zyuni inSection:0];
 //    
-//    [self.tableView indexPathWithIndex:iPath animated:YES scrollPosition:UITableViewScrollPositionMiddle];
+//    [self.tableView selectRowAtIndexPath:iPath animated:YES scrollPosition:UITableViewScrollPositionMiddle];
 //    
+//    [super viewWillAppear:animated];
 //    
     //アラインを中央にする。
     cell.textLabel.textAlignment = UITextAlignmentCenter;
