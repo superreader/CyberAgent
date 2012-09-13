@@ -731,7 +731,7 @@
     <resources>
         <image name="back.png" width="640" height="960"/>
         <image name="btn7.jpg" width="117" height="32"/>
-        <image name="topimg1.png" width="271" height="143"/>
+        <image name="topimg1.png" width="271" height="140"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
