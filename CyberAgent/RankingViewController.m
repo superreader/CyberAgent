@@ -72,8 +72,8 @@ BOOL backBtn;
         str = [NSString stringWithFormat:@"%@",str];
         naviItem.title = str;
     }
-        
-	// Do any additional setup after loading the view.
+    
+    // Do any additional setup after loading the view.
 }
 
 // 戻るボタンの実装
@@ -100,7 +100,7 @@ BOOL backBtn;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
+        
     //データの取得とソート
     int array[num];//ソート用int型配列の宣言
     
