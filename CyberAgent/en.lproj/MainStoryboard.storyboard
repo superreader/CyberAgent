@@ -97,7 +97,7 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="qfK-hL-iFn">
-                                <rect key="frame" x="20" y="9" width="280" height="149"/>
+                                <rect key="frame" x="20" y="9" width="280" height="150"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
@@ -297,7 +297,7 @@
                                 </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="z9Z-E2-jEY">
-                                <rect key="frame" x="88" y="400" width="145" height="45"/>
+                                <rect key="frame" x="88" y="399" width="145" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="TOP" backgroundImage="btn7.jpg">
@@ -344,7 +344,7 @@
                                 </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="3pa-AE-pyG">
-                                <rect key="frame" x="88" y="401" width="145" height="45"/>
+                                <rect key="frame" x="88" y="400" width="145" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="TOP" backgroundImage="btn7.jpg">
@@ -391,7 +391,7 @@
                                 </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="mec-Mo-aBg">
-                                <rect key="frame" x="88" y="400" width="145" height="45"/>
+                                <rect key="frame" x="88" y="399" width="145" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="TOP" backgroundImage="btn7.jpg">
@@ -438,7 +438,7 @@
                                 </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="9eY-3B-wRX">
-                                <rect key="frame" x="88" y="401" width="145" height="45"/>
+                                <rect key="frame" x="88" y="400" width="145" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="TOP" backgroundImage="btn7.jpg">
@@ -483,7 +483,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="fLF-8e-IJD">
-                                <rect key="frame" x="43" y="406" width="225" height="45"/>
+                                <rect key="frame" x="80" y="406" width="160" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="TOP" backgroundImage="btn7.jpg">
@@ -562,7 +562,7 @@
                                 </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="V8b-vO-ChK">
-                                <rect key="frame" x="81" y="406" width="160" height="45"/>
+                                <rect key="frame" x="80" y="406" width="160" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="TOP" backgroundImage="btn7.jpg">
@@ -815,7 +815,7 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="H1S-I0-l4R"/>
+        <segue reference="cT9-kn-6QL"/>
         <segue reference="ZCB-N0-XuB"/>
     </inferredMetricsTieBreakers>
 </document>
