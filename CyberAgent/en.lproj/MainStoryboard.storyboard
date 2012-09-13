@@ -595,7 +595,7 @@
                     </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="1880" y="579"/>
+            <point key="canvasLocation" x="1682" y="579"/>
         </scene>
         <!--Result100 View Controller-->
         <scene sceneID="cDF-ZY-dfx">
@@ -658,7 +658,7 @@
                     </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="1432" y="579"/>
+            <point key="canvasLocation" x="1198" y="579"/>
         </scene>
         <!--Result50 View Controller-->
         <scene sceneID="s5J-z2-eaq">
@@ -741,7 +741,7 @@
             <relationships>
                 <relationship kind="action" name="judgmentQuastionLeft:" candidateClass="UIButton"/>
                 <relationship kind="action" name="judgmentQuastionRight:" candidateClass="UIButton"/>
-                <relationship kind="action" name="shuffleQuestionImage:" candidateClass="NSInteger"/>
+                <relationship kind="action" name="shuffleQuestionImage:"/>
                 <relationship kind="outlet" name="QuestionString" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="Questionimg" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="leftButton" candidateClass="UIButton"/>
@@ -828,7 +828,7 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="cT9-kn-6QL"/>
+        <segue reference="PIf-jw-qcI"/>
         <segue reference="T1o-vo-30j"/>
     </inferredMetricsTieBreakers>
 </document>
