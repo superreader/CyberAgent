@@ -146,11 +146,6 @@
     
     //セルに表示する内容を代入
     cell.textLabel.text = [NSString stringWithFormat:@"%d位　　    　　　%d問",(indexPath.row+1),array[indexPath.row]];
-
-    //セルにイメージを設定
-    if(array[indexPath.row] == 10){
-        cell.imageView.image = [UIImage imageNamed:@"oukan.png"];
-    }
         
     //セルの選択時の処理をなくす(ハイライトをなくす)
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
