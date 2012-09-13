@@ -32,8 +32,8 @@ int sequence;
 
 {
     
-    UIImage *backgroundImage = [UIImage imageNamed:@"back.png"];
-    self.view.backgroundColor = [UIColor colorWithPatternImage:backgroundImage];
+//    UIImage *backgroundImage = [UIImage imageNamed:@"back.png"];
+//    self.view.backgroundColor = [UIColor colorWithPatternImage:backgroundImage];
     NSLog(@"viewDidLoad start");
     sequence = 3;
     

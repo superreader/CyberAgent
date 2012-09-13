@@ -102,6 +102,7 @@ BOOL flag = false;
     //バックボタンを起動させるか
     backBtn = false;
     
+    questionResult = false;
     
     questionFinished = false;
     
@@ -166,11 +167,15 @@ BOOL flag = false;
     naviItem = [[UINavigationItem alloc] initWithTitle:@""];
     
     // 戻るボタンを生成
-    backButton = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStyleBordered target:self action:@selector(doBack:)];
+    backButton = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStyleBordered target:self action:@selector(doBack:) ];
+
+   // backButton.tintColor = [UIColor greenColor];
+
     
     
     // ナビゲーションアイテムの右側に戻るボタンを設置
     naviItem.leftBarButtonItem = backButton;
+    //[naviItem.leftBarButtonItem  buttonWithType:101];
     
     // ナビゲーションバーにナビゲーションアイテムを設置
     [objectNaviBar pushNavigationItem:naviItem animated:YES];
@@ -180,75 +185,6 @@ BOOL flag = false;
     
  	// Do any additional setup after loading the view.
     
-}
-
-
-
--(void) countDown {
-    //3  2  1 実装
-    
-    UIImageView *iv1;
-    NSString *aImagePath = [[NSBundle mainBundle] pathForResource:@"image_0" ofType:@"jpg"];
-    UIImage *image = [[UIImage alloc] initWithContentsOfFile:aImagePath];
-    iv1 = [[UIImageView alloc] initWithImage:image];
-    
-    
-    [self.view addSubview:iv1];
-    //       NSLog(@"right show");
-    
-    //        iv.frame = CGRectMake(0, 0, 400, 300);
-    iv1.center = CGPointMake(150, 150);
-    [UIView beginAnimations:nil context:nil];  // 条件指定開始
-    [UIView setAnimationDuration:1];  // 秒かけてアニメーションを終了させる
-    [UIView setAnimationDelay:0];  // 3秒後にアニメーションを開始する
-    [UIView setAnimationRepeatCount:1.0];  // アニメーションを1回繰り返す
-    [UIView setAnimationCurve:UIViewAnimationCurveLinear];  // アニメーションは一定速度
-    iv1.alpha = 0.0;
-    [UIView commitAnimations];  // アニメーション開始！
-
-    
-    UIImageView *iv2;
-    aImagePath = [[NSBundle mainBundle] pathForResource:@"image_1" ofType:@"jpg"];
-    image = [[UIImage alloc] initWithContentsOfFile:aImagePath];
-    iv2 = [[UIImageView alloc] initWithImage:image];
-    
-    
-    [self.view addSubview:iv2];
-    //       NSLog(@"right show");
-    
-    //        iv.frame = CGRectMake(0, 0, 400, 300);
-    iv2.center = CGPointMake(150, 150);
-    [UIView beginAnimations:nil context:nil];  // 条件指定開始
-    [UIView setAnimationDuration:1];  // 秒かけてアニメーションを終了させる
-    [UIView setAnimationDelay:0];  // 3秒後にアニメーションを開始する
-    [UIView setAnimationRepeatCount:1.0];  // アニメーションを1回繰り返す
-    [UIView setAnimationCurve:UIViewAnimationCurveLinear];  // アニメーションは一定速度
-    iv2.alpha = 0.0;
-    [UIView commitAnimations];  // アニメーション開始！
-
-    
-    
-    UIImageView *iv3;
-    aImagePath = [[NSBundle mainBundle] pathForResource:@"image_2" ofType:@"jpg"];
-    image = [[UIImage alloc] initWithContentsOfFile:aImagePath];
-    iv3 = [[UIImageView alloc] initWithImage:image];
-    
-    
-    [self.view addSubview:iv3];
-    //       NSLog(@"right show");
-    
-    //        iv.frame = CGRectMake(0, 0, 400, 300);
-    iv3.center = CGPointMake(150, 150);
-    [UIView beginAnimations:nil context:nil];  // 条件指定開始
-    [UIView setAnimationDuration:1];  // 秒かけてアニメーションを終了させる
-    [UIView setAnimationDelay:0];  // 3秒後にアニメーションを開始する
-    [UIView setAnimationRepeatCount:1.0];  // アニメーションを1回繰り返す
-    [UIView setAnimationCurve:UIViewAnimationCurveLinear];  // アニメーションは一定速度
-    iv3.alpha = 0.0;
-    [UIView commitAnimations];  // アニメーション開始！
-
-    flag = true;
-
 }
 
 
@@ -290,7 +226,9 @@ BOOL flag = false;
 //次の画面に正解数を渡す
 +(NSInteger*)answerNum{
     NSInteger *ansCount;
-    ansCount = answerCount;
+    ansCount = (NSInteger*)answerCount;
+    NSLog(@"answerCount = %d ",answerCount);
+
     return ansCount;
 }
 
@@ -428,7 +366,7 @@ BOOL flag = false;
         NSLog(@"right show");
         
         iv.frame = CGRectMake(0, 0, 400, 300);
-        iv.center = CGPointMake(150, 150);
+        iv.center = CGPointMake(160, 150);
         [UIView beginAnimations:nil context:nil];  // 条件指定開始
         [UIView setAnimationDuration:0.4];  // 0.2秒かけてアニメーションを終了させる
         [UIView setAnimationDelay:0.1];  // 3秒後にアニメーションを開始する
@@ -503,10 +441,10 @@ BOOL flag = false;
     [self setButton:question];
     
 
-    //正解数を数える
-    if(questionResult){
-        answerCount = answerCount + 1;
-    }
+//    //正解数を数える
+//    if(questionResult){
+//        answerCount = answerCount + 1;
+//    }
     
     //問題文をすすめる
 }
@@ -589,6 +527,7 @@ BOOL flag = false;
 
         //正解時に音を鳴らす
         [self AnswerSound];
+        answerCount = answerCount + 1;
 
         
               
@@ -643,7 +582,7 @@ BOOL flag = false;
 
         //正解時に音を鳴らす
         [self AnswerSound];
-        
+        answerCount = answerCount + 1;
                 
         //正解のイメージを表示させる
         resultShow = 1;
