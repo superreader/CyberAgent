@@ -17,6 +17,7 @@
 int sequence;
 
 @implementation CountDownViewController
+@synthesize CountDown;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -50,6 +51,7 @@ int sequence;
 
 -(void)countDown : (NSTimer*)timer{
     
+    
     if(sequence > 0){
     //問題画像をセット
     NSString *str = [NSString stringWithFormat : @"%d", sequence];
@@ -57,8 +59,13 @@ int sequence;
 
     NSString *imagePath = [[NSBundle mainBundle] pathForResource:str ofType:@"png"];    //問題文の種類の呼び出し
     UIImage *image = [[UIImage alloc] initWithContentsOfFile:imagePath];
-    UIImageView *iv = [[UIImageView alloc] initWithImage:image];
-    [self.view addSubview: iv];
+    //UIImageView *iv = [[UIImageView alloc] initWithImage:image];
+    
+        
+    //[self.view addSubview: iv];
+        CountDown.image = image;
+  
+    
     sequence--;
     NSLog(@"sequence %d",sequence);
     
@@ -88,6 +95,7 @@ int sequence;
 
 - (void)viewDidUnload
 {
+    [self setCountDown:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }

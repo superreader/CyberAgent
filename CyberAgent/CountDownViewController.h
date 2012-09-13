@@ -10,4 +10,5 @@
 
 @interface CountDownViewController : UIViewController
 
+@property (strong, nonatomic) IBOutlet UIImageView *CountDown;
 @end
