@@ -34,7 +34,38 @@
     [super viewDidLoad];
       
     ans = (int)[QuestionViewController answerNum];
+    
+    //全問正解時の処理
+    if (ans == 10){
+        SystemSoundID soundID;
+        UIImageView *iv;
+
+        //正解のイメージを表示させる
+        NSString *aImagePath = [[NSBundle mainBundle] pathForResource:@"oukan" ofType:@"png"];
+        UIImage *image = [[UIImage alloc] initWithContentsOfFile:aImagePath];
+        iv = [[UIImageView alloc] initWithImage:image];
         
+        [self.view addSubview:iv];
+        NSLog(@"全問正解エフェクト");
+        
+        iv.frame = CGRectMake(0, 0, 300, 300);
+        iv.center = CGPointMake(160, 150);
+        [UIView beginAnimations:nil context:nil];  // 条件指定開始
+        [UIView setAnimationDuration:1];  // 0.2秒かけてアニメーションを終了させる
+        [UIView setAnimationDelay:0.1];  // 3秒後にアニメーションを開始する
+        [UIView setAnimationRepeatCount:1.0];  // アニメーションを5回繰り返す
+        [UIView setAnimationCurve:UIViewAnimationCurveLinear];  // アニメーションは一定速度
+        iv.alpha = 0.0;
+        
+        [UIView commitAnimations];  // アニメーション開始！
+
+        //音を鳴らす
+        NSString *path = [[NSBundle mainBundle] pathForResource:@"hakusyu" ofType:@"mp3"];
+        NSURL *url = [NSURL fileURLWithPath:path];
+        AudioServicesCreateSystemSoundID((__bridge CFURLRef)url, &soundID);
+        AudioServicesPlaySystemSound(soundID);
+    }
+    
     self.ResultLabel.text = [NSString stringWithFormat:@"10問中%d問正解！！",ans];
     
     ud = [NSUserDefaults standardUserDefaults];//保存先のオブジェクトの宣言
@@ -111,11 +142,16 @@
 //    [super viewWillAppear:animated];
 //    
     //アラインを中央にする。
-    cell.textLabel.textAlignment = UITextAlignmentCenter;
+    cell.textLabel.textAlignment = UITextAlignmentRight;
     
     //セルに表示する内容を代入
     cell.textLabel.text = [NSString stringWithFormat:@"%d位　　    　　　%d問",(indexPath.row+1),array[indexPath.row]];
-    
+
+    //セルにイメージを設定
+    if(array[indexPath.row] == 10){
+        cell.imageView.image = [UIImage imageNamed:@"oukan.png"];
+    }
+        
     //セルの選択時の処理をなくす(ハイライトをなくす)
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
