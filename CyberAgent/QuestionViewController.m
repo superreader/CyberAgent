@@ -558,10 +558,7 @@ BOOL flag = false;
 //        UIImage *imege = [[UIImage alloc] initWithContentsOfFile:aImagePath];
 //        rightAndWrong.image = imege;
 //        rightAndWrong.hidden = false;
-//        [NSThread sleepForTimeInterval:1.0];
-
-
-        
+//        [NSThread sleepForTimeInterval:1.0];        
     }
 
     
@@ -592,7 +589,6 @@ BOOL flag = false;
                 
         //正解のイメージを表示させる
         resultShow = 1;
-
     }
     else{
         NSLog(@"不正解！！！");
@@ -609,7 +605,6 @@ BOOL flag = false;
         resultShow = 2;
         
         AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
-
 
     }
     //問題には答えた(正解かどうかはどうでもいい)
