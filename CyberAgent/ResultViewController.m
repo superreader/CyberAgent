@@ -32,12 +32,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+      
     ans = (int)[QuestionViewController answerNum];
     
     //ans = rand() % 100;//0～9の数値をランダムに取得
     //ans = (int)[QuestionViewController answerNum];
-    
     
     self.ResultLabel.text = [NSString stringWithFormat:@"10問中%d問正解！！",ans];
     
@@ -47,38 +46,8 @@
 //    int array[num+1];//int配列の宣言
     [ud setInteger:ans forKey:[NSString stringWithFormat:@"%d",num]];//Keyに変数numを指定し、ansの値を保存先オブジェクトに保存
     
-/*
-    //int型配列に今までの結果をコピー
-    for(i=0;i<=num;i++){
-        s = [ud integerForKey:[NSString stringWithFormat:@"%d",i]];  // Keyに変数iを指定し、内容をinteger型として取得
-        array[i]=s;//配列に代入
-    }
-    
-    //int配列内の表示
-    NSLog(@"int配列内の表示開始");
-    for(i=0;i<=num;i++){
-        NSLog(@"%d",array[i]);
-    }
-    NSLog(@"int配列内の表示終了");
-    
-    //int配列のソート
-    for (i = 0; i <num; i++) {
-        for (j = num ; j > i; j--) {
-            if (array[j-1] < array[j]) {
-                tmp = array[j-1];
-                array[j-1] = array[j];
-                array[j] = tmp;
-            }
-        }
-    }
-    
-    //ソート後int配列の表示
-    NSLog(@"ソート後int配列内の表示開始");
-    for(i=0;i<=num;i++){
-        NSLog(@"%d",array[i]);
-    }
-    NSLog(@"ソート後int配列内の表示終了");
-*/
+    //tableViewの背景を透明にする
+    self.tableView.backgroundColor = [UIColor clearColor];
     
     num++;
     [ud setInteger:num forKey:@"KEY_num"];
@@ -133,14 +102,21 @@
         cell = [[UITableViewCell alloc] initWithFrame:CGRectZero reuseIdentifier:MyIdentifier];
     }
     
+    //アラインを中央にする。
+    cell.textLabel.textAlignment = UITextAlignmentCenter;
+    
     //セルに表示する内容を代入
-    cell.textLabel.text = [NSString stringWithFormat:@"%d位　　　　　　　　　%d問",(indexPath.row+1),array[indexPath.row]];
+    cell.textLabel.text = [NSString stringWithFormat:@"%d位　　    　　　%d問",(indexPath.row+1),array[indexPath.row]];
     
     //セルの選択時の処理をなくす(ハイライトをなくす)
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
+    //セルの文字色を変える
+    cell.textLabel.textColor = [UIColor whiteColor];
+    
     //セルインクタンスを返す
     return cell;
+
 }
 
 //今回の順位のセルの色を変える
@@ -154,6 +130,7 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
                                           brightness:1.0
                                                alpha:1.0];
     }
+    
 }
 
 //tableの設定終了
