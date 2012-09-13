@@ -34,7 +34,7 @@ int sequence;
     UIImage *backgroundImage = [UIImage imageNamed:@"back.png"];
     self.view.backgroundColor = [UIColor colorWithPatternImage:backgroundImage];
     NSLog(@"viewDidLoad start");
-    sequence = 0;
+    sequence = 3;
     
     [NSTimer
      scheduledTimerWithTimeInterval:1
@@ -50,19 +50,19 @@ int sequence;
 
 -(void)countDown : (NSTimer*)timer{
     
-    if(sequence < 3){
+    if(sequence > 0){
     //問題画像をセット
-    NSString *str = [NSString stringWithFormat : @"%d", sequence+1];
+    NSString *str = [NSString stringWithFormat : @"%d", sequence];
     str = [NSString stringWithFormat:@"%@",str];
 
     NSString *imagePath = [[NSBundle mainBundle] pathForResource:str ofType:@"png"];    //問題文の種類の呼び出し
     UIImage *image = [[UIImage alloc] initWithContentsOfFile:imagePath];
     UIImageView *iv = [[UIImageView alloc] initWithImage:image];
     [self.view addSubview: iv];
-    sequence++;
+    sequence--;
     NSLog(@"sequence %d",sequence);
     
-    }else if(sequence == 3){
+    }else if(sequence == 0){
         
         //一拍開けるため
         [NSTimer
@@ -82,7 +82,7 @@ int sequence;
 
 }
 -(void)tmp : (NSTimer*)timer{
-    [NSThread sleepForTimeInterval:1.0];
+ //   [NSThread sleepForTimeInterval:1.0];
     [timer invalidate];
 }
 
