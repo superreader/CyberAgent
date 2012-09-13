@@ -31,7 +31,7 @@
 {
     [super viewDidLoad];
     
-    ans = 30;//(int)[QuestionViewController answerNum];
+    ans = (int)[QuestionViewController answerNum];
     
     //全問正解時の処理
     if (ans == 30){

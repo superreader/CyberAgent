@@ -33,7 +33,7 @@
 {
     [super viewDidLoad];
       
-    ans = 10;//(int)[QuestionViewController answerNum];
+    ans = (int)[QuestionViewController answerNum];
     
     //全問正解時の処理
     if (ans == 10){
@@ -152,7 +152,7 @@
     
     //セルの文字色を変える
     cell.textLabel.textColor = [UIColor whiteColor];
-    
+        
     //セルインクタンスを返す
     return cell;
 }
