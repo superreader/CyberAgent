@@ -34,21 +34,17 @@
     [super viewDidLoad];
       
     ans = (int)[QuestionViewController answerNum];
-    
-    //ans = rand() % 100;//0～9の数値をランダムに取得
-    //ans = (int)[QuestionViewController answerNum];
-    
+        
     self.ResultLabel.text = [NSString stringWithFormat:@"10問中%d問正解！！",ans];
     
     ud = [NSUserDefaults standardUserDefaults];//保存先のオブジェクトの宣言
     num = [ud integerForKey:@"KEY_num"];//何回目のプレイかを記憶する変数numの宣言
     
-//    int array[num+1];//int配列の宣言
     [ud setInteger:ans forKey:[NSString stringWithFormat:@"%d",num]];//Keyに変数numを指定し、ansの値を保存先オブジェクトに保存
     
     //tableViewの背景を透明にする
     self.tableView.backgroundColor = [UIColor clearColor];
-    
+        
     num++;
     [ud setInteger:num forKey:@"KEY_num"];
     
@@ -91,7 +87,11 @@
             zyuni=(num-i+1);//同立の場合は直近の結果が上位になる数式アルゴリズム
         }
     }
+    
+    
+    NSLog(@"zyuniの数値=%d",zyuni);
 
+    
     //結果が何位かの表示
     self.yourRank.text = [NSString stringWithFormat:@"あなたの順位は%d位です！！",zyuni];
     
@@ -130,7 +130,6 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
                                           brightness:1.0
                                                alpha:1.0];
     }
-    
 }
 
 //tableの設定終了
