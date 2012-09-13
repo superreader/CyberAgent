@@ -4,7 +4,7 @@
 //
 //  Created by 柏木 翔太 on 12/09/12.
 //  Copyright (c) 2012年 上野 博司. All rights reserved.
-// 9/12-11:09
+// 9/12-11:09 11:13
 
 #import "RankingViewSelectViewController.h"
 #import "ViewController.h"
