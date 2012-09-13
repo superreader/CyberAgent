@@ -248,8 +248,10 @@ BOOL flag = false;
     
     //プログレスバーの値を変更する
     pv.progress = 1-(qOperator/4);
-    
-    
+        
+    if(qOperator > 3){
+        pv.progressTintColor = [UIColor colorWithRed:1.0f green:0.0f blue:0.0f alpha:1.0f];
+    }
     //バックボタンを起動させる
     if (backBtn) {
         [timer invalidate];
@@ -296,6 +298,7 @@ BOOL flag = false;
         NSString *str = [NSString stringWithFormat : @"%d", sequence];
         str = [NSString stringWithFormat:@"問 %@",str];
         naviItem.title = str;
+        pv.progressTintColor = [UIColor colorWithRed:0.0f green:1.0f blue:0.0f alpha:1.0f];
         [self changeQuestion];
         NSLog(@"%d",numQuestion);
         
