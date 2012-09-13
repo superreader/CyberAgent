@@ -37,6 +37,10 @@ int sequence;
     NSLog(@"viewDidLoad start");
     sequence = 3;
     
+    //画像の設定
+    [self changeImage:sequence];
+    sequence--;
+    
     [NSTimer
      scheduledTimerWithTimeInterval:1
      target:self
@@ -53,21 +57,11 @@ int sequence;
     
     
     if(sequence > 0){
-    //問題画像をセット
-    NSString *str = [NSString stringWithFormat : @"%d", sequence];
-    str = [NSString stringWithFormat:@"%@",str];
-
-    NSString *imagePath = [[NSBundle mainBundle] pathForResource:str ofType:@"png"];    //問題文の種類の呼び出し
-    UIImage *image = [[UIImage alloc] initWithContentsOfFile:imagePath];
-    //UIImageView *iv = [[UIImageView alloc] initWithImage:image];
     
-        
-    //[self.view addSubview: iv];
-        CountDown.image = image;
-  
-    
-    sequence--;
-    NSLog(@"sequence %d",sequence);
+        //問題画像をセット
+        [self changeImage:sequence];
+        sequence--;
+        NSLog(@"sequence %d",sequence);
     
     }else if(sequence == 0){
         
@@ -88,8 +82,21 @@ int sequence;
     
 
 }
+-(void)changeImage:(int)sequence{
+    NSString *str = [NSString stringWithFormat : @"%d", sequence];
+    str = [NSString stringWithFormat:@"%@",str];
+    
+    NSString *imagePath = [[NSBundle mainBundle] pathForResource:str ofType:@"png"];    //問題文の種類の呼び出し
+    UIImage *image = [[UIImage alloc] initWithContentsOfFile:imagePath];
+    //UIImageView *iv = [[UIImageView alloc] initWithImage:image];
+    
+    
+    //[self.view addSubview: iv];
+    CountDown.image = image;
+    
+
+}
 -(void)tmp : (NSTimer*)timer{
- //   [NSThread sleepForTimeInterval:1.0];
     [timer invalidate];
 }
 

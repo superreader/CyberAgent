@@ -52,10 +52,13 @@
         [matrics exchangeObjectAtIndex:i withObjectAtIndex:j];
     }
     
-
+    NSMutableArray *tmp = [[NSMutableArray alloc]init];
     
+    for(int i = 0 ; i <  30 ; i++){
+        [tmp addObject:[matrics objectAtIndex:i]];
+    }
     
-    return matrics;
+    return tmp;
 }
 
 @end
