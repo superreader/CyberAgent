@@ -142,7 +142,7 @@
 //    [super viewWillAppear:animated];
 //    
     //アラインを中央にする。
-    cell.textLabel.textAlignment = UITextAlignmentRight;
+    cell.textLabel.textAlignment = UITextAlignmentCenter;
     
     //セルに表示する内容を代入
     cell.textLabel.text = [NSString stringWithFormat:@"%d位　　    　　　%d問",(indexPath.row+1),array[indexPath.row]];

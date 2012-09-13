@@ -34,10 +34,12 @@
     
     ans = (int)[QuestionViewController answerNum];
     
+    SystemSoundID soundID;
+    UIImageView *iv;
+
+    
     //全問正解時の処理
-    if (ans == 100){
-        SystemSoundID soundID;
-        UIImageView *iv;
+    if (ans >= 100){
         
         //正解のイメージを表示させる
         NSString *aImagePath = [[NSBundle mainBundle] pathForResource:@"oukan" ofType:@"png"];
@@ -64,9 +66,6 @@
         AudioServicesCreateSystemSoundID((__bridge CFURLRef)url, &soundID);
         AudioServicesPlaySystemSound(soundID);
     }
-    
-    //ans = rand() % 100;//0～9の数値をランダムに取得
-    //ans = (int)[QuestionViewController answerNum];
     
     
     self.ResultLabel.text = [NSString stringWithFormat:@"連続%d問正解！！",ans];
