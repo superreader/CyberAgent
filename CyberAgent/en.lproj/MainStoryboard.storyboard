@@ -97,7 +97,7 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="topimg.png" id="qfK-hL-iFn">
-                                <rect key="frame" x="20" y="11" width="280" height="150"/>
+                                <rect key="frame" x="20" y="8" width="280" height="150"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
@@ -128,7 +128,7 @@
                     </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="1339" y="-129"/>
+            <point key="canvasLocation" x="1362" y="-120"/>
         </scene>
         <!--Question View Controller-->
         <scene sceneID="Bf2-cD-s4V">
@@ -727,7 +727,7 @@
     <resources>
         <image name="back.png" width="640" height="960"/>
         <image name="btn7.jpg" width="117" height="32"/>
-        <image name="topimg.png" width="280" height="150"/>
+        <image name="topimg.png" width="271" height="143"/>
     </resources>
     <classes>
         <class className="CountDownViewController" superclassName="UIViewController">
@@ -741,7 +741,7 @@
             <relationships>
                 <relationship kind="action" name="judgmentQuastionLeft:" candidateClass="UIButton"/>
                 <relationship kind="action" name="judgmentQuastionRight:" candidateClass="UIButton"/>
-                <relationship kind="action" name="shuffleQuestionImage:"/>
+                <relationship kind="action" name="shuffleQuestionImage:" candidateClass="NSInteger"/>
                 <relationship kind="outlet" name="QuestionString" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="Questionimg" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="leftButton" candidateClass="UIButton"/>
@@ -829,6 +829,6 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="cT9-kn-6QL"/>
-        <segue reference="ZCB-N0-XuB"/>
+        <segue reference="T1o-vo-30j"/>
     </inferredMetricsTieBreakers>
 </document>
