@@ -80,6 +80,7 @@ BOOL backBtn;
 {
     backBtn = true;
     RankingViewSelectViewController *vc= [self.storyboard instantiateViewControllerWithIdentifier:@"RankingViewSelectViewController"];
+    vc.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;//アニメーションの指定
     [self presentModalViewController:vc animated:YES ];
     
     

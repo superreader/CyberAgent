@@ -32,16 +32,14 @@ int sequence;
 - (void)viewDidLoad
 
 {
+    [super viewDidLoad];
     
 //    UIImage *backgroundImage = [UIImage imageNamed:@"back.png"];
 //    self.view.backgroundColor = [UIColor colorWithPatternImage:backgroundImage];
     NSLog(@"viewDidLoad start");
+    
     sequence = 3;
-    
-    //画像の設定
-    [self changeImage:sequence];
-    sequence--;
-    
+        
     [NSTimer
      scheduledTimerWithTimeInterval:1
      target:self
@@ -49,8 +47,10 @@ int sequence;
      userInfo:nil
      repeats:YES];
     
-   
-    [super viewDidLoad];
+    //画像の設定
+    [self changeImage:sequence];
+    sequence--;
+    
 	// Do any additional setup after loading the view.
 }
 

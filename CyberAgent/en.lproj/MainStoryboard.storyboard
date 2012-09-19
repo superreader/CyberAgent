@@ -31,7 +31,7 @@
                                 </state>
                                 <connections>
                                     <action selector="startBtn1:" destination="2" eventType="touchDown" id="rZG-e6-YsD"/>
-                                    <segue destination="Gbo-CV-c2X" kind="modal" modalTransitionStyle="flipHorizontal" id="PnN-2M-wtq"/>
+                                    <segue destination="Gbo-CV-c2X" kind="modal" modalTransitionStyle="crossDissolve" id="PnN-2M-wtq"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="D5y-rS-JH7">
@@ -61,7 +61,7 @@
                                 </state>
                                 <connections>
                                     <action selector="startBtn4:" destination="2" eventType="touchDown" id="3xF-k7-odd"/>
-                                    <segue destination="Gbo-CV-c2X" kind="modal" modalTransitionStyle="flipHorizontal" id="LvP-oh-x8M"/>
+                                    <segue destination="Gbo-CV-c2X" kind="modal" modalTransitionStyle="crossDissolve" id="LvP-oh-x8M"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="gVa-rg-b0A">
@@ -77,7 +77,7 @@
                                 </state>
                                 <connections>
                                     <action selector="startBtn3:" destination="2" eventType="touchDown" id="O6z-74-vJz"/>
-                                    <segue destination="Gbo-CV-c2X" kind="modal" modalTransitionStyle="flipHorizontal" id="ZCB-N0-XuB"/>
+                                    <segue destination="Gbo-CV-c2X" kind="modal" modalTransitionStyle="crossDissolve" id="ZCB-N0-XuB"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="25X-6Z-Zdp">
@@ -93,7 +93,7 @@
                                 </state>
                                 <connections>
                                     <action selector="startBtn2:" destination="2" eventType="touchDown" id="HSb-5p-fGF"/>
-                                    <segue destination="Gbo-CV-c2X" kind="modal" modalTransitionStyle="flipHorizontal" id="T1o-vo-30j"/>
+                                    <segue destination="Gbo-CV-c2X" kind="modal" modalTransitionStyle="crossDissolve" id="T1o-vo-30j"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="oukan.png" id="9v5-cl-K7b">
@@ -325,7 +325,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="2" kind="modal" id="cT9-kn-6QL"/>
+                                    <segue destination="2" kind="modal" modalTransitionStyle="flipHorizontal" id="cT9-kn-6QL"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -372,7 +372,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="2" kind="modal" id="ZuG-t6-HL4"/>
+                                    <segue destination="2" kind="modal" modalTransitionStyle="flipHorizontal" id="ZuG-t6-HL4"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -419,7 +419,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="2" kind="modal" id="vG1-6T-8vk"/>
+                                    <segue destination="2" kind="modal" modalTransitionStyle="flipHorizontal" id="vG1-6T-8vk"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -466,7 +466,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="2" kind="modal" id="3p8-qZ-Fxn"/>
+                                    <segue destination="2" kind="modal" modalTransitionStyle="flipHorizontal" id="3p8-qZ-Fxn"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -511,7 +511,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="2" kind="modal" id="Stt-gE-XXR"/>
+                                    <segue destination="2" kind="modal" modalTransitionStyle="flipHorizontal" id="Stt-gE-XXR"/>
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Hb6-lC-Nmq">
@@ -590,7 +590,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="2" kind="modal" id="PIf-jw-qcI"/>
+                                    <segue destination="2" kind="modal" modalTransitionStyle="flipHorizontal" id="PIf-jw-qcI"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -653,7 +653,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="2" kind="modal" id="9ZH-4B-ICN"/>
+                                    <segue destination="2" kind="modal" modalTransitionStyle="flipHorizontal" id="9ZH-4B-ICN"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -716,7 +716,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="2" kind="modal" id="H1S-I0-l4R"/>
+                                    <segue destination="2" kind="modal" modalTransitionStyle="flipHorizontal" id="H1S-I0-l4R"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -822,12 +822,10 @@
         <class className="ViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
             <relationships>
-                <relationship kind="action" name="questionQuantity:"/>
                 <relationship kind="action" name="startBtn1:"/>
                 <relationship kind="action" name="startBtn2:"/>
                 <relationship kind="action" name="startBtn3:"/>
                 <relationship kind="action" name="startBtn4:"/>
-                <relationship kind="outlet" name="segment1" candidateClass="UISegmentedControl"/>
             </relationships>
         </class>
     </classes>

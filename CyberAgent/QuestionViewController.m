@@ -260,6 +260,7 @@ BOOL flag = false;
         NSLog(@"back");
         //   [self.navigationController popViewControllerAnimated:YES];
         ViewController *vc= [self.storyboard instantiateViewControllerWithIdentifier:@"ViewController"];
+        vc.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;//アニメーションの指定
         [self presentModalViewController:vc animated:YES ];
 
     }
