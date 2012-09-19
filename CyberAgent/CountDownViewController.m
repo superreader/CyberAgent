@@ -2,9 +2,10 @@
 //  CountDownViewController.m
 //  CyberAgent
 //
-//  Created by 上野 博司 on 12/09/12.
-//  Copyright (c) 2012年 上野 博司. All rights reserved.
+//  Created by 柏木翔太 on 12/09/05.
+//  Copyright (c) 2012年 柏木翔太. All rights reserved.
 //
+
 
 #import "CountDownViewController.h"
 #import "QuestionViewController.h"
@@ -73,11 +74,12 @@ int sequence;
          userInfo:nil
          repeats:YES];
 
+        //Viewの呼び出し
         [timer invalidate];
         QuestionViewController *vc= [self.storyboard instantiateViewControllerWithIdentifier:@"QuestionViewController"];
+        vc.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;//アニメーションの指定
         [self presentModalViewController:vc animated:YES ];
-     
-        
+                
     }
     
 

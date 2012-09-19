@@ -31,7 +31,7 @@
                                 </state>
                                 <connections>
                                     <action selector="startBtn1:" destination="2" eventType="touchDown" id="rZG-e6-YsD"/>
-                                    <segue destination="Gbo-CV-c2X" kind="modal" id="PnN-2M-wtq"/>
+                                    <segue destination="Gbo-CV-c2X" kind="modal" modalTransitionStyle="flipHorizontal" id="PnN-2M-wtq"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="D5y-rS-JH7">
@@ -61,7 +61,7 @@
                                 </state>
                                 <connections>
                                     <action selector="startBtn4:" destination="2" eventType="touchDown" id="3xF-k7-odd"/>
-                                    <segue destination="Gbo-CV-c2X" kind="modal" id="LvP-oh-x8M"/>
+                                    <segue destination="Gbo-CV-c2X" kind="modal" modalTransitionStyle="flipHorizontal" id="LvP-oh-x8M"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="gVa-rg-b0A">
@@ -77,7 +77,7 @@
                                 </state>
                                 <connections>
                                     <action selector="startBtn3:" destination="2" eventType="touchDown" id="O6z-74-vJz"/>
-                                    <segue destination="Gbo-CV-c2X" kind="modal" id="ZCB-N0-XuB"/>
+                                    <segue destination="Gbo-CV-c2X" kind="modal" modalTransitionStyle="flipHorizontal" id="ZCB-N0-XuB"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="25X-6Z-Zdp">
@@ -93,7 +93,7 @@
                                 </state>
                                 <connections>
                                     <action selector="startBtn2:" destination="2" eventType="touchDown" id="HSb-5p-fGF"/>
-                                    <segue destination="Gbo-CV-c2X" kind="modal" id="T1o-vo-30j"/>
+                                    <segue destination="Gbo-CV-c2X" kind="modal" modalTransitionStyle="flipHorizontal" id="T1o-vo-30j"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="oukan.png" id="9v5-cl-K7b">
@@ -838,6 +838,6 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="PIf-jw-qcI"/>
-        <segue reference="ZCB-N0-XuB"/>
+        <segue reference="LvP-oh-x8M"/>
     </inferredMetricsTieBreakers>
 </document>
