@@ -209,7 +209,7 @@
                     </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="1990" y="-129"/>
+            <point key="canvasLocation" x="1995" y="-120"/>
         </scene>
         <!--Ranking View Select View Controller - RankingViewSelectViewController-->
         <scene sceneID="gKc-6m-LiM">
@@ -835,7 +835,7 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="PIf-jw-qcI"/>
+        <segue reference="3p8-qZ-Fxn"/>
         <segue reference="LvP-oh-x8M"/>
     </inferredMetricsTieBreakers>
 </document>
