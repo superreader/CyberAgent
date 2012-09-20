@@ -63,6 +63,7 @@ int sequence;
         [self changeImage:sequence];
         sequence--;
         NSLog(@"sequence %d",sequence);
+        
     
     }else if(sequence == 0){
         

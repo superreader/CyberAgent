@@ -5,7 +5,6 @@
 //  Created by 柏木翔太 on 12/09/05.
 //  Copyright (c) 2012年 柏木翔太. All rights reserved.
 //
-//test
 
 #import "ViewController.h"
 #import "QuestionViewController.h"
@@ -25,15 +24,17 @@
 
 @synthesize questionQuantityNum;
 
-
 //問題のボタンは右が正解だったらTrue
 //           左が正解だったらFalse
 bool questionAns = false;
+
 //現在の問題数
 int sequence;
 NSMutableArray *anArray;
+
 //正解数
 int answerCount;
+
 //問題数
 int numQuestion;
 
@@ -75,13 +76,14 @@ BOOL flag = false;
     return self;
 }
 
-
-
 /*
  問題のスタート設定
  */
 - (void)viewDidLoad
 {
+    
+    [super viewDidLoad];
+
     
     //現在の問題数
     sequence = 0;
@@ -107,20 +109,9 @@ BOOL flag = false;
     questionFinished = false;
     
     
-    //一つ前の画面で問題数を設定したのでその数字の格納
+    //TOP画面で問題数を設定したのでその数字の格納
     //問題数の受け渡し
     nq = [ViewController Qnum];
-//    
-//    NSString *ImagePath = [[NSBundle mainBundle] pathForResource:@"image_5" ofType:@"jpg"];
-//    UIImage *imege = [[UIImage alloc] initWithContentsOfFile:ImagePath];
-//    Questionimg.image = imege;
-// 
-//
-    
-
-//[self countDown];
-    
-    
     
     //プログレスバー初期設定
     pv.progress = 1.0;
@@ -136,7 +127,6 @@ BOOL flag = false;
     else{
         //問題数の設定
         numQuestion = [nq intValue];
-        //numQuestion = 10;
         infiniteMode = false;
     }
     
@@ -152,68 +142,36 @@ BOOL flag = false;
     selector:@selector(questionOperator:)
     userInfo:nil
     repeats:YES];
-    
-    
-    [super viewDidLoad];
-    
-    
-    
+        
+    /************************ナビゲーションバー**********************************************/
     // ナビゲーションバーを生成
     objectNaviBar = [[UINavigationBar alloc] initWithFrame:CGRectMake(0, 0, 320, 44)];
     objectNaviBar.tintColor = [UIColor blackColor];
-    
     // ナビゲーションアイテムを生成
-    
     naviItem = [[UINavigationItem alloc] initWithTitle:@""];
-    
     // 戻るボタンを生成
     backButton = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStyleBordered target:self action:@selector(doBack:) ];
+    //backButton.tintColor = [UIColor greenColor];
 
-   // backButton.tintColor = [UIColor greenColor];
-
-    
-    
     // ナビゲーションアイテムの右側に戻るボタンを設置
     naviItem.leftBarButtonItem = backButton;
     //[naviItem.leftBarButtonItem  buttonWithType:101];
-    
     // ナビゲーションバーにナビゲーションアイテムを設置
     [objectNaviBar pushNavigationItem:naviItem animated:YES];
-    
     // ビューにナビゲーションアイテムを設置
     [self.view addSubview:objectNaviBar];
+    /************************ナビゲーションバー**********************************************/
     
  	// Do any additional setup after loading the view.
     
 }
 
 
-
-
-// 戻るボタンの実装
+// ナビゲーションバーの戻るボタンの実装
 - (void)doBack:(id)sender
 {
     backBtn = true;
 }
-
-- (void)viewDidUnload
-{
-    [self setQuestionimg:nil];
-    [self setQuestionString:nil];
-    [self setRightAndWrong:nil];
-    [self setLeftButton:nil];
-    [self setRightButton:nil];
-    [self setPv:nil];
-    [super viewDidUnload];
-    // Release any retained subviews of the main view.
-}
-
-
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
-}
-
 
 //前の画面から問題数の受け渡し
 -(void)setQuestionQuantity: (NSString*)qq{
@@ -235,8 +193,6 @@ BOOL flag = false;
 
 //問題を呼び出したり色々な設定を行うところ
 -(void)questionOperator:(NSTimer *)timer {
-    
-    
    
     //問題数無限大の時に設定の問題が足りなくなったらもっかい問題を取りに行く
     if([anArray count] == questionArrayLength +1){
@@ -248,23 +204,24 @@ BOOL flag = false;
     
     //プログレスバーの値を変更する
     pv.progress = 1-(qOperator/4);
-        
+    //残り1秒でプログレスバーの色を赤にする
     if(qOperator > 3){
         pv.progressTintColor = [UIColor colorWithRed:1.0f green:0.0f blue:0.0f alpha:1.0f];
     }
-    //バックボタンを起動させる
+    
+    //バックボタンが押されればを起動させる
     if (backBtn) {
         [timer invalidate];
         //問題文の開放
         [anArray removeAllObjects];
         NSLog(@"back");
-        //   [self.navigationController popViewControllerAnimated:YES];
+        
+        //?[self.navigationController popViewControllerAnimated:YES];
+        
         ViewController *vc= [self.storyboard instantiateViewControllerWithIdentifier:@"ViewController"];
         vc.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;//アニメーションの指定
         [self presentModalViewController:vc animated:YES ];
-
     }
-    
     
     //時間切れによる不正解
     if (!questionSelected || qOperator  > 4.0) {
@@ -416,9 +373,7 @@ BOOL flag = false;
 }
 
 
-/*
- 問題を変える
- */
+//問題を変える
 - (void)changeQuestion{
 
     
@@ -450,18 +405,10 @@ BOOL flag = false;
     //問題ボタンの設定
     [self setButton:question];
     
-
-//    //正解数を数える
-//    if(questionResult){
-//        answerCount = answerCount + 1;
-//    }
-    
-    //問題文をすすめる
 }
 
-/*
- 問題ごとにボタンの情報をセットする
- */
+
+//問題ごとにボタンの情報をセットする
 -(void) setButton: (NSMutableArray*)quastion{
     
     //問題のボタンは右が正解だったらTrue
@@ -524,9 +471,8 @@ BOOL flag = false;
 
 
 
-/*
- 問題の正解か不正解の判定（右ボタン）
- */
+
+//問題の正解か不正解の判定（右ボタン）
 -(IBAction) judgmentQuastionRight:(UIButton *)sender{
     
    //右が正解だった場合
@@ -539,32 +485,24 @@ BOOL flag = false;
         [self AnswerSound];
         answerCount = answerCount + 1;
 
-        
-              
+        //不正解のイメージを表示させる
         resultShow = 1;
     }
     else{
         NSLog(@"不正解！！！");
-
         
         //不正解だった
         questionResult = false;
-
         
         //不正解時に音を鳴らす
         [self AnswerSound];
         
+        //不正解のイメージを表示させる
         resultShow = 2;
+        
         AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
 
-        //不正解のイメージを表示させる
-//        NSString *aImagePath = [[NSBundle mainBundle] pathForResource:@"wrong" ofType:@"jpg"];
-//        UIImage *imege = [[UIImage alloc] initWithContentsOfFile:aImagePath];
-//        rightAndWrong.image = imege;
-//        rightAndWrong.hidden = false;
-//        [NSThread sleepForTimeInterval:1.0];        
     }
-
     
     //問題には答えた(正解かどうかはどうでもいい)
     questionSelected = true;
@@ -572,14 +510,11 @@ BOOL flag = false;
     NSLog(@"push button answerCount = %d",(int)answerCount);
     qOperator = 0.0;
     
-    
     [self questionResultShow];
-
 }
 
-/*
- 問題の正解か不正解の判定（左ボタン）
- */
+
+//問題の正解か不正解の判定（左ボタン）
 -(IBAction) judgmentQuastionLeft:(UIButton *)sender{
 
     if(!questionAns){
@@ -625,5 +560,22 @@ BOOL flag = false;
 
 
 
+- (void)viewDidUnload
+{
+    [self setQuestionimg:nil];
+    [self setQuestionString:nil];
+    [self setRightAndWrong:nil];
+    [self setLeftButton:nil];
+    [self setRightButton:nil];
+    [self setPv:nil];
+    [super viewDidUnload];
+    // Release any retained subviews of the main view.
+}
+
+
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+{
+    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+}
 
 @end

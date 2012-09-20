@@ -54,7 +54,7 @@ static  NSString *Qnum;
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
-
+//外からQnumを見るためのクラス
 + (NSString*)Qnum {
     NSLog(@"qnum:%@",Qnum);
     return Qnum;

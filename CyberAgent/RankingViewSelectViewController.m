@@ -8,6 +8,7 @@
 
 #import "RankingViewSelectViewController.h"
 #import "ViewController.h"
+#import "AllRankingViewController.h"
 
 @interface RankingViewSelectViewController ()
 
@@ -17,6 +18,9 @@
 
 //バックボタンを起動させるかどうか
 BOOL backBtn;
+
+//どのボタンが押されたか記録する
+static  NSString *btnSelect;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -85,5 +89,36 @@ BOOL backBtn;
 {
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
+
+- (IBAction)btn1:(id)sender {
+    btnSelect = [NSString stringWithFormat:@"10"];
+    AllRankingViewController *vc= [self.storyboard instantiateViewControllerWithIdentifier:@"AllRankingViewController"];
+    [self presentModalViewController:vc animated:YES ];
+}
+
+- (IBAction)btn2:(id)sender {
+    btnSelect = [NSString stringWithFormat:@"20"];
+    AllRankingViewController *vc= [self.storyboard instantiateViewControllerWithIdentifier:@"AllRankingViewController"];
+    [self presentModalViewController:vc animated:YES ];
+}
+
+- (IBAction)btn3:(id)sender {
+    btnSelect = [NSString stringWithFormat:@"30"];
+    AllRankingViewController *vc= [self.storyboard instantiateViewControllerWithIdentifier:@"AllRankingViewController"];
+    [self presentModalViewController:vc animated:YES ];
+}
+
+- (IBAction)btn4:(id)sender {
+    btnSelect = [NSString stringWithFormat:@"連続正解"];
+    AllRankingViewController *vc= [self.storyboard instantiateViewControllerWithIdentifier:@"AllRankingViewController"];
+    [self presentModalViewController:vc animated:YES ];
+}
+
+//外からbtnSelectを見るためのクラス
++ (NSString*)btnSelect {
+    NSLog(@"qnum:%@",btnSelect);
+    return btnSelect;
+}
+
 
 @end

@@ -20,4 +20,13 @@
 
 }
 
++ (NSString*)btnSelect;
+
+- (IBAction)btn1:(id)sender;
+- (IBAction)btn2:(id)sender;
+- (IBAction)btn3:(id)sender;
+- (IBAction)btn4:(id)sender;
+
+
+
 @end
