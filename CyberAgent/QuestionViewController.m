@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "QuestionViewController.h"
+#import "AllResultViewController.h"
 
 @interface QuestionViewController ()
 
@@ -281,17 +282,17 @@ BOOL flag = false;
         //問題数に応じて行き先を変える
         if ([nq isEqualToString:@"10"]) {
             NSLog(@"Finished 10 question");
-            ResultViewController *rvc= [self.storyboard instantiateViewControllerWithIdentifier:@"ResultViewController"];
+            AllResultViewController *rvc= [self.storyboard instantiateViewControllerWithIdentifier:@"AllResultViewController"];
             [self presentModalViewController:rvc animated:YES];
         }
         else if([nq isEqualToString:@"20"]){
             NSLog(@"Finished 50 question");
-            Result50ViewController *rvc50= [self.storyboard instantiateViewControllerWithIdentifier:@"Result50ViewController"];
+            AllResultViewController *rvc50= [self.storyboard instantiateViewControllerWithIdentifier:@"AllResultViewController"];
             [self presentModalViewController:rvc50 animated:YES ];
         }
         else if([nq isEqualToString:@"30"]){
             NSLog(@"Finished 100 question");
-            Result100ViewController *rvc100 = [self.storyboard instantiateViewControllerWithIdentifier:@"Result100ViewController"];
+            AllResultViewController *rvc100 = [self.storyboard instantiateViewControllerWithIdentifier:@"AllResultViewController"];
             [self presentModalViewController:rvc100 animated:YES ];
         }
         
@@ -309,7 +310,7 @@ BOOL flag = false;
         
         
         NSLog(@"Finished infinite question");
-        ResultInfinityViewController *rvc= [self.storyboard instantiateViewControllerWithIdentifier:@"ResultInfinityViewController"];
+        AllResultViewController *rvc= [self.storyboard instantiateViewControllerWithIdentifier:@"AllResultViewController"];
         [self presentModalViewController:rvc animated:YES ];
         
         
