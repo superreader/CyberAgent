@@ -47,7 +47,7 @@ NSString *nq;
     // ナビゲーションアイテムを生成
     naviItem = [[UINavigationItem alloc] initWithTitle:@""];
     // 戻るボタンを生成
-    backButton = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStyleBordered target:self action:@selector(doBack:) ];
+    backButton = [[UIBarButtonItem alloc] initWithTitle:@"戻る" style:UIBarButtonItemStyleBordered target:self action:@selector(doBack:) ];
     //backButton.tintColor = [UIColor greenColor];
     
     // ナビゲーションアイテムの右側に戻るボタンを設置

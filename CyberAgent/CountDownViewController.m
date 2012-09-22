@@ -97,6 +97,18 @@ int sequence;
     //[self.view addSubview: iv];
     CountDown.image = image;
     
+    //アニメーションの設定
+    self.CountDown.alpha = 1.0;
+	self.CountDown.transform = CGAffineTransformMakeScale(1.0, 1.0);
+    
+    [UIView animateWithDuration:0.3
+                     animations:^{
+                         self.CountDown.alpha = 1.0;
+                         self.CountDown.transform = CGAffineTransformMakeScale(2.2, 2.2);
+                     }
+     ];
+
+    
 
 }
 -(void)tmp : (NSTimer*)timer{

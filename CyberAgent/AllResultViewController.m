@@ -53,7 +53,10 @@ NSString *nq;
     }
 
     //******************全問正解の時の処理***************************//
-    if (ans == [@"%@",nq intValue]){
+    NSString *text;
+    text = [NSString stringWithFormat:@"%d",ans];
+    
+    if ([text isEqualToString:nq]){
         SystemSoundID soundID;
         UIImageView *iv;
         

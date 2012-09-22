@@ -151,7 +151,7 @@ BOOL flag = false;
     // ナビゲーションアイテムを生成
     naviItem = [[UINavigationItem alloc] initWithTitle:@""];
     // 戻るボタンを生成
-    backButton = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStyleBordered target:self action:@selector(doBack:) ];
+    backButton = [[UIBarButtonItem alloc] initWithTitle:@"戻る" style:UIBarButtonItemStyleBordered target:self action:@selector(doBack:) ];
     //backButton.tintColor = [UIColor greenColor];
 
     // ナビゲーションアイテムの右側に戻るボタンを設置
@@ -255,7 +255,7 @@ BOOL flag = false;
         //questionResult = false;
         
         NSString *str = [NSString stringWithFormat : @"%d", sequence];
-        str = [NSString stringWithFormat:@"問 %@",str];
+        str = [NSString stringWithFormat:@"%@問目",str];
         naviItem.title = str;
         pv.progressTintColor = [UIColor colorWithRed:0.0f green:1.0f blue:0.0f alpha:1.0f];
         [self changeQuestion];

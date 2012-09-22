@@ -125,7 +125,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="FWh-FE-F7y">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
+                                <rect key="frame" x="79" y="113" width="162" height="234"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                         </subviews>
@@ -209,7 +209,7 @@
                     </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="1827" y="-588"/>
+            <point key="canvasLocation" x="1353" y="17"/>
         </scene>
         <!--All Result View Controller-->
         <scene sceneID="LsD-pl-fKN">
@@ -239,7 +239,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="DGu-DF-xTo">
-                                <rect key="frame" x="80" y="402" width="160" height="45"/>
+                                <rect key="frame" x="80" y="403" width="160" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="TOP" backgroundImage="btn7.jpg">
@@ -272,7 +272,7 @@
                     </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="1470" y="24"/>
+            <point key="canvasLocation" x="858" y="17"/>
         </scene>
         <!--AllRankingViewController-->
         <scene sceneID="bVa-kh-A9i">
@@ -288,7 +288,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="ay8-lL-Lgz">
-                                <rect key="frame" x="30" y="69" width="260" height="320"/>
+                                <rect key="frame" x="30" y="58" width="260" height="334"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
@@ -297,7 +297,7 @@
                                 </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="oXR-3S-5zF">
-                                <rect key="frame" x="90" y="400" width="141" height="48"/>
+                                <rect key="frame" x="80" y="403" width="160" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="TOP" backgroundImage="btn7.jpg">
@@ -319,7 +319,7 @@
                     </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="619" y="31"/>
+            <point key="canvasLocation" x="375" y="17"/>
         </scene>
         <!--Ranking View Select View Controller - RankingViewSelectViewController-->
         <scene sceneID="gKc-6m-LiM">
@@ -399,7 +399,7 @@
                     </view>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="361" y="-594"/>
+            <point key="canvasLocation" x="375" y="-588"/>
         </scene>
     </scenes>
     <resources>
@@ -469,7 +469,7 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
+        <segue reference="PyM-5a-dEd"/>
         <segue reference="ZCB-N0-XuB"/>
-        <segue reference="hez-X6-Fir"/>
     </inferredMetricsTieBreakers>
 </document>

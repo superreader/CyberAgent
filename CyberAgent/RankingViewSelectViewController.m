@@ -44,7 +44,7 @@ static  NSString *btnSelect;
     naviItem = [[UINavigationItem alloc] initWithTitle:@""];
     
     // 戻るボタンを生成
-    backButton = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStyleBordered target:self action:@selector(doBack:)];
+    backButton = [[UIBarButtonItem alloc] initWithTitle:@"戻る" style:UIBarButtonItemStyleBordered target:self action:@selector(doBack:)];
 
     //バックボタンを起動させるか
     backBtn = false;
